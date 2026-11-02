@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Condensed Matter Scales</title>
+<meta name="description" content="Key relations and typical energy, length and time scales for theoretical condensed matter, with a quiz mode for practicing recall.">
+<meta property="og:title" content="Condensed Matter Scales">
+<meta property="og:description" content="Key relations and typical energy, length and time scales for theoretical condensed matter, with a quiz mode for practicing recall.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cg fill='none' stroke='%23A44F1B' stroke-width='2'%3E%3Cellipse cx='16' cy='16' rx='13' ry='5'/%3E%3Cellipse cx='16' cy='16' rx='13' ry='5' transform='rotate(60 16 16)'/%3E%3Cellipse cx='16' cy='16' rx='13' ry='5' transform='rotate(120 16 16)'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='2.5' fill='%23A44F1B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Base: page-level reset */
+:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+footer a{color:var(--accent);text-underline-offset:2px}
+/* Layout: a pocket data booklet. One reading column of dense reference tables under a sticky index, with an energy ladder near the top. */
+:root{
+  --paper:#F4F6F9;
+  --surface:#FFFFFF;
+  --ink:#141C2B;
+  --ink-2:#4B5670;
+  --rule:#D8DEE8;
+  --accent:#A44F1B;
+  --accent-soft:#EBD3C2;
+  --mask:#E2E7EF;
+  --tb:96px;
+  --math:"STIX Two Text","Cambria","Times New Roman",serif;
+  --sans:"Source Sans 3","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F141C; --surface:#161D28; --ink:#E6EAF0; --ink-2:#9AA6B8; --rule:#283244;
+    --accent:#E5915A; --accent-soft:#4A3122; --mask:#222B39; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F141C; --surface:#161D28; --ink:#E6EAF0; --ink-2:#9AA6B8; --rule:#283244;
+  --accent:#E5915A; --accent-soft:#4A3122; --mask:#222B39; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.gutter{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.inner{max-width:1120px;margin:0 auto}
+sub,sup{font-size:.72em;line-height:0}
+
+.masthead{padding-block:40px 22px}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);font-weight:600;margin:0}
+h1{font-family:var(--math);font-weight:600;font-size:clamp(2.1rem,5vw,3.2rem);line-height:1.08;margin:.3rem 0 .8rem;text-wrap:balance;letter-spacing:-.01em}
+.lede{max-width:66ch;color:var(--ink-2);font-size:16px;margin:0}
+.lede + .lede{margin-top:.55rem}
+.lede b{color:var(--ink);font-weight:600}
+
+.toolbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--rule)}
+.toolbar .inner{display:flex;flex-direction:column;gap:8px;padding-block:10px}
+.controls{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;min-width:0}
+.search{flex:1 1 200px;min-width:0;max-width:340px;font:inherit;font-size:14px;padding:6px 10px;border:1px solid var(--rule);border-radius:6px;background:var(--surface);color:var(--ink)}
+.search::placeholder{color:var(--ink-2);opacity:.85}
+.search:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.seg{display:inline-flex;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:var(--surface)}
+.seg input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.seg label{padding:6px 10px;font-size:13px;font-weight:600;color:var(--ink-2);cursor:pointer;white-space:nowrap}
+.seg label:not(:first-of-type){border-left:1px solid var(--rule)}
+.seg input:checked + label{background:var(--ink);color:var(--paper)}
+.seg input:focus-visible + label{outline:2px solid var(--accent);outline-offset:-2px}
+.btn{font:inherit;font-size:13px;font-weight:600;padding:6px 10px;border-radius:6px;border:1px solid var(--rule);background:var(--surface);color:var(--ink);cursor:pointer}
+.btn:hover{border-color:var(--ink-2)}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.count{font-size:13px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.nav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;min-width:0;margin:0 -8px;padding:0 0 2px}
+.nav::-webkit-scrollbar{display:none}
+.nav a{flex:none;font-size:13px;font-weight:600;color:var(--ink-2);text-decoration:none;padding:3px 8px;border-radius:4px;white-space:nowrap}
+.nav a:hover{color:var(--ink);background:var(--mask)}
+.nav a.on{color:var(--accent)}
+.nav a:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+
+main{padding-block:4px 48px}
+section{padding-block:34px 6px;scroll-margin-top:calc(env(safe-area-inset-top,0px) + var(--tb) + 8px)}
+@media (max-width:620px){.toolbar{position:relative;top:auto}}
+h2{font-family:var(--math);font-weight:600;font-size:1.65rem;line-height:1.2;margin:0 0 .3rem;text-wrap:balance}
+h3{font-family:var(--math);font-weight:600;font-size:1.2rem;margin:26px 0 8px}
+.intro{color:var(--ink-2);max-width:70ch;margin:0 0 16px}
+.math{font-family:var(--math)}
+
+/* Anchors: a ruled grid like a data booklet's constants page */
+.anchors{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.anchor{background:var(--surface);padding:14px 14px 12px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.anchor .lab{font-family:var(--math);font-size:15px;color:var(--ink-2)}
+.anchor .val{font-family:var(--math);font-size:1.22rem;line-height:1.3;color:var(--ink);font-variant-numeric:tabular-nums}
+.anchor .note{font-size:12.5px;color:var(--ink-2);line-height:1.4}
+@media (max-width:960px){.anchors{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Reference tables */
+.tablewrap{overflow-x:auto}
+table.ref{width:100%;border-collapse:collapse;font-size:14.5px}
+.ref th{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);font-weight:600;text-align:left;padding:6px 14px 6px 0;border-bottom:1.5px solid var(--ink);white-space:nowrap}
+.ref td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule);vertical-align:top;min-width:0}
+.ref td:first-child{font-weight:600}
+.ref td.m{font-family:var(--math);font-size:15.5px}
+.ref td.num{font-variant-numeric:tabular-nums}
+.ref td.empty{color:var(--ink-2)}
+.ref.cols4 td:nth-child(1){width:19%}
+.ref.cols4 td:nth-child(2){width:31%}
+.ref.cols4 td:nth-child(3){width:22%}
+.ref.cols3 td:nth-child(1){width:26%}
+.ref.cols3 td:nth-child(2){width:30%}
+.ref.fixed{min-width:640px}
+.ref.fixed td,.ref.fixed th{white-space:nowrap}
+.ref.fixed td:last-child,.ref.fixed th:last-child{white-space:normal}
+.ref.conv{min-width:560px}
+.ref.conv td{font-variant-numeric:tabular-nums}
+.ref.conv td:not(:first-child){font-family:var(--math);font-size:15.5px}
+.ref.conv td.self{color:var(--ink-2)}
+.ref.exp td:not(:first-child):not(:last-child){font-family:var(--math);font-size:15.5px;font-variant-numeric:tabular-nums}
+.ref.derive td.chk,.ref.derive th.chk{width:2.2rem}
+.ref.derive td:nth-child(2){width:46%}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.ref input[type="checkbox"]{width:17px;height:17px;accent-color:var(--accent);margin:2px 0 0;cursor:pointer}
+.ref label{cursor:pointer}
+tr.done td:not(.chk){color:var(--ink-2)}
+
+@media (max-width:760px){
+  table.ref.stack, .ref.stack tbody, .ref.stack tr, .ref.stack td{display:block;width:100% !important}
+  .ref.stack thead{display:none}
+  .ref.stack tr{padding:12px 0;border-bottom:1px solid var(--rule)}
+  .ref.stack tr:first-child{border-top:1.5px solid var(--ink)}
+  .ref.stack td{border:0;padding:1px 0}
+  .ref.stack td[data-label]::before{content:attr(data-label);display:block;font-family:var(--sans);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);font-weight:600;margin-top:7px}
+  .ref.stack td.empty{display:none}
+  .ref.stack td.chk{float:left;width:2rem !important}
+}
+
+/* Specific-heat counting rule, boxed the way a derived result is boxed */
+.rulebox{border:1.5px solid var(--ink);padding:12px 16px 13px;max-width:72ch;margin:0 0 18px;background:var(--surface)}
+.rulebox .tag{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 4px}
+.rulebox p{margin:0;font-family:var(--math);font-size:16px;line-height:1.55}
+
+/* Energy ladder: decades on a log axis */
+.ladder{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--ink)}
+.rung{display:grid;grid-template-columns:9.5rem minmax(0,1fr);gap:0 18px;padding:13px 0;border-bottom:1px solid var(--rule)}
+.scale{display:flex;flex-direction:column;gap:1px}
+.scale .e{font-family:var(--math);font-size:1.5rem;font-weight:600;color:var(--accent);line-height:1.15;font-variant-numeric:tabular-nums}
+.scale .eq{font-size:13px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.axis{position:relative;border-left:2px solid var(--accent-soft);padding-left:16px;min-width:0}
+.axis::before{content:"";position:absolute;left:-2px;top:.72em;width:10px;height:2px;background:var(--accent)}
+.items{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:5px 26px}
+.items li{min-width:0}
+.items .val{font-family:var(--math);font-size:15.5px;font-variant-numeric:tabular-nums}
+@media (max-width:620px){
+  .rung{grid-template-columns:6.4rem minmax(0,1fr);gap:0 12px}
+  .scale .e{font-size:1.25rem}
+  .axis{padding-left:12px}
+  .items{grid-template-columns:minmax(0,1fr)}
+}
+
+/* Quiz masking */
+[data-mask="v"] .v:not(.shown), [data-mask="f"] .f:not(.shown){filter:blur(6px);opacity:.55;cursor:pointer;-webkit-user-select:none;user-select:none;transition:filter .15s ease,opacity .15s ease}
+[data-mask="v"] .v:not(.shown):hover, [data-mask="f"] .f:not(.shown):hover{opacity:.75}
+.v:focus-visible,.f:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+@media (prefers-reduced-motion: reduce){[data-mask] .v,[data-mask] .f{transition:none}}
+
+.none{padding:24px 0;color:var(--ink-2)}
+footer{border-top:1px solid var(--rule);padding-block:20px 36px;color:var(--ink-2);font-size:13px}
+footer p{margin:0 0 6px;max-width:80ch}
+</style>
+</head>
+<body>
+<header class="masthead gutter">
+  <div class="inner">
+    <p class="eyebrow">Pocket reference for theoretical condensed matter</p>
+    <h1>Condensed Matter Scales</h1>
+    <p class="lede">The relations and typical numbers worth knowing by heart, from microelectronvolts to tens of electronvolts. SI units throughout.</p>
+    <p class="lede"><b>How to use it:</b> spend ten minutes a day on one section. Switch to <b>Hide values</b> or <b>Hide relations</b>, recall each entry, then tap it to check. When you miss one, derive it rather than rereading it.</p>
+  </div>
+</header>
+
+<div class="toolbar gutter">
+  <div class="inner">
+    <div class="controls">
+      <input id="q" class="search" type="search" placeholder="Search, e.g. coherence, phonon, GaAs" aria-label="Search the reference">
+      <div class="seg" role="radiogroup" aria-label="Quiz mode">
+        <input type="radio" name="mode" id="mode-all" value=""><label for="mode-all">Show all</label>
+        <input type="radio" name="mode" id="mode-v" value="v"><label for="mode-v">Hide values</label>
+        <input type="radio" name="mode" id="mode-f" value="f"><label for="mode-f">Hide relations</label>
+      </div>
+      <button id="reveal" class="btn" type="button" hidden>Reveal all</button>
+      <span id="count" class="count" aria-live="polite"></span>
+    </div>
+    <nav class="nav" id="nav" aria-label="Sections"></nav>
+  </div>
+</div>
+
+<main class="gutter">
+  <div class="inner" id="root"></div>
+  <div class="inner"><p class="none" id="none" hidden>No entries match that search. Try a broader word such as “gap” or “length”.</p></div>
+</main>
+
+<footer class="gutter">
+  <div class="inner">
+    <p>Constants from CODATA 2018. Material values from Ashcroft &amp; Mermin, Kittel and standard reviews; free-electron values where noted.</p>
+    <p>Typical values are order-of-magnitude guides. Check a primary source before you cite a number.</p>
+    <p>Source: <a href="https://github.com/RahulSpath/physics-learning">github.com/RahulSpath/physics-learning</a></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  var store = {
+    get: function (k, d) { try { var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
+    set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  };
+
+  /* ---------- Content ---------- */
+
+  var ANCHORS = [
+    ["k<sub>B</sub>T at 300 K", "25.9 meV", "About 1/40 eV"],
+    ["1 meV", "11.6 K · 0.242 THz · 8.07 cm<sup>−1</sup>", "Energy, temperature, frequency, wavenumber"],
+    ["ħ", "0.658 eV·fs = 0.658 meV·ps", "Time for an energy: τ = ħ/E"],
+    ["hc", "1240 eV·nm", "ħc = 1973 eV·Å"],
+    ["ħ²/2m<sub>e</sub>", "3.81 eV·Å²", "Free-electron energy at any k"],
+    ["e²/4πε<sub>0</sub>", "14.4 eV·Å", "Coulomb energy at any distance"],
+    ["a<sub>0</sub>, Ry", "0.529 Å, 13.6 eV", "Ry = e²/(8πε<sub>0</sub>a<sub>0</sub>)"],
+    ["μ<sub>B</sub>", "57.9 μeV/T = 0.672 K/T", "Spin flip (g = 2): 1.34 K/T, 28.0 GHz/T"],
+    ["ℓ<sub>B</sub> = √(ħ/eB)", "25.7 nm / √(B/T)", "eB/h = 2.42 × 10<sup>10</sup> cm<sup>−2</sup> per tesla"],
+    ["h/e², h/2e", "25.8 kΩ, 2068 T·nm²", "Resistance quantum and flux quantum"]
+  ];
+
+  var CONV = [
+    ["1 eV", "1 eV", "11,605 K", "241.8 THz", "8,066 cm<sup>−1</sup>", 1],
+    ["1 meV", "1 meV", "11.60 K", "241.8 GHz", "8.066 cm<sup>−1</sup>", 1],
+    ["1 K", "86.17 μeV", "1 K", "20.84 GHz", "0.695 cm<sup>−1</sup>", 2],
+    ["1 THz", "4.136 meV", "47.99 K", "1 THz", "33.36 cm<sup>−1</sup>", 3],
+    ["1 cm<sup>−1</sup>", "0.1240 meV", "1.439 K", "29.98 GHz", "1 cm<sup>−1</sup>", 4],
+    ["1 T, electron spin (g = 2)", "0.1158 meV", "1.343 K", "27.99 GHz", "0.934 cm<sup>−1</sup>", 0]
+  ];
+
+  var LADDER = [
+    ["~10 eV", "116,000 K", "2.4 PHz", [
+      ["Rydberg", "13.6 eV"],
+      ["Plasmons in metals, ħω<sub>p</sub>", "5–15 eV"],
+      ["Fermi energies: Na, Cu, Al", "3.2, 7.0, 11.7 eV"],
+      ["s and p bandwidths", "5–10 eV"],
+      ["Hubbard U in 3d oxides", "4–8 eV"],
+      ["Wide gaps: diamond, hBN", "5.5 eV, ≈ 6 eV"]
+    ]],
+    ["~1 eV", "11,600 K", "242 THz", [
+      ["Band gaps: Ge, Si, GaAs", "0.66, 1.12, 1.42 eV"],
+      ["Visible light", "1.8–3.1 eV"],
+      ["Graphene hopping t", "≈ 2.8 eV"],
+      ["3d bandwidths", "2–5 eV"],
+      ["3d crystal-field splitting 10Dq", "1–2 eV"],
+      ["Hund's coupling (3d)", "0.5–1 eV"],
+      ["Cuprate hopping t; 5d spin–orbit", "≈ 0.4 eV"]
+    ]],
+    ["~100 meV", "1,160 K", "24 THz", [
+      ["Exchange J in cuprates", "≈ 130 meV"],
+      ["Optical phonons: Si, graphene G mode", "64, 196 meV"],
+      ["Exciton binding in monolayer TMDs", "0.2–0.5 eV"],
+      ["k<sub>B</sub>T<sub>c</sub> of iron (1043 K)", "90 meV"]
+    ]],
+    ["~10 meV", "116 K", "2.4 THz", [
+      ["k<sub>B</sub>T at room temperature", "26 meV"],
+      ["Debye energies ħω<sub>D</sub> (Cu)", "10–50 meV (30 meV)"],
+      ["GaAs LO phonon", "36 meV"],
+      ["Cuprate superconducting gaps", "20–40 meV"],
+      ["Flat bands in magic-angle graphene", "~10 meV wide"],
+      ["GaAs donor binding", "5.5 meV"]
+    ]],
+    ["~1 meV", "11.6 K", "242 GHz", [
+      ["Superconducting gaps: Pb, Nb", "1.4, 1.5 meV"],
+      ["GaAs cyclotron energy at 1 T", "1.7 meV"],
+      ["4f crystal-field splittings", "1–10 meV"],
+      ["⁴He roton gap", "0.74 meV (8.6 K)"],
+      ["k<sub>B</sub> × 4.2 K (liquid helium)", "0.36 meV"]
+    ]],
+    ["~100 μeV", "1.16 K", "24 GHz", [
+      ["Electron Zeeman splitting at 1 T", "116 μeV"],
+      ["Aluminium superconducting gap", "180 μeV"],
+      ["Charging energy of a 1 fF island", "80 μeV"],
+      ["k<sub>B</sub> × 1 K", "86 μeV"]
+    ]],
+    ["~10 μeV", "116 mK", "2.4 GHz", [
+      ["Superconducting qubit at 5 GHz", "21 μeV (0.24 K)"],
+      ["k<sub>B</sub> × 100 mK", "8.6 μeV"]
+    ]],
+    ["~1 μeV", "11.6 mK", "242 MHz", [
+      ["Dilution refrigerator at 10 mK", "0.86 μeV"],
+      ["Dipolar coupling, μ<sub>B</sub> moments 3 Å apart", "2 μeV (0.02 K)"],
+      ["Proton NMR at 1 T (42.6 MHz)", "0.18 μeV"]
+    ]]
+  ];
+
+  var COLS4 = function (last, lastMask) {
+    return [{ h: "Quantity" }, { h: "Relation", m: "f", math: 1 }, { h: "Typical", m: "v" }, { h: last || "Example", m: lastMask === undefined ? "v" : lastMask }];
+  };
+
+  var SECTIONS = [
+    { id: "heat", nav: "Specific heat", title: "Specific heat",
+      intro: "Low-temperature power laws, and where each one comes from.",
+      rule: "Gapless bosons with ω ∝ k<sup>s</sup> in d dimensions give C ∝ T<sup>d/s</sup>. Fermions with density of states g(E) ∝ |E − E<sub>F</sub>|<sup>r</sup> give C ∝ T<sup>r+1</sup>. A gap Δ gives C ∝ e<sup>−Δ/k<sub>B</sub>T</sup>.",
+      cols: [{ h: "System" }, { h: "C(T)", m: "v", math: 1 }, { h: "Origin", m: "f" }, { h: "Numbers", m: "v" }],
+      rows: [
+        ["Metal: electrons", "γT", "Finite g(E<sub>F</sub>), so r = 0. Only a fraction T/T<sub>F</sub> of electrons can be excited", "γ = (π²/3)k<sub>B</sub>²g(E<sub>F</sub>). Cu: 0.70 mJ/mol·K² (free-electron value 0.50)"],
+        ["Heavy-fermion metal", "γT, with huge γ", "Quasiparticle mass m* ~ 100–1000 m<sub>e</sub>", "γ ~ 1 J/mol·K², e.g. CeCu<sub>6</sub>"],
+        ["Acoustic phonons, T ≪ Θ<sub>D</sub>", "βT³", "d = 3, s = 1", "C = 1944 J/mol·K × (T/Θ<sub>D</sub>)³ per mole of atoms"],
+        ["Phonons, T ≫ Θ<sub>D</sub>", "3Nk<sub>B</sub>", "Equipartition", "Dulong–Petit: 24.9 J/mol·K"],
+        ["Simple metal, low T", "γT + βT³", "Electrons plus phonons", "Electrons dominate below T* = √(γ/β) ≈ 4 K in Cu. Plot C/T against T² to separate them"],
+        ["Acoustic phonons in 2D", "T²", "d = 2, s = 1", "Any 2D crystal with linear dispersion"],
+        ["Flexural phonons, 2D membrane", "T", "d = 2, s = 2 (ω ∝ k²)", "Dominant in graphene at low T"],
+        ["Ferromagnetic magnons", "T<sup>3/2</sup>", "d = 3, s = 2 (ω = Dk²)", "The same counting gives Bloch's law: M(0) − M(T) ∝ T<sup>3/2</sup>"],
+        ["Antiferromagnetic magnons", "T³", "d = 3, s = 1", "Same power as phonons"],
+        ["Ideal Bose gas below T<sub>BEC</sub>", "T<sup>3/2</sup>", "ε ∝ k², d = 3", "—"],
+        ["Graphene electrons at neutrality", "T²", "2D Dirac cone: g(E) ∝ |E|, r = 1", "—"],
+        ["Weyl or Dirac semimetal at the node", "T³", "3D cone: g(E) ∝ E², r = 2", "—"],
+        ["d-wave superconductor", "T²", "Line nodes: g(E) ∝ |E|", "Cuprates"],
+        ["s-wave superconductor", "e<sup>−Δ/k<sub>B</sub>T</sup>", "Full gap Δ", "Jump at T<sub>c</sub>: ΔC/γT<sub>c</sub> = 1.43 (BCS)"],
+        ["Two-level system (Schottky)", "Peak at k<sub>B</sub>T ≈ 0.42Δ", "Activated at low T, ∝ 1/T² at high T", "C<sub>max</sub> ≈ 0.44 k<sub>B</sub> per two-level system"],
+        ["Glasses below ~1 K", "≈ T", "Tunneling two-level systems with a broad spread of splittings", "Seen in every amorphous solid"],
+        ["Superfluid ⁴He", "T³ + e<sup>−Δ/k<sub>B</sub>T</sup>", "Phonons plus rotons", "Roton gap Δ ≈ 8.6 K"],
+        ["Near a continuous transition", "∝ |t|<sup>−α</sup>, t = (T − T<sub>c</sub>)/T<sub>c</sub>", "Critical fluctuations", "Mean field: a jump. 3D Ising: α ≈ 0.11. ⁴He λ-point: α ≈ −0.015"],
+        ["Classical limit", "½k<sub>B</sub> per quadratic term in H", "Equipartition", "—"]
+      ] },
+
+    { id: "metals", nav: "Metals", title: "Electrons in metals",
+      intro: "Free-electron (Sommerfeld) values. Real metals differ by factors of order one.",
+      cols: COLS4(),
+      rows: [
+        ["Fermi wavevector", "k<sub>F</sub> = (3π²n)<sup>1/3</sup> = 3.63 Å<sup>−1</sup>/r<sub>s</sub>", "1–2 Å<sup>−1</sup>", "Cu: 1.36 Å<sup>−1</sup>"],
+        ["Density parameter", "r<sub>s</sub> = (3/4πn)<sup>1/3</sup>/a<sub>0</sub>", "2–6", "Al 2.07, Cu 2.67, Na 3.93"],
+        ["Electron density", "n", "10<sup>22</sup>–10<sup>23</sup> cm<sup>−3</sup>", "Cu: 8.5 × 10<sup>22</sup> cm<sup>−3</sup>"],
+        ["Fermi energy", "E<sub>F</sub> = ħ²k<sub>F</sub>²/2m = 50.1 eV/r<sub>s</sub>²", "2–12 eV; T<sub>F</sub> = 10<sup>4</sup>–10<sup>5</sup> K", "Na 3.2, Cu 7.0, Al 11.7 eV"],
+        ["Fermi velocity", "v<sub>F</sub> = ħk<sub>F</sub>/m = (4.20 × 10<sup>6</sup> m/s)/r<sub>s</sub>", "~10<sup>6</sup> m/s ≈ c/300", "Cu: 1.57 × 10<sup>6</sup> m/s"],
+        ["Degeneracy", "T/T<sub>F</sub>", "~10<sup>−2</sup> at 300 K", "Only electrons within k<sub>B</sub>T of E<sub>F</sub> respond"],
+        ["Density of states at E<sub>F</sub>", "g(E<sub>F</sub>) = 3n/2E<sub>F</sub>, both spins", "0.2–0.5 states/(eV·atom) in s–p metals", "Cu: 0.21 states/(eV·atom); larger in d metals"],
+        ["Electronic specific heat", "C = (π²/3)k<sub>B</sub>²g(E<sub>F</sub>)T = (π²/2)nk<sub>B</sub>T/T<sub>F</sub>", "~1 mJ/mol·K²", "Cu: γ = 0.70 mJ/mol·K²"],
+        ["Plasma frequency", "ω<sub>p</sub>² = ne²/ε<sub>0</sub>m", "ħω<sub>p</sub> = 11.7 eV × √(n/10<sup>23</sup> cm<sup>−3</sup>)", "Al: 15 eV. Metals reflect light below ω<sub>p</sub>, which is why they shine"],
+        ["Thomas–Fermi screening length", "k<sub>TF</sub>² = e²g(E<sub>F</sub>)/ε<sub>0</sub>", "1/k<sub>TF</sub> ≈ 0.5 Å", "Cu: 0.55 Å. A charge is screened within one atom"],
+        ["Pauli susceptibility", "χ<sub>P</sub> = μ<sub>0</sub>μ<sub>B</sub>²g(E<sub>F</sub>)", "~10<sup>−5</sup> (SI), independent of T", "Landau diamagnetism is −χ<sub>P</sub>/3 for free electrons"],
+        ["Stoner criterion", "I·g(E<sub>F</sub>) > 1, g per spin", "—", "Satisfied in Fe, Co, Ni"]
+      ] },
+
+    { id: "transport", nav: "Transport", title: "Transport",
+      intro: "Room-temperature values unless noted.",
+      cols: COLS4("Note"),
+      rows: [
+        ["Drude conductivity", "σ = ne²τ/m", "ρ = 1–10 μΩ·cm in good metals", "Cu: 1.7 μΩ·cm"],
+        ["Scattering time", "τ = m/ne²ρ", "10–30 fs", "Cu: 25 fs"],
+        ["Mean free path", "ℓ = v<sub>F</sub>τ", "10–100 nm; μm to mm in pure crystals at low T", "Cu: 40 nm"],
+        ["Mobility", "μ = eτ/m*", "Si 1400, GaAs 8500 cm²/V·s", "Quantum oscillations need ω<sub>c</sub>τ = μB ≳ 1, so μ = 10<sup>4</sup> cm²/V·s needs B ≳ 1 T"],
+        ["Hall coefficient", "R<sub>H</sub> = 1/nq", "—", "The sign gives the carrier type; the size gives n"],
+        ["Einstein relation", "σ = e²g(E<sub>F</sub>)D, D = v<sub>F</sub>²τ/d", "—", "d is the dimension"],
+        ["Wiedemann–Franz law", "κ/σT = L<sub>0</sub> = (π²/3)(k<sub>B</sub>/e)²", "2.44 × 10<sup>−8</sup> W·Ω/K²", "Holds when scattering is elastic"],
+        ["Mott–Ioffe–Regel limit", "k<sub>F</sub>ℓ ~ 1, ℓ ≈ lattice spacing", "3D: ρ ~ 100–300 μΩ·cm. 2D: sheet resistance ~ h/e² ≈ 26 kΩ", "Bad metals exceed it without saturating"],
+        ["Planckian scattering", "ħ/τ ≈ k<sub>B</sub>T", "τ = 25 fs at 300 K, 7.6 ps at 1 K", "Strange metals: ρ ∝ T"]
+      ],
+      sub: { title: "Resistivity against temperature",
+        cols: [{ h: "Mechanism" }, { h: "ρ(T)", m: "v", math: 1 }, { h: "Why", m: "f" }],
+        rows: [
+          ["Static impurities", "ρ<sub>0</sub>, constant", "Matthiessen's rule: scattering rates add"],
+          ["Phonons, T ≳ Θ<sub>D</sub>", "∝ T", "Phonon number ∝ T"],
+          ["Phonons, T ≪ Θ<sub>D</sub>", "∝ T⁵", "Bloch–Grüneisen: T³ phonons times a T² small-angle weighting"],
+          ["Electron–electron (Fermi liquid)", "∝ T²", "Phase space ∝ (k<sub>B</sub>T/E<sub>F</sub>)²; needs umklapp or several bands"],
+          ["Magnetic impurities (Kondo)", "∝ −ln T", "Produces a resistance minimum"],
+          ["Strange metals", "∝ T to the lowest T", "Cuprates near optimal doping; heavy fermions near a quantum critical point"],
+          ["Weak localization (2D)", "σ falls ∝ ln T as T → 0", "Interference of time-reversed paths"],
+          ["Intrinsic semiconductor", "σ ∝ e<sup>−E<sub>g</sub>/2k<sub>B</sub>T</sup>", "Carrier density is thermally activated"],
+          ["Variable-range hopping", "ln ρ ∝ (T<sub>0</sub>/T)<sup>1/(d+1)</sup>", "Mott. With a Coulomb gap (Efros–Shklovskii) the exponent is ½"]
+        ] } },
+
+    { id: "semis", nav: "Semiconductors", title: "Semiconductors and 2D electron gases",
+      intro: "Room-temperature gaps; low-temperature values for 2D systems.",
+      cols: COLS4(),
+      rows: [
+        ["Band gap", "—", "0.2–6 eV", "InSb 0.17, Ge 0.66, Si 1.12 (indirect), GaAs 1.42 (direct), GaN 3.4, diamond 5.5 eV"],
+        ["Effective mass", "1/m* = (1/ħ²)∂²E/∂k²", "0.01–1 m<sub>e</sub>", "GaAs electrons 0.067 m<sub>e</sub>; Si m<sub>l</sub> = 0.92, m<sub>t</sub> = 0.19 m<sub>e</sub>"],
+        ["Dielectric constant", "ε<sub>r</sub>", "10–15", "Si 11.7, GaAs 12.9"],
+        ["Hydrogenic donor", "Ry* = Ry (m*/m<sub>e</sub>)/ε<sub>r</sub>², a* = a<sub>0</sub>ε<sub>r</sub>(m<sub>e</sub>/m*)", "meV binding, nm radius", "GaAs: 5.5 meV, 10 nm"],
+        ["Mott criterion (doped semiconductor)", "n<sub>c</sub><sup>1/3</sup>a* ≈ 0.26", "—", "Si:P: n<sub>c</sub> ≈ 3.7 × 10<sup>18</sup> cm<sup>−3</sup>"],
+        ["Exciton binding", "Ry* with the reduced mass", "meV in bulk; 0.2–0.5 eV in monolayers", "GaAs: 4 meV. Monolayer TMDs: large because 2D screening is weak"],
+        ["Intrinsic carrier density", "n<sub>i</sub> ∝ T<sup>3/2</sup>e<sup>−E<sub>g</sub>/2k<sub>B</sub>T</sup>", "—", "Si: 10<sup>10</sup> cm<sup>−3</sup> at 300 K"],
+        ["2D density of states", "g = m*/πħ², both spins", "GaAs: 2.8 × 10<sup>10</sup> cm<sup>−2</sup> meV<sup>−1</sup>", "n = 10<sup>11</sup> cm<sup>−2</sup> gives E<sub>F</sub> = 3.6 meV (41 K)"],
+        ["2D Fermi wavelength", "k<sub>F</sub> = √(2πn), λ<sub>F</sub> = √(2π/n)", "40–80 nm", "79 nm at n = 10<sup>11</sup> cm<sup>−2</sup>"],
+        ["Low-temperature mobility", "—", "GaAs/AlGaAs 2DEG: > 10<sup>7</sup> cm²/V·s, ℓ ~ 100 μm", "Graphene in hBN: ~10<sup>5</sup> cm²/V·s at 300 K"],
+        ["Thermal de Broglie wavelength", "λ<sub>T</sub> = h/√(2πmk<sub>B</sub>T)", "4.3 nm for electrons at 300 K", "Quantum statistics matter once λ<sub>T</sub> exceeds the particle spacing"]
+      ] },
+
+    { id: "lattice", nav: "Phonons", title: "Lattice and phonons",
+      intro: "Lattice spacings, phonon energies and the small parameter that separates electrons from ions.",
+      cols: COLS4(),
+      rows: [
+        ["Lattice constant", "—", "2.5–6 Å", "Cu 3.61 Å, Si 5.43 Å, graphene 2.46 Å (C–C 1.42 Å)"],
+        ["Debye temperature", "k<sub>B</sub>Θ<sub>D</sub> = ħω<sub>D</sub>", "100–600 K; ħω<sub>D</sub> = 10–50 meV", "Pb 105, Na 158, Cu 343, Al 428, Si 645 K; diamond 2230 K"],
+        ["Sound velocity", "ω<sub>D</sub> = v<sub>s</sub>k<sub>D</sub>", "2–10 km/s", "Diamond ~18 km/s. v<sub>s</sub>/v<sub>F</sub> ~ 10<sup>−3</sup>"],
+        ["Optical phonons", "—", "30–200 meV", "GaAs LO 36 meV; Si 64 meV (520 cm<sup>−1</sup>); graphene G mode 196 meV (1580 cm<sup>−1</sup>)"],
+        ["Adiabatic parameter", "√(m/M) ~ ħω<sub>D</sub>/E<sub>F</sub>", "~10<sup>−2</sup>", "Small, so Born–Oppenheimer and Migdal's theorem work"],
+        ["Electron–phonon coupling", "λ", "0.1–1.5", "Al 0.43, Pb 1.55"],
+        ["Lindemann criterion", "√⟨u²⟩ ≈ 0.1a at melting", "—", "Rough rule for melting temperatures"],
+        ["Grüneisen parameter", "γ<sub>G</sub> = −∂ ln ω/∂ ln V", "1–2", "Sets the thermal expansion"],
+        ["Phonon period", "2π/ω", "1 THz ↔ 1 ps", "Si optical phonon: 64 fs"]
+      ] },
+
+    { id: "magnetism", nav: "Magnetism", title: "Magnetism",
+      intro: "Exchange, not the dipolar interaction, sets every ordering temperature on this list.",
+      cols: COLS4(),
+      rows: [
+        ["Exchange constant", "J", "1–100 meV", "Comes from Coulomb repulsion plus Pauli exclusion"],
+        ["Dipolar coupling", "μ<sub>0</sub>μ²/4πr³", "≈ 0.02 K for μ<sub>B</sub> moments 3 Å apart", "About 10<sup>4</sup> times smaller than k<sub>B</sub>T<sub>c</sub> of iron, so it cannot cause ferromagnetism"],
+        ["Curie temperatures", "—", "10–1400 K", "Gd 293, Ni 627, Fe 1043, Co 1388 K"],
+        ["Néel temperatures", "—", "—", "MnO 116 K, NiO 525 K. La<sub>2</sub>CuO<sub>4</sub>: T<sub>N</sub> ≈ 325 K although J ≈ 0.13 eV (1500 K), because its planes are 2D (Mermin–Wagner) and only weakly coupled"],
+        ["Curie law", "χ = C/T, μ<sub>eff</sub> = g√(J(J+1)) μ<sub>B</sub>", "—", "Curie–Weiss: χ = C/(T − θ<sub>CW</sub>). |θ<sub>CW</sub>|/T<sub>N</sub> ≳ 10 signals frustration"],
+        ["Electron Zeeman energy", "ΔE = gμ<sub>B</sub>B", "g = 2: 0.116 meV/T = 1.34 K/T = 28.0 GHz/T", "Precession period 36 ps at 1 T"],
+        ["Nuclear Zeeman energy", "μ<sub>N</sub> = μ<sub>B</sub>/1836", "Proton: 42.6 MHz/T", "About 660 times smaller than for an electron spin"],
+        ["Spin waves", "Ferromagnet ω = Dk²; antiferromagnet ω ∝ k", "Fe: D ≈ 280 meV·Å²", "Bloch's law: M(0) − M(T) ∝ T<sup>3/2</sup>"],
+        ["Domain wall width", "δ = π√(A/K)", "10–100 nm", "Wider when the anisotropy K is weak"],
+        ["Exchange length", "ℓ<sub>ex</sub> = √(2A/μ<sub>0</sub>M<sub>s</sub>²)", "2–10 nm", "Fe ≈ 3 nm"],
+        ["RKKY interaction", "J(r) ∝ cos(2k<sub>F</sub>r)/r³ (3D)", "Oscillation period π/k<sub>F</sub> ≈ 2 Å", "The sign alternates with distance"],
+        ["Kondo temperature", "T<sub>K</sub> ~ D exp(−1/ρJ)", "1–100 K for common systems", "Resistance minimum; the moment is screened below T<sub>K</sub>"],
+        ["Mermin–Wagner theorem", "—", "—", "No continuous symmetry breaking at T > 0 in d ≤ 2 with short-range interactions"]
+      ] },
+
+    { id: "sc", nav: "Superconductivity", title: "Superconductivity",
+      intro: "Weak-coupling BCS numbers, and the two lengths that decide everything else.",
+      cols: COLS4(),
+      rows: [
+        ["BCS gap", "2Δ(0) = 3.53 k<sub>B</sub>T<sub>c</sub>", "Δ[meV] ≈ 0.15 × T<sub>c</sub>[K]", "Al 0.18 meV, Nb 1.5 meV; cuprates 20–40 meV (d-wave maximum)"],
+        ["BCS transition temperature", "k<sub>B</sub>T<sub>c</sub> = 1.13 ħω<sub>D</sub> e<sup>−1/N(0)V</sup>", "—", "N(0) is the density of states per spin"],
+        ["Gap near T<sub>c</sub>", "Δ(T) ≈ 3.06 k<sub>B</sub>T<sub>c</sub>√(1 − T/T<sub>c</sub>)", "—", "Mean-field exponent β = ½"],
+        ["Specific heat jump", "ΔC/γT<sub>c</sub> = 1.43", "—", "Larger for strong coupling: Pb ≈ 2.7"],
+        ["Coherence length", "ξ<sub>0</sub> = ħv<sub>F</sub>/πΔ", "1 nm–2 μm", "Al 1600 nm, Sn 230 nm, Pb 83 nm, Nb 38 nm; MgB<sub>2</sub> 5–10 nm; YBCO ≈ 1.5 nm in-plane"],
+        ["London penetration depth", "λ<sub>L</sub> = √(m/μ<sub>0</sub>n<sub>s</sub>e²) = c/ω<sub>p</sub> if n<sub>s</sub> = n", "15–200 nm", "Al 16, Sn 34, Pb 37, Nb 39 nm; YBCO ≈ 150 nm in-plane"],
+        ["Ginzburg–Landau parameter", "κ = λ/ξ", "—", "Type I: κ < 1/√2 (Al, Sn, Pb). Type II: κ > 1/√2 (Nb; cuprates κ ~ 100)"],
+        ["Upper critical field", "μ<sub>0</sub>H<sub>c2</sub> = Φ<sub>0</sub>/2πξ² ≈ 329 T/(ξ/nm)²", "ξ = 10 nm: 3.3 T; ξ = 2 nm: 82 T", "Here ξ is the Ginzburg–Landau length"],
+        ["Vortex spacing", "a ≈ √(Φ<sub>0</sub>/B)", "45 nm/√(B/T)", "Each vortex carries one Φ<sub>0</sub>; the core size is ~ξ"],
+        ["Josephson relations", "f = 2eV/h; I<sub>c</sub>R<sub>N</sub> = πΔ/2e at T = 0", "483.6 GHz/mV", "AC Josephson effect; Ambegaokar–Baratoff"],
+        ["Flux quantum", "Φ<sub>0</sub> = h/2e", "2.07 × 10<sup>−15</sup> Wb", "The 2e is the Cooper-pair charge"],
+        ["Transition temperatures", "—", "—", "Al 1.2, Sn 3.7, Pb 7.2, Nb 9.3, Nb<sub>3</sub>Sn 18, MgB<sub>2</sub> 39, YBCO 92 K; Hg-1223 133 K (ambient-pressure record); LaH<sub>10</sub> ≈ 250 K at ~170 GPa"],
+        ["Ginzburg number", "Gi ~ (T<sub>c</sub>/E<sub>F</sub>)⁴, clean 3D", "Tiny for conventional superconductors", "So mean-field BCS is excellent; cuprates have a measurable critical region"],
+        ["BKT jump in 2D", "ρ<sub>s</sub>(T<sub>BKT</sub>) = (2/π)k<sub>B</sub>T<sub>BKT</sub>", "Universal", "Thin superconducting films, ⁴He films"]
+      ] },
+
+    { id: "qhe", nav: "Quantum Hall", title: "Quantum Hall and mesoscopic physics",
+      intro: "Field scales, quanta of conductance, and the lengths that decide whether a sample is quantum.",
+      cols: COLS4(),
+      rows: [
+        ["Magnetic length", "ℓ<sub>B</sub> = √(ħ/eB)", "25.7 nm/√(B/T)", "—"],
+        ["Landau level degeneracy", "eB/h per area, per level, per spin", "2.42 × 10<sup>10</sup> cm<sup>−2</sup> per T", "Filling factor ν = nh/eB"],
+        ["Cyclotron energy", "ħω<sub>c</sub> = ħeB/m*", "0.116 meV/T × m<sub>e</sub>/m*", "GaAs: 1.73 meV/T"],
+        ["Graphene Landau levels", "E<sub>n</sub> = ±v<sub>F</sub>√(2eħB|n|)", "≈ 36 meV × √(|n| B/T)", "σ<sub>xy</sub> = ±4(n + ½)e²/h, so ν = ±2, ±6, ±10, …"],
+        ["von Klitzing constant", "R<sub>K</sub> = h/e²", "25,812.807 Ω", "Exact in SI since 2019"],
+        ["Conductance quantum", "G<sub>0</sub> = 2e²/h", "77.5 μS = (12.9 kΩ)<sup>−1</sup>", "Per spin-degenerate ballistic channel"],
+        ["Thermal conductance quantum", "κ<sub>0</sub> = π²k<sub>B</sub>²T/3h", "0.946 pW/K² × T", "Per ballistic channel"],
+        ["Quantum oscillation frequency", "F = (ħ/2πe)A<sub>k</sub> (Onsager)", "10.5 kT per Å<sup>−2</sup> of A<sub>k</sub>", "2DEG: F = nh/2e = 2.07 T per 10<sup>11</sup> cm<sup>−2</sup>"],
+        ["Aharonov–Bohm period", "ΔB = (h/e)/area", "4.1 mT for 1 μm²", "h/2e in superconducting rings"],
+        ["Coulomb blockade", "E<sub>C</sub> = e²/2C", "80 μeV (0.93 K) for C = 1 fF", "Needs E<sub>C</sub> ≫ k<sub>B</sub>T and tunnel resistance ≫ h/e²"],
+        ["Thermal length", "L<sub>T</sub> = ħv<sub>F</sub>/k<sub>B</sub>T (ballistic), √(ħD/k<sub>B</sub>T) (diffusive)", "~1 μm at 1 K", "GaAs 2DEG at n = 10<sup>11</sup> cm<sup>−2</sup>"],
+        ["Phase coherence length", "L<sub>φ</sub>", "1–10 μm below 1 K", "Grows as T falls"],
+        ["Thouless energy", "E<sub>Th</sub> = ħD/L²", "—", "Energy scale of a diffusive sample of size L"]
+      ] },
+
+    { id: "correlated", nav: "Correlated", title: "Correlated electrons and moiré materials",
+      intro: "Interactions matter when they are comparable to the bandwidth.",
+      cols: COLS4("Note"),
+      rows: [
+        ["Bandwidth", "W", "s, p: 5–10 eV; 3d: 2–5 eV; 4f: ≲ 0.1 eV", "Narrow bands make interactions matter"],
+        ["Hubbard U", "U", "3d oxides: 4–8 eV", "U/W decides Mott physics"],
+        ["Superexchange", "J = 4t²/U", "—", "Antiferromagnetic coupling in Mott insulators"],
+        ["Cuprate parameters", "t, U, J", "t ≈ 0.4 eV, U/t ≈ 8–12, J ≈ 0.13 eV", "Charge-transfer insulators (Zaanen–Sawatzky–Allen), gap ≈ 1.5–2 eV"],
+        ["Crystal-field splitting", "10Dq", "3d: 1–2 eV; 4f: 1–10 meV", "4f shells are shielded by the filled 5s and 5p shells"],
+        ["Atomic spin–orbit coupling", "λ L·S", "3d: 10–100 meV; 5d: 0.3–0.5 eV", "Iridates; heavy-element topological materials"],
+        ["Hund's coupling", "J<sub>H</sub>", "0.5–1 eV (3d)", "Hund's metals, e.g. iron pnictides"],
+        ["Heavy fermions", "m*", "100–1000 m<sub>e</sub>", "T<sub>K</sub> ~ 10 K; γ ~ 1 J/mol·K²"],
+        ["Graphene", "v<sub>F</sub> = 3ta/2ħ, a = C–C distance", "t ≈ 2.8 eV, v<sub>F</sub> ≈ 10<sup>6</sup> m/s", "—"],
+        ["Twisted bilayer graphene", "Moiré period L = a/(2 sin(θ/2))", "Magic angle ≈ 1.1° gives L ≈ 13 nm", "Flat bands ~10 meV wide; T<sub>c</sub> ≈ 1.7 K"],
+        ["Wigner crystal", "r<sub>s</sub> at crystallization", "≈ 30–40 (2D), ~100 (3D)", "Coulomb energy beats kinetic energy at low density"]
+      ] },
+
+    { id: "time", nav: "Time scales", title: "Time scales",
+      intro: "Convert any energy to a time with τ = ħ/E, then compare the times to see which process wins.",
+      cols: [{ h: "Process" }, { h: "Relation", m: "f", math: 1 }, { h: "Typical", m: "v" }, { h: "Note" }],
+      rows: [
+        ["Energy to time", "τ = ħ/E", "1 eV ↔ 0.66 fs; 1 meV ↔ 0.66 ps", "—"],
+        ["Plasma oscillation", "2π/ω<sub>p</sub>", "~0.4 fs", "—"],
+        ["Transport scattering, metal at 300 K", "τ", "10–30 fs", "—"],
+        ["Planckian time", "ħ/k<sub>B</sub>T", "25 fs at 300 K; 7.6 ps at 1 K", "Proposed bound on relaxation; strange metals sit near it"],
+        ["Optical phonon period", "2π/ω", "20–120 fs", "Graphene G 21 fs, Si 64 fs, GaAs LO 114 fs"],
+        ["Acoustic phonon period", "2π/ω", "~1 ps at 1 THz", "—"],
+        ["Hot electrons in metals", "—", "Thermalize in ~100 fs; cool to the lattice in ~1 ps", "Pump–probe experiments"],
+        ["Spin precession, g = 2", "h/gμ<sub>B</sub>B", "36 ps at 1 T", "—"],
+        ["Bloch oscillation period", "T<sub>B</sub> = h/eEa", "8 ps for E = 10<sup>4</sup> V/cm, a = 5 Å", "Much longer than τ, so absent in bulk crystals; seen in superlattices and cold atoms"],
+        ["Superconducting qubit coherence", "T<sub>1</sub>, T<sub>2</sub>", "0.1–1 ms", "Transmons"],
+        ["NV centre spin coherence", "T<sub>2</sub>", "~1 ms at room temperature", "Isotopically pure diamond"]
+      ] }
+  ];
+
+  var EXPONENTS = [
+    ["Mean field", "0 (jump)", "1/2", "1", "1/2", "0", "Conventional superconductors; any d ≥ 4"],
+    ["2D Ising", "0 (log)", "1/8", "7/4", "1", "1/4", "Onsager's exact solution; K<sub>2</sub>CoF<sub>4</sub>"],
+    ["3D Ising", "0.110", "0.326", "1.237", "0.630", "0.036", "Uniaxial magnets; liquid–gas critical point"],
+    ["3D XY", "−0.015", "0.349", "1.317", "0.672", "0.038", "⁴He λ-point; planar magnets"],
+    ["3D Heisenberg", "−0.13", "0.369", "1.396", "0.711", "0.038", "Isotropic magnets: EuO, Ni"]
+  ];
+
+  var DERIVE = [
+    ["Tight-binding bands: 1D chain, square lattice, graphene", "Graphene: Dirac cones with v<sub>F</sub> = 3ta/2ħ"],
+    ["Free-electron density of states in 1D, 2D, 3D", "1D ∝ 1/√E, 2D constant, 3D ∝ √E"],
+    ["Sommerfeld expansion", "C<sub>el</sub> = (π²/3)g(E<sub>F</sub>)k<sub>B</sub>²T"],
+    ["Monatomic and diatomic chains; Debye model", "Low T: C = (12π⁴/5)Nk<sub>B</sub>(T/Θ<sub>D</sub>)³"],
+    ["Nearly free electrons", "Gap 2|U<sub>G</sub>| at the zone boundary"],
+    ["Drude model and Hall effect", "σ = ne²τ/m, R<sub>H</sub> = −1/ne"],
+    ["Landau levels", "E<sub>n</sub> = ħω<sub>c</sub>(n + ½), eB/h states per area per level"],
+    ["Pauli paramagnetism", "χ<sub>P</sub> = μ<sub>0</sub>μ<sub>B</sub>²g(E<sub>F</sub>)"],
+    ["Mean-field Ising; Landau theory", "T<sub>c</sub> = zJ/k<sub>B</sub>, β = ½"],
+    ["Spin waves (Holstein–Primakoff; Bogoliubov for the antiferromagnet)", "Ferromagnet ω ∝ k², antiferromagnet ω ∝ k"],
+    ["BCS gap equation", "Δ(0) = 1.76 k<sub>B</sub>T<sub>c</sub>"],
+    ["Kubo formula", "f-sum rule: ∫<sub>0</sub><sup>∞</sup> Re σ(ω) dω = πne²/2m"],
+    ["Berry phase; Chern number", "Qi–Wu–Zhang model: C = ±1 for 0 < |u| < 2, otherwise 0"]
+  ];
+
+  /* ---------- Rendering ---------- */
+
+  function isEmpty(s) { return s === "—" || s === ""; }
+
+  function tableHTML(cols, rows, cls) {
+    var n = cols.length;
+    var h = '<div class="tablewrap"><table class="ref stack cols' + n + (cls ? " " + cls : "") + '"><thead><tr>';
+    cols.forEach(function (c) { h += "<th scope=\"col\">" + c.h + "</th>"; });
+    h += "</tr></thead><tbody>";
+    rows.forEach(function (r) {
+      h += "<tr data-row>";
+      r.forEach(function (cell, i) {
+        var c = cols[i] || {};
+        var tdc = [];
+        if (c.math) tdc.push("m");
+        if (isEmpty(cell)) tdc.push("empty");
+        var label = i === 0 ? "" : ' data-label="' + c.h.replace(/<[^>]+>/g, "") + '"';
+        var inner = (!isEmpty(cell) && c.m) ? '<span class="' + c.m + '">' + cell + "</span>" : cell;
+        h += "<td" + (tdc.length ? ' class="' + tdc.join(" ") + '"' : "") + label + ">" + inner + "</td>";
+      });
+      h += "</tr>";
+    });
+    return h + "</tbody></table></div>";
+  }
+
+  function sectionOpen(id, title, intro) {
+    return '<section id="' + id + '" data-sec><h2>' + title + "</h2>" + (intro ? '<p class="intro">' + intro + "</p>" : "");
+  }
+
+  var html = "";
+  var navItems = [["anchors", "Anchors"], ["ladder", "Energy ladder"]];
+
+  // Anchors and conversions
+  html += sectionOpen("anchors", "Ten anchors", "Memorize these ten. Most other numbers on this page follow from them in a line or two.");
+  html += '<div class="anchors">';
+  ANCHORS.forEach(function (a) {
+    html += '<div class="anchor" data-row><div class="lab">' + a[0] + '</div><div class="val"><span class="v">' + a[1] + '</span></div><div class="note">' + a[2] + "</div></div>";
+  });
+  html += "</div>";
+  html += "<h3>Conversions</h3>";
+  html += '<div class="tablewrap"><table class="ref conv"><thead><tr><th scope="col"></th><th scope="col">Energy</th><th scope="col">Temperature</th><th scope="col">Frequency</th><th scope="col">Wavenumber</th></tr></thead><tbody>';
+  CONV.forEach(function (r) {
+    html += "<tr data-row><td>" + r[0] + "</td>";
+    for (var i = 1; i <= 4; i++) {
+      var self = (i === r[5]);
+      html += "<td" + (self ? ' class="self"' : "") + ">" + (self ? r[i] : '<span class="v">' + r[i] + "</span>") + "</td>";
+    }
+    html += "</tr>";
+  });
+  html += "</tbody></table></div></section>";
+
+  // Energy ladder
+  html += sectionOpen("ladder", "Energy ladder", "Each step is a factor of ten in energy. Read the temperature and frequency on the left, then what lives at that scale.");
+  html += '<ol class="ladder">';
+  LADDER.forEach(function (r) {
+    html += '<li class="rung"><div class="scale"><span class="e">' + r[0] + '</span><span class="eq"><span class="v">' + r[1] + '</span></span><span class="eq"><span class="v">' + r[2] + '</span></span></div><div class="axis"><ul class="items">';
+    r[3].forEach(function (it) {
+      html += "<li data-row>" + it[0] + ': <span class="val"><span class="v">' + it[1] + "</span></span></li>";
+    });
+    html += "</ul></div></li>";
+  });
+  html += "</ol></section>";
+
+  // Generic sections
+  SECTIONS.forEach(function (s) {
+    navItems.push([s.id, s.nav]);
+    html += sectionOpen(s.id, s.title, s.intro);
+    if (s.rule) html += '<div class="rulebox"><p class="tag">Counting rule</p><p>' + s.rule + "</p></div>";
+    html += tableHTML(s.cols, s.rows);
+    if (s.sub) { html += "<h3>" + s.sub.title + "</h3>" + tableHTML(s.sub.cols, s.sub.rows); }
+    html += "</section>";
+  });
+
+  // Critical exponents
+  navItems.push(["critical", "Critical exponents"]);
+  html += sectionOpen("critical", "Critical exponents", "Scaling relations: α + 2β + γ = 2, γ = ν(2 − η), and dν = 2 − α. The upper critical dimension is 4; the lower one is 1 for a discrete symmetry and 2 for a continuous one.");
+  html += '<div class="tablewrap"><table class="ref exp fixed"><thead><tr><th scope="col">Class</th><th scope="col">α</th><th scope="col">β</th><th scope="col">γ</th><th scope="col">ν</th><th scope="col">η</th><th scope="col">Examples</th></tr></thead><tbody>';
+  EXPONENTS.forEach(function (r) {
+    html += "<tr data-row><td>" + r[0] + "</td>";
+    for (var i = 1; i <= 5; i++) html += '<td><span class="v">' + r[i] + "</span></td>";
+    html += "<td>" + r[6] + "</td></tr>";
+  });
+  html += "</tbody></table></div></section>";
+
+  // Derivations checklist
+  navItems.push(["derive", "Derivations"]);
+  html += sectionOpen("derive", "Derivations to own", "Derive each one from scratch with no notes, then tick it. Ticks are saved in this browser only.");
+  html += '<div class="tablewrap"><table class="ref stack derive" id="derive-table"><thead><tr><th scope="col" class="chk"><span class="sr">Done</span></th><th scope="col">Derive</th><th scope="col">Check your result against</th></tr></thead><tbody>';
+  DERIVE.forEach(function (r, i) {
+    var id = "derive-" + (i + 1);
+    html += '<tr data-row data-id="' + id + '"><td class="chk"><input type="checkbox" id="' + id + '" aria-label="Done: ' + r[0].replace(/<[^>]+>/g, "") + '"></td><td><label for="' + id + '">' + r[0] + '</label></td><td class="m" data-label="Check against"><span class="v">' + r[1] + "</span></td></tr>";
+  });
+  html += "</tbody></table></div></section>";
+
+  var root = document.getElementById("root");
+  root.innerHTML = html;
+
+  var nav = document.getElementById("nav");
+  nav.innerHTML = navItems.map(function (n) { return '<a href="#' + n[0] + '" data-for="' + n[0] + '">' + n[1] + "</a>"; }).join("");
+
+  /* ---------- Quiz mode ---------- */
+
+  var modeKey = "cms-mode";
+  var revealBtn = document.getElementById("reveal");
+  var allRevealed = false;
+
+  function maskedEls(mode) { return mode ? root.querySelectorAll("." + mode) : []; }
+
+  function setMode(mode, save) {
+    var docEl = document.body;
+    root.querySelectorAll(".v.shown, .f.shown").forEach(function (el) { el.classList.remove("shown"); });
+    root.querySelectorAll("[tabindex]").forEach(function (el) {
+      if (el.classList.contains("v") || el.classList.contains("f")) { el.removeAttribute("tabindex"); el.removeAttribute("role"); el.removeAttribute("aria-label"); }
+    });
+    if (mode) {
+      docEl.setAttribute("data-mask", mode);
+      maskedEls(mode).forEach(function (el) { el.setAttribute("tabindex", "0"); el.setAttribute("role", "button"); el.setAttribute("aria-label", "Hidden. Press to reveal"); });
+    } else {
+      docEl.removeAttribute("data-mask");
+    }
+    revealBtn.hidden = !mode;
+    allRevealed = false;
+    revealBtn.textContent = "Reveal all";
+    var radio = document.getElementById(mode ? "mode-" + mode : "mode-all");
+    if (radio) radio.checked = true;
+    if (save) store.set(modeKey, mode);
+  }
+
+  function toggleOne(el) {
+    var mode = document.body.getAttribute("data-mask");
+    if (!mode || !el.classList.contains(mode)) return;
+    el.classList.toggle("shown");
+    if (el.classList.contains("shown")) el.removeAttribute("aria-label"); else el.setAttribute("aria-label", "Hidden. Press to reveal");
+  }
+
+  root.addEventListener("click", function (e) {
+    var mode = document.body.getAttribute("data-mask");
+    if (!mode) return;
+    var el = e.target.closest("." + mode);
+    if (el && root.contains(el)) { e.preventDefault(); toggleOne(el); }
+  });
+  root.addEventListener("keydown", function (e) {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    var mode = document.body.getAttribute("data-mask");
+    if (!mode) return;
+    var el = e.target.closest("." + mode);
+    if (el && el === e.target) { e.preventDefault(); toggleOne(el); }
+  });
+
+  document.querySelectorAll('input[name="mode"]').forEach(function (r) {
+    r.addEventListener("change", function () { if (r.checked) setMode(r.value, true); });
+  });
+
+  revealBtn.addEventListener("click", function () {
+    var mode = document.body.getAttribute("data-mask");
+    if (!mode) return;
+    allRevealed = !allRevealed;
+    maskedEls(mode).forEach(function (el) { el.classList.toggle("shown", allRevealed); });
+    revealBtn.textContent = allRevealed ? "Hide all again" : "Reveal all";
+  });
+
+  var savedMode = store.get(modeKey, "");
+  setMode(savedMode === "v" || savedMode === "f" ? savedMode : "", false);
+
+  /* ---------- Search ---------- */
+
+  var q = document.getElementById("q");
+  var countEl = document.getElementById("count");
+  var noneEl = document.getElementById("none");
+
+  function applyFilter() {
+    var term = q.value.trim().toLowerCase();
+    var total = 0;
+    root.querySelectorAll("section[data-sec]").forEach(function (sec) {
+      var titleHit = term && sec.querySelector("h2").textContent.toLowerCase().indexOf(term) !== -1;
+      sec.querySelectorAll("[data-row]").forEach(function (r) {
+        var hit = !term || titleHit || r.textContent.toLowerCase().indexOf(term) !== -1;
+        r.hidden = !hit;
+      });
+      sec.querySelectorAll(".rung").forEach(function (rung) {
+        var scaleHit = term && rung.querySelector(".scale").textContent.toLowerCase().indexOf(term) !== -1;
+        var items = rung.querySelectorAll("[data-row]");
+        if (scaleHit) items.forEach(function (li) { li.hidden = false; });
+        var any = false;
+        items.forEach(function (li) { if (!li.hidden) any = true; });
+        rung.hidden = !any;
+      });
+      var visible = 0;
+      sec.querySelectorAll("[data-row]").forEach(function (r) { if (!r.hidden) visible++; });
+      sec.querySelectorAll("h3 + .tablewrap").forEach(function (tw) {
+        var rows = tw.querySelectorAll("[data-row]");
+        var any = false;
+        rows.forEach(function (r) { if (!r.hidden) any = true; });
+        tw.hidden = !any;
+        tw.previousElementSibling.hidden = !any;
+      });
+      sec.querySelectorAll(".tablewrap").forEach(function (tw) {
+        if (tw.previousElementSibling && tw.previousElementSibling.tagName === "H3") return;
+        var any = false;
+        tw.querySelectorAll("[data-row]").forEach(function (r) { if (!r.hidden) any = true; });
+        tw.hidden = !any;
+      });
+      var anchorsGrid = sec.querySelector(".anchors");
+      if (anchorsGrid) {
+        var anyA = false;
+        anchorsGrid.querySelectorAll("[data-row]").forEach(function (r) { if (!r.hidden) anyA = true; });
+        anchorsGrid.hidden = !anyA;
+      }
+      var rb = sec.querySelector(".rulebox");
+      if (rb) rb.hidden = !!term && !titleHit;
+      sec.hidden = visible === 0;
+      var link = nav.querySelector('[data-for="' + sec.id + '"]');
+      if (link) link.hidden = visible === 0;
+      total += visible;
+    });
+    countEl.textContent = term ? (total === 1 ? "1 entry" : total + " entries") : "";
+    noneEl.hidden = !(term && total === 0);
+  }
+  q.addEventListener("input", applyFilter);
+
+  /* ---------- Derivation ticks ---------- */
+
+  var doneKey = "cms-derived";
+  var done = store.get(doneKey, []);
+  if (!Array.isArray(done)) done = [];
+  root.querySelectorAll("#derive-table tr[data-id]").forEach(function (tr) {
+    var id = tr.getAttribute("data-id");
+    var box = tr.querySelector("input");
+    if (done.indexOf(id) !== -1) { box.checked = true; tr.classList.add("done"); }
+    box.addEventListener("change", function () {
+      tr.classList.toggle("done", box.checked);
+      var i = done.indexOf(id);
+      if (box.checked && i === -1) done.push(id);
+      if (!box.checked && i !== -1) done.splice(i, 1);
+      store.set(doneKey, done);
+    });
+  });
+
+  /* ---------- Section index highlight ---------- */
+
+  var toolbar = document.querySelector(".toolbar");
+  var tbHeight = 96;
+  function measureToolbar() {
+    var sticky = getComputedStyle(toolbar).position === "sticky";
+    tbHeight = sticky ? toolbar.offsetHeight : 0;
+    document.documentElement.style.setProperty("--tb", tbHeight + "px");
+  }
+  measureToolbar();
+  window.addEventListener("resize", measureToolbar);
+
+  var links = nav.querySelectorAll("a");
+  var ticking = false;
+  function spy() {
+    ticking = false;
+    var current = null;
+    root.querySelectorAll("section[data-sec]").forEach(function (sec) {
+      if (sec.hidden) return;
+      if (sec.getBoundingClientRect().top < tbHeight + 48) current = sec.id;
+    });
+    links.forEach(function (a) {
+      var on = a.getAttribute("data-for") === current;
+      a.classList.toggle("on", on);
+      if (on && nav.scrollWidth > nav.clientWidth) {
+        var l = a.offsetLeft - nav.offsetLeft, w = a.offsetWidth;
+        if (l < nav.scrollLeft || l + w > nav.scrollLeft + nav.clientWidth) nav.scrollLeft = Math.max(0, l - 16);
+      }
+    });
+  }
+  window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(spy); } }, { passive: true });
+  spy();
+})();
+</script>
+
+</body>
+</html>
