@@ -28,6 +28,10 @@ Every topic starts from real data from a classic experiment found in standard te
 | 5. Molecules | 14–17 | Born–Oppenheimer approximation; electronic, rotational, vibrational and Raman spectra of diatomic molecules; selection rules; Franck–Condon principle | Planned |
 | 6. Lasers | 18–20 | Spontaneous and stimulated emission; Einstein A and B coefficients; optical pumping, population inversion, rate equations; modes of resonators and coherence length | Planned |
 
+## Worked example: from a raw spectrum to energy levels
+
+Experiments measure spectra, not level diagrams. [This worked example](worked-example-raw-spectrum.md) takes a real mercury–cadmium–argon lamp spectrum and goes step by step to the energy levels of cadmium and mercury: find the lines, measure them, identify them, apply the Ritz principle, and label the levels. The data are in [`data/`](data/) and a Python script that repeats the whole analysis is in [`analysis/`](analysis/).
+
 ## Lectures
 
 0. What a spectrum measures: spectroscopy as linear response

@@ -1,0 +1,41 @@
+# Lines found in hg-cd-ar-lamp-spectrum.csv with the method of analysis/raw_spectrum_to_levels.py (local maxima above 0.2% of the brightest line).
+# Centres from a Gaussian fit to the top of each line. Identified against the full NIST lists of Hg I, Cd I and Ar I lines compiled in PypeIt (nearest line within 1.5 angstrom). Blank = not identified.
+centre_vacuum_angstrom,height,fwhm_angstrom,clipped,identification,reference_vacuum_angstrom
+3261.96,5160,1.57,no,Cd I,3262.00
+3342.52,86,1.63,no,Hg I,3342.45
+3404.59,214,1.57,no,Cd I,3404.63
+3467.68,493,2.45,no,Cd I,3467.19
+3611.53,1205,5.23,no,Cd I,3611.54
+3608.57,508,7.35,no,,
+3651.21,7681,1.57,no,Hg I,3651.20
+3654.78,1467,3.99,no,,
+3664.27,1162,1.63,no,Hg I,3664.33
+4047.71,10000,1.65,yes,Hg I,4047.71
+4078.99,628,1.61,no,Hg I,4078.99
+4159.84,39,1.66,no,Ar I,4159.76
+4201.86,35,4.71,no,Ar I,4201.86
+4349.52,41,3.92,no,,
+4351.18,26,,no,,
+4359.60,10000,1.73,yes,Hg I,4359.56
+4679.45,1038,1.69,no,Cd I,4679.46
+4801.24,2528,1.70,no,Cd I,4801.25
+5087.26,2943,1.70,no,Cd I,5087.24
+5478.39,26,20.85,no,,
+5462.29,10000,1.96,yes,Hg I,5462.27
+5771.28,1299,2.02,no,Hg I,5771.21
+5792.27,1343,2.03,no,Hg I,5792.28
+5930.45,51,2.06,no,Ar I,5930.46
+6225.77,174,1.72,no,,
+6236.61,261,1.86,no,,
+6440.28,4842,2.07,no,Cd I,6440.25
+6679.09,55,2.38,no,Ar I,6679.13
+6754.70,47,2.31,no,Ar I,6754.70
+6873.36,43,2.34,no,Ar I,6873.19
+6909.63,76,2.39,no,,
+6939.71,21,2.63,no,Ar I,6939.58
+6955.43,49,,no,,
+6967.34,10000,2.60,yes,Ar I,6967.35
+7032.23,52,2.31,no,Ar I,7032.19
+7069.29,4077,2.10,no,Ar I,7069.17
+7149.18,684,2.18,no,Ar I,7149.01
+7275.28,3358,2.38,no,Ar I,7274.94

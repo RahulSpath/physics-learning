@@ -262,7 +262,14 @@ K falls quickly with l. It measures how much the nl orbital overlaps the 1s orbi
 
 ### 9.1 The data
 
-> **How it is measured.** The levels come from emission spectra, assembled with the Ritz combination principle. A term splits into a group of closely spaced levels, which shows up as a group of lines, called a multiplet, with a characteristic pattern of spacings and intensities. The magnetic moments of rare-earth ions come from the temperature dependence of their magnetic susceptibility. In a salt where the ions are far apart, χ = C/T (Curie's law), and the Curie constant C gives the moment. The susceptibility is measured with a Gouy or Faraday balance, or today with a SQUID magnetometer.
+> **How it is measured.** All the levels in this lecture belong to the lowest configuration of each atom. They have the same parity, so electric-dipole lines between them are forbidden, and they cannot be measured directly. They are found in three ways:
+> - **Pairs of lines with a shared upper level.** Carbon's 2p3s ¹P₁ level emits at 193.09 nm (vacuum) down to ¹D₂ and at 247.86 nm (air) down to ¹S₀. The difference of the two wavenumbers, 51 789.16 − 40 333.80 = 11 455.36 cm⁻¹, is the spacing between ¹S₀ and ¹D₂, although no line joins those two levels. Spectroscopists collect thousands of lines and solve for the set of levels that explains them all: the Ritz principle of Lecture 1. The [worked example](worked-example-raw-spectrum.md) carries out every step on a real lamp spectrum.
+> - **Forbidden lines where atoms are left undisturbed.** In a thin gas, atoms have time to make even very slow transitions. The aurora shows oxygen's 557.7 nm line (¹S₀ → ¹D₂) and 630.0 nm line (¹D₂ → ³P₂), and radio telescopes see carbon's ³P₁ → ³P₀ line at 492 GHz in interstellar clouds.
+> - **Which term is lowest.** Cold vapour absorbs only from levels that are populated at its temperature (k<sub>B</sub>T ≈ 208 cm⁻¹ at 300 K). Carbon absorbs from all three ³P levels but not from ¹D₂, so ³P is the ground term.
+>
+> The labels, such as ³P₁, are interpretation. J values come from Zeeman patterns (Unit 4) and selection rules; the terms come from the patterns of spacings and intensities, and from Hund's rules.
+>
+> **Magnetic moments** of rare-earth ions come from the temperature dependence of their magnetic susceptibility. In a salt where the ions are far apart, χ = C/T (Curie's law), and the Curie constant C gives the moment. The susceptibility is measured with a Gouy or Faraday balance, or today with a SQUID magnetometer.
 
 **1. Calcium's 4s4p ³P term** has three levels, with J = 0, 1, 2, at 15 157.90, 15 210.06 and 15 315.94 cm⁻¹. The two intervals are 52.16 and 105.88 cm⁻¹, in the ratio 2.03. The singlet of the same configuration, 4s4p ¹P₁, lies much higher, at 23 652.30 cm⁻¹; it gives calcium's strong line at 422.7 nm.
 
