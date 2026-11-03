@@ -6,7 +6,7 @@ Study material for sharpening physics problem solving, with a focus on theoretic
 
 **Read the notes:** [atomic-molecular-physics/](atomic-molecular-physics/README.md)
 
-Lecture notes for Section VII of the CSIR-UGC NET Physical Sciences syllabus. Each topic starts from real textbook data and builds the theory needed to explain it. Lecture 0 (spectroscopy as linear response) and Units 1 (the hydrogen atom) and 2 (spin, fine and hyperfine structure) are written; Units 3–6 are planned.
+Lecture notes for Section VII of the CSIR-UGC NET Physical Sciences syllabus. Each topic starts from real textbook data and builds the theory needed to explain it. Lecture 0 (spectroscopy as linear response) and Units 1–3 (the hydrogen atom; spin, fine and hyperfine structure; many-electron atoms) are written; Units 4–6 are planned.
 
 ## Condensed Matter Scales
 
