@@ -137,7 +137,7 @@ The Lyman series limit is 91.2 nm, or 13.6 eV. This matches the **measured ioniz
 - Every line is a jump between two of these levels.
 - We have not yet explained *why* the levels exist. That is Lecture 2.
 
-**In response language ([Lecture 0](lecture-0-spectroscopy-as-response.md)).** Each line is a resonance of the atom's response at a frequency $`(E_n - E_m)/\hbar`$. The Rydberg formula tells us where the resonances are.
+**In response language ([optional reading](reading-spectroscopy-as-response.md)).** Each line is a resonance of the atom's response at a frequency $`(E_n - E_m)/\hbar`$. The Rydberg formula tells us where the resonances are.
 
 ### Problems for Lecture 1
 
@@ -276,7 +276,7 @@ In 1932 Urey, Brickwedde and Murphy concentrated the heavy isotope by slowly eva
 - Why the ground state of hydrogen has **no** orbital angular momentum (Lecture 3).
 - At high resolution, Hα is a close **doublet** (Unit 2).
 
-**In response language ([Lecture 0](lecture-0-spectroscopy-as-response.md)).** The Franck–Hertz current reveals discrete atomic excitation energies through inelastic electron collisions, but also depends on electron transport and collection; electron impact can excite levels inaccessible to electric-dipole absorption from the ground state. The reduced mass and the Z² scaling only move the resonances.
+**In response language ([optional reading](reading-spectroscopy-as-response.md)).** The Franck–Hertz current reveals discrete atomic excitation energies through inelastic electron collisions, but also depends on electron transport and collection; electron impact can excite levels inaccessible to electric-dipole absorption from the ground state. The reduced mass and the Z² scaling only move the resonances.
 
 ### Problems for Lecture 2
 
@@ -418,7 +418,7 @@ The same rule tells us what Hα is made of. The allowed transitions from n = 3 t
 | Two Stern–Gerlach components for ground-state H | l = 0 in the ground state; electron spin (Unit 2) |
 | τ(2p) = 1.6 ns but τ(2s) = 0.12 s | The selection rule Δl = ±1 |
 
-**In response language ([Lecture 0](lecture-0-spectroscopy-as-response.md)).** Selection rules say which resonances have any weight: $`f_{n0} \propto |\langle n|z|0\rangle|^2`$ is zero unless Δl = ±1. Lifetimes set the widths: the 2p resonance is 100 MHz wide.
+**In response language ([optional reading](reading-spectroscopy-as-response.md)).** Selection rules say which resonances have any weight: $`f_{n0} \propto |\langle n|z|0\rangle|^2`$ is zero unless Δl = ±1. Lifetimes set the widths: the 2p resonance is 100 MHz wide.
 
 ### Problems for Lecture 3 (CSIR-NET style)
 

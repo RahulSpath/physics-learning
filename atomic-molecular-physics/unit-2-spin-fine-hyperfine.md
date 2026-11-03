@@ -132,7 +132,7 @@ as observed.
 - Spin–orbit coupling splits every level with l ≥ 1 into two levels, j = l ± ½.
 - Levels are labelled by term symbols, $`^{2S+1}L_J`$.
 
-**In response language ([Lecture 0](lecture-0-spectroscopy-as-response.md)).** Spin–orbit coupling splits one resonance into two. Their weights, the oscillator strengths 0.641 and 0.320, are in the ratio 2 : 1, the same ratio seen in emission.
+**In response language ([optional reading](reading-spectroscopy-as-response.md)).** Spin–orbit coupling splits one resonance into two. Their weights, the oscillator strengths 0.641 and 0.320, are in the ratio 2 : 1, the same ratio seen in emission.
 
 ### Problems for Lecture 4
 
@@ -240,7 +240,7 @@ Explaining this shift needed quantum electrodynamics: the electron interacts wit
 - Their sum depends only on n and j: $`E_{nj} = E_n\left[1 + \frac{\alpha^2}{n^2}\left(\frac{n}{j+1/2} - \frac34\right)\right]`$.
 - The Lamb shift splits 2s<sub>1/2</sub> from 2p<sub>1/2</sub> by about 1 GHz, which is beyond Dirac's theory.
 
-**In response language ([Lecture 0](lecture-0-spectroscopy-as-response.md)).** Fine structure shifts and splits the resonances by amounts of order α². The Lamb shift is a further shift caused by the atom's coupling to the electromagnetic field; in many-body language, it is a self-energy.
+**In response language ([optional reading](reading-spectroscopy-as-response.md)).** Fine structure shifts and splits the resonances by amounts of order α². The Lamb shift is a further shift caused by the atom's coupling to the electromagnetic field; in many-body language, it is a self-energy.
 
 ### Problems for Lecture 5
 
@@ -371,7 +371,7 @@ Because $`|\psi(0)|^2`$ grows rapidly with Z, this shift dominates in heavy atom
 - For s electrons, the Fermi contact interaction predicts the 21 cm line to 0.007%.
 - Isotope shifts come from the change in mass (light atoms) and the change in nuclear size (heavy atoms).
 
-**In response language ([Lecture 0](lecture-0-spectroscopy-as-response.md)).** The 21 cm line is a resonance of the atom's magnetic response, not of its electric polarizability. Its weight is small and its frequency very low, and since the emission rate grows as ω³, an atom waits 11 million years to emit. Isotope shifts move the resonances slightly without changing their weights.
+**In response language ([optional reading](reading-spectroscopy-as-response.md)).** The 21 cm line is a resonance of the atom's magnetic response, not of its electric polarizability. Its weight is small and its frequency very low, and since the emission rate grows as ω³, an atom waits 11 million years to emit. Isotope shifts move the resonances slightly without changing their weights.
 
 ### Problems for Lecture 6 (CSIR-NET style)
 

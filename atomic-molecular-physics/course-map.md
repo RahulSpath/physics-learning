@@ -407,18 +407,18 @@ This is the proposed restructuring following inspection of commit `a0164bc`. Num
 
 | Current material | Destination and action |
 |---|---|
-| [Course README](README.md) | Replace its old Units 0–6 navigation with Units 0–8 and link this map. Retain useful references and conventions. Revise the compulsory seven-step lecture format and the claim that every topic requires a dataset. |
-| [Lecture 0](lecture-0-spectroscopy-as-response.md) | The course entrance is now the written [Unit 0](unit-0-learning-from-measurements.md). Reuse the distinction between positions, strengths and widths. **Decided:** retain the old file, after revision and retitling, as optional response-theory reading attached to Unit 5: Lorentz oscillator, polarizability, oscillator strengths, Kubo formula, sum rule and Kramers–Kronig relations. |
+| [Course README](README.md) | **Done:** navigation follows Units 0–8 and links this map; references and conventions are kept. The seven-step pattern is described as that of the lectures written so far, and a missing dataset no longer holds up a unit. |
+| [Former Lecture 0](reading-spectroscopy-as-response.md) | The course entrance is now the written [Unit 0](unit-0-learning-from-measurements.md). **Done:** retitled as optional response-theory reading attached to Unit 5 (Lorentz oscillator, polarizability, oscillator strengths, Kubo formula, sum rule and Kramers–Kronig relations), with sections renumbered R.1–R.8 and unit references updated to this map. Revise it further when Unit 5 is developed. |
 | [Unit 1](unit-1-hydrogen.md), Lectures 1–3 | Keep in Unit 1: spectral series; Franck–Hertz and reduced mass; quantum states. Keep selection rules and lifetime contrasts as explicitly basic previews of Unit 5. |
 | [Unit 2](unit-2-spin-fine-hyperfine.md), Lectures 4–6 | Keep in Unit 2: spin; fine structure; hyperfine structure and isotope shifts. Keep sodium as an illustrative single-valence-electron example before its fuller explanation in Unit 3. |
 | [Unit 3](unit-3-many-electron-atoms.md), Lectures 7–9 | Keep alkali spectra, helium and coupling in Unit 3; arrange helium, alkalis and coupling into a continuous argument. Keep rare-earth moments as an optional application after Unit 4 introduces the Landé factor. |
-| Unit 3, Lecture 10 | Move line widths, associated questions and `line-shapes.svg` into Unit 5. Earlier units need only enough resolution context to explain why splittings may be hidden. |
+| Former Unit 3, Lecture 10 | **Done:** moved with its problems, answers, sources and `line-shapes.svg` to [Unit 5](unit-5-light-matter-interaction.md). Earlier units need only enough resolution context to explain why splittings may be hidden. |
 | README’s planned Lectures 11–13 | Develop in Unit 4: Zeeman/Paschen–Back, Stark, ESR/NMR and chemical shift. These are currently plans, not written units. |
 | README’s planned Lectures 14–15 | Divide between Unit 6’s molecular potentials and nuclear levels and Unit 7’s rotational/infrared transitions and bands. |
 | README’s planned Lectures 16–17 | Develop Raman and electronic/Franck–Condon spectroscopy in Unit 7. |
 | README’s planned Lectures 18–20 | Develop Einstein coefficients, pumping, inversion, rate equations, resonators and coherence in Unit 5. |
 | [Worked lamp example](worked-example-raw-spectrum.md) | Rework as Unit 8’s principal example, preceded by individual Hg, Cd and Ar spectra. Preserve its useful Ritz reconstruction and explicit calibration limitation. |
-| [Top-level README](../README.md) | Update only the Atomic and Molecular Physics introduction, entry link and progress description to match the new course. |
+| [Top-level README](../README.md) | **Done:** the Atomic and Molecular Physics introduction, entry link and progress description match the new course. |
 
 Old lecture numbers above identify existing material. Use unit and section numbers in the revised course; update lecture-number references, figure captions and links together. Replace repetitive compulsory “In response language” endings with physically useful connections to the next question.
 
@@ -430,7 +430,7 @@ Retain the present asset directories:
 
 ### Coverage still to develop
 
-The written units provide substantial atomic-structure material through Unit 3 and a line-width treatment to move into Unit 5. External fields and magnetic resonance are largely only planned. Einstein coefficients and selection rules appear in existing notes, but the connected treatment of optical processes and lasers remains to be written. Molecular structure and spectroscopy are currently README outlines.
+The written units provide substantial atomic-structure material through Unit 3, and Unit 5 already holds the lecture on line widths. External fields and magnetic resonance are largely only planned. Einstein coefficients and selection rules appear in existing notes, but the connected treatment of optical processes and lasers remains to be written. Molecular structure and spectroscopy are currently README outlines.
 
 The repository contains a mixed measured lamp spectrum, but no separate measured hydrogen, Hg, Cd or Ar spectra. `balmer-spectrum.svg` is a line-position illustration, not a measured intensity trace. Source a properly attributed single-element record for Unit 0 and individual-element examples for Unit 8; do not manufacture experimental traces or present selected lines from the mixture as separately measured spectra.
 

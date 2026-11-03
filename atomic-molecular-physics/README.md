@@ -1,60 +1,51 @@
-# Atomic and Molecular Physics, Data First
+# Atomic and Molecular Physics
 
-Lecture notes for Section VII (Atomic & Molecular Physics) of the CSIR-UGC NET Physical Sciences syllabus.
+A connected, observation-driven course in atomic and molecular physics at MSc level, covering Section VII (Atomic & Molecular Physics) of the CSIR-UGC NET Physical Sciences syllabus.
 
-Every topic starts from real data from a classic experiment found in standard textbooks. The theory is then developed to explain that data. This is also how the subject grew: Balmer fitted the hydrogen lines in 1885, almost 30 years before Bohr explained them.
+We cannot directly see the internal quantum states of an atom or molecule. How do we learn about them through measurements? The course follows this question from beginning to end. Each unit starts from an observation or a question, introduces the theory needed to explain it, shows what that theory predicts, and ends with what it cannot yet explain, which leads to the next unit.
 
-**Start with [Lecture 0](lecture-0-spectroscopy-as-response.md).** It sets up the common language for the whole course: a spectrum measures the atom's response function, as in linear-response theory in condensed matter.
+**Start with [Unit 0](unit-0-learning-from-measurements.md).** The [course map](course-map.md) gives each unit's central question, motivating observation, essential equations and connection to the next.
 
-## How each lecture works
+## Units
+
+| Unit | Central question | Syllabus topics | Notes |
+|---|---|---|---|
+| 0. How do we learn about the microscopic world? | How do measurements reveal microscopic properties? | Preparation for the whole section | [Unit 0](unit-0-learning-from-measurements.md) |
+| 1. The hydrogen atom | What explains discrete levels and spectral series? | Quantum states of an electron in an atom | [Unit 1](unit-1-hydrogen.md) |
+| 2. Spin and atomic fine structure | Why do levels and lines split? | Electron spin; relativistic corrections for the energy levels of hydrogen; hyperfine structure and isotope shift | [Unit 2](unit-2-spin-fine-hyperfine.md) |
+| 3. Many-electron atoms | How do interacting electrons change atomic spectra? | Spectra of helium and alkali atoms; LS and jj coupling | [Unit 3](unit-3-many-electron-atoms.md) |
+| 4. Atoms in external fields | How do fields shift, split and connect states? | Zeeman, Paschen–Back and Stark effects; electron spin resonance; nuclear magnetic resonance and chemical shift | Planned |
+| 5. Light–matter interaction | What determines strengths, widths and laser oscillation? | Width of spectral lines; spontaneous and stimulated emission; Einstein A and B coefficients; optical pumping, population inversion, rate equations; modes of resonators and coherence length | [Unit 5](unit-5-light-matter-interaction.md), so far the lecture on line widths. Optional reading: [spectroscopy as linear response](reading-spectroscopy-as-response.md) |
+| 6. Molecules and nuclear motion | How do molecules bind, rotate and vibrate? | Born–Oppenheimer approximation; the levels behind the electronic, rotational and vibrational spectra of diatomic molecules | Planned |
+| 7. Molecular spectroscopy | How do probes reveal molecular motion and electronic structure? | Electronic, rotational, vibrational and Raman spectra of diatomic molecules; selection rules; Franck–Condon principle | Planned |
+| 8. Putting the ideas together | What can a complex spectrum establish? | All of the above, applied to measured spectra | Planned; it will build on the [worked example](worked-example-raw-spectrum.md) |
+
+## How the units are written
+
+Version 1 aims to make the physics and its connections complete before the details are polished. A unit is complete for Version 1 when a reader can answer:
+
+1. What physical phenomenon motivated this topic?
+2. What new theoretical idea was necessary?
+3. What can we calculate or predict with it?
+4. What does it fail to explain, and what comes next?
+
+Real measurements are used wherever good data exist, but a missing dataset does not hold up the physical argument.
+
+The lectures written so far, Lectures 1–9 in Units 1–3 and Lecture 10 in Unit 5, come from the first draft of these notes and keep their original numbers. Each follows one pattern:
 
 1. **Data:** a spectrum, a table of lines or a measured curve. A short **How it is measured** box describes the apparatus, what is recorded and the resolution needed.
 2. **Puzzle:** what the simple theory cannot explain.
 3. **Model:** the theory that explains it.
 4. **Numbers from the data:** constants such as the Rydberg constant, a bond length or a g-factor.
 5. **Test a prediction** against more data.
-6. **In response language:** one or two sentences linking the lecture back to Lecture 0.
+6. **In response language:** one or two sentences linking the lecture to the [optional reading on spectroscopy as linear response](reading-spectroscopy-as-response.md).
 7. **Problems** in CSIR-NET style, with answers.
 
-## Units
-
-| Unit | Lectures | Syllabus topics | Notes |
-|---|---|---|---|
-| 0. What a spectrum measures | 0 | The common language for selection rules, line widths, Einstein coefficients, ESR, NMR and Raman spectra | [Lec 0](lecture-0-spectroscopy-as-response.md) |
-| 1. The hydrogen atom | 1–3 | Quantum states of an electron in an atom | [Unit 1](unit-1-hydrogen.md) |
-| 2. Spin, fine and hyperfine structure | 4–6 | Electron spin; relativistic corrections for the energy levels of hydrogen; hyperfine structure and isotope shift | [Unit 2](unit-2-spin-fine-hyperfine.md) |
-| 3. Many-electron atoms | 7–10 | Spectra of helium and alkali atoms; LS and jj coupling; width of spectral lines | [Unit 3](unit-3-many-electron-atoms.md) |
-| 4. Atoms in fields | 11–13 | Zeeman, Paschen–Back and Stark effects; electron spin resonance; nuclear magnetic resonance and chemical shift | Planned |
-| 5. Molecules | 14–17 | Born–Oppenheimer approximation; electronic, rotational, vibrational and Raman spectra of diatomic molecules; selection rules; Franck–Condon principle | Planned |
-| 6. Lasers | 18–20 | Spontaneous and stimulated emission; Einstein A and B coefficients; optical pumping, population inversion, rate equations; modes of resonators and coherence length | Planned |
+They will be revised unit by unit, in sequence; later units need not keep the same format.
 
 ## Worked example: from a raw spectrum to energy levels
 
-Experiments measure spectra, not level diagrams. [This worked example](worked-example-raw-spectrum.md) takes a real mercury–cadmium–argon lamp spectrum and goes step by step to the energy levels of cadmium and mercury: find the lines, measure them, identify them, apply the Ritz principle, and label the levels. The data are in [`data/`](data/), and a Python script that finds and fits the lines, identifies the seven selected cadmium and mercury transitions, and recovers cadmium levels and mercury level spacings is in [`analysis/`](analysis/). The fuller identifications in [`data/measured-lines.csv`](data/measured-lines.csv) used the NIST line lists compiled in PypeIt.
-
-## Lectures
-
-0. What a spectrum measures: spectroscopy as linear response
-1. The hydrogen spectrum and the Rydberg formula
-2. Energy levels are real: Franck–Hertz, Bohr and the reduced mass
-3. Quantum states: the Schrödinger hydrogen atom and selection rules
-4. Electron spin: Stern–Gerlach and the sodium doublet
-5. Fine structure of hydrogen: relativistic corrections and the Dirac formula
-6. Hyperfine structure (the 21 cm line) and isotope shifts
-7. Alkali spectra and the quantum defect
-8. Helium: exchange, singlets and triplets
-9. LS and jj coupling
-10. Widths of spectral lines
-11. Zeeman and Paschen–Back effects
-12. The Stark effect
-13. Magnetic resonance: ESR and NMR
-14. The Born–Oppenheimer approximation and rotational spectra
-15. Vibrational spectra
-16. Raman spectra
-17. Electronic spectra and the Franck–Condon principle
-18. Einstein A and B coefficients
-19. Population inversion, rate equations and optical pumping
-20. Resonator modes and coherence length
+Experiments measure spectra, not level diagrams. [This worked example](worked-example-raw-spectrum.md) takes a real mercury–cadmium–argon lamp spectrum and goes step by step to the energy levels of cadmium and mercury: find the lines, measure them, identify them, apply the Ritz principle, and label the levels. The data are in [`data/`](data/), and a Python script that finds and fits the lines, identifies the seven selected cadmium and mercury transitions, and recovers cadmium levels and mercury level spacings is in [`analysis/`](analysis/). The fuller identifications in [`data/measured-lines.csv`](data/measured-lines.csv) used the NIST line lists compiled in PypeIt. It will become the main example of Unit 8, after spectra of the single elements.
 
 ## Experiments for each syllabus topic
 
