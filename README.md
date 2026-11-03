@@ -2,6 +2,12 @@
 
 Study material for sharpening physics problem solving, with a focus on theoretical condensed matter.
 
+## Atomic and Molecular Physics, Data First
+
+**Read the notes:** [atomic-molecular-physics/](atomic-molecular-physics/README.md)
+
+Lecture notes for Section VII of the CSIR-UGC NET Physical Sciences syllabus. Each topic starts from real textbook data and builds the theory needed to explain it. Unit 1 (the hydrogen atom) is written; Units 2–6 are planned.
+
 ## Condensed Matter Scales
 
 **Open the page:** https://rahulspath.github.io/physics-learning/
