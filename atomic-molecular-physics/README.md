@@ -20,7 +20,7 @@ Every topic starts from real data from a classic experiment found in standard te
 
 | Unit | Lectures | Syllabus topics | Notes |
 |---|---|---|---|
-| 0. What a spectrum measures | 0 | The common language for selection rules, line widths, Einstein coefficients, ESR, NMR and Raman spectra | [Lecture 0](lecture-0-spectroscopy-as-response.md) |
+| 0. What a spectrum measures | 0 | The common language for selection rules, line widths, Einstein coefficients, ESR, NMR and Raman spectra | [Lec 0](lecture-0-spectroscopy-as-response.md) |
 | 1. The hydrogen atom | 1–3 | Quantum states of an electron in an atom | [Unit 1](unit-1-hydrogen.md) |
 | 2. Spin, fine and hyperfine structure | 4–6 | Electron spin; relativistic corrections for the energy levels of hydrogen; hyperfine structure and isotope shift | [Unit 2](unit-2-spin-fine-hyperfine.md) |
 | 3. Many-electron atoms | 7–10 | Spectra of helium and alkali atoms; LS and jj coupling; width of spectral lines | Planned |
