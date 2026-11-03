@@ -16,6 +16,8 @@ Each lecture follows the same path as Unit 1: **data → puzzle → model → nu
 
 ### 4.1 The data
 
+> **How it is measured.** **Stern–Gerlach:** silver evaporates in an oven at about 1300 K. Two narrow slits select a thin beam, which passes between magnet poles shaped as a knife edge facing a groove; this shape gives a strong field gradient. The atoms land on a glass plate. The silver layer was so thin that it had to be developed chemically, like a photograph, before the two spots could be seen. **The sodium doublet:** a sodium-vapour lamp and a grating spectrometer. Separating two lines 0.6 nm apart at 589 nm needs a resolving power of about 1000, which makes this a standard test of a student spectrometer.
+
 **Stern–Gerlach (1922).** A beam of silver atoms from an oven passes through a strongly non-uniform magnetic field and lands on a glass plate. The beam splits into **two** separate spots, about 0.2 mm apart. In 1927 Phipps and Taylor repeated the experiment with ground-state hydrogen atoms and also found two spots (Unit 1, Lecture 3).
 
 **The sodium D line.** The yellow sodium line is a close pair:
@@ -130,6 +132,8 @@ as observed.
 - Spin–orbit coupling splits every level with l ≥ 1 into two levels, j = l ± ½.
 - Levels are labelled by term symbols, $`^{2S+1}L_J`$.
 
+**In response language ([Lecture 0](lecture-0-spectroscopy-as-response.md)).** Spin–orbit coupling splits one resonance into two. Their weights, the oscillator strengths 0.641 and 0.320, are in the ratio 2 : 1, the same ratio seen in emission.
+
 ### Problems for Lecture 4
 
 **4.1** Silver atoms (mass 108 u) leave an oven at about 550 m/s and cross a magnet 3.5 cm long with a field gradient of 10³ T/m. Taking $`\mu_z = \pm\mu_B`$, find the separation of the two beams at the exit of the magnet.
@@ -149,6 +153,8 @@ as observed.
 ## Lecture 5 · Fine structure of hydrogen: relativistic corrections and the Dirac formula
 
 ### 5.1 The data
+
+> **How it is measured.** **Optical fine structure:** the Hα doublet is barely wider than the Doppler width, so the discharge tube is cooled with liquid nitrogen and the light is analysed with a Fabry–Pérot interferometer or a large grating in a high order. In 1972 Hänsch, Shahin and Schawlow resolved it cleanly with laser saturation spectroscopy, which removes the Doppler width. **Lamb and Retherford:** hydrogen molecules are split into atoms in a tungsten oven at about 2500 K, and an electron beam excites some of them to the 2s level. The atomic beam crosses a microwave cavity in a magnetic field and then hits a metal plate. Atoms still in 2s knock electrons out of the plate, giving a current. When the microwaves drive 2s → 2p, the atoms decay to 1s within nanoseconds and the current drops.
 
 - In 1887 Michelson found that Hα is a close **doublet**. Its two strongest components are about **0.33 cm⁻¹** apart, or 0.014 nm.
 - Lyman α (2p → 1s) is also a doublet. The 2p level is split by **10.969 GHz** (0.366 cm⁻¹).
@@ -234,6 +240,8 @@ Explaining this shift needed quantum electrodynamics: the electron interacts wit
 - Their sum depends only on n and j: $`E_{nj} = E_n\left[1 + \frac{\alpha^2}{n^2}\left(\frac{n}{j+1/2} - \frac34\right)\right]`$.
 - The Lamb shift splits 2s<sub>1/2</sub> from 2p<sub>1/2</sub> by about 1 GHz, which is beyond Dirac's theory.
 
+**In response language ([Lecture 0](lecture-0-spectroscopy-as-response.md)).** Fine structure shifts and splits the resonances by amounts of order α². The Lamb shift is a further shift caused by the atom's coupling to the electromagnetic field; in many-body language, it is a self-energy.
+
 ### Problems for Lecture 5
 
 **5.1** Add the three corrections of Section 5.3 and show that the result depends only on n and j. Treat l = 0 and l ≥ 1 separately.
@@ -253,6 +261,8 @@ Explaining this shift needed quantum electrodynamics: the electron interacts wit
 ## Lecture 6 · Hyperfine structure and isotope shifts
 
 ### 6.1 The data
+
+> **How it is measured.** **The 21 cm line:** a radio telescope feeds a sensitive receiver; Ewen and Purcell used a horn antenna on a laboratory roof. Switching the receiver's frequency back and forth picks the weak line out of the noise. **The hydrogen maser:** atoms in the upper hyperfine level are selected with a magnet and stored in a coated glass bulb inside a microwave cavity tuned to 1420 MHz. They emit coherently, and the output frequency is counted. **Alkali hyperfine splittings and the caesium clock:** an atomic beam crosses a region of oscillating magnetic field, and the number of atoms that change their F level is counted as the frequency is scanned. This is Rabi's method; caesium clocks use Ramsey's version, with two separated field regions. **Isotope shifts:** high-resolution grating or Fabry–Pérot spectroscopy, and now laser spectroscopy.
 
 **The 21 cm line.** Radio telescopes receive a line at **1420.4 MHz** (λ = 21.1 cm) from hydrogen clouds all over the Milky Way. Van de Hulst predicted it in 1944, and Ewen and Purcell first detected it in 1951. In the laboratory, the hydrogen maser measures the same frequency: 1 420 405 751.77 Hz.
 
@@ -360,6 +370,8 @@ Because $`|\psi(0)|^2`$ grows rapidly with Z, this shift dominates in heavy atom
 - The hyperfine interaction couples I and J into F = I + J. Levels follow $`E_F = \tfrac{A}{2}[F(F+1) - I(I+1) - J(J+1)]`$ and the interval rule.
 - For s electrons, the Fermi contact interaction predicts the 21 cm line to 0.007%.
 - Isotope shifts come from the change in mass (light atoms) and the change in nuclear size (heavy atoms).
+
+**In response language ([Lecture 0](lecture-0-spectroscopy-as-response.md)).** The 21 cm line is a resonance of the atom's magnetic response, not of its electric polarizability. Its weight is small and its frequency very low, and since the emission rate grows as ω³, an atom waits 11 million years to emit. Isotope shifts move the resonances slightly without changing their weights.
 
 ### Problems for Lecture 6 (CSIR-NET style)
 

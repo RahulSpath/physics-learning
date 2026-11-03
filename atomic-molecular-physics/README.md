@@ -4,19 +4,23 @@ Lecture notes for Section VII (Atomic & Molecular Physics) of the CSIR-UGC NET P
 
 Every topic starts from real data from a classic experiment found in standard textbooks. The theory is then developed to explain that data. This is also how the subject grew: Balmer fitted the hydrogen lines in 1885, almost 30 years before Bohr explained them.
 
+**Start with [Lecture 0](lecture-0-spectroscopy-as-response.md).** It sets up the common language for the whole course: a spectrum measures the atom's response function, as in linear-response theory in condensed matter.
+
 ## How each lecture works
 
-1. **Data:** a spectrum, a table of lines or a measured curve.
+1. **Data:** a spectrum, a table of lines or a measured curve. A short **How it is measured** box describes the apparatus, what is recorded and the resolution needed.
 2. **Puzzle:** what the simple theory cannot explain.
 3. **Model:** the theory that explains it.
 4. **Numbers from the data:** constants such as the Rydberg constant, a bond length or a g-factor.
 5. **Test a prediction** against more data.
-6. **Problems** in CSIR-NET style, with answers.
+6. **In response language:** one or two sentences linking the lecture back to Lecture 0.
+7. **Problems** in CSIR-NET style, with answers.
 
 ## Units
 
 | Unit | Lectures | Syllabus topics | Notes |
 |---|---|---|---|
+| 0. What a spectrum measures | 0 | The common language for selection rules, line widths, Einstein coefficients, ESR, NMR and Raman spectra | [Lecture 0](lecture-0-spectroscopy-as-response.md) |
 | 1. The hydrogen atom | 1–3 | Quantum states of an electron in an atom | [Unit 1](unit-1-hydrogen.md) |
 | 2. Spin, fine and hyperfine structure | 4–6 | Electron spin; relativistic corrections for the energy levels of hydrogen; hyperfine structure and isotope shift | [Unit 2](unit-2-spin-fine-hyperfine.md) |
 | 3. Many-electron atoms | 7–10 | Spectra of helium and alkali atoms; LS and jj coupling; width of spectral lines | Planned |
@@ -26,6 +30,7 @@ Every topic starts from real data from a classic experiment found in standard te
 
 ## Lectures
 
+0. What a spectrum measures: spectroscopy as linear response
 1. The hydrogen spectrum and the Rydberg formula
 2. Energy levels are real: Franck–Hertz, Bohr and the reduced mass
 3. Quantum states: the Schrödinger hydrogen atom and selection rules

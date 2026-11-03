@@ -18,6 +18,8 @@ Visible wavelengths are given in air, as in most textbooks. Answers to all probl
 
 ### 1.1 The data
 
+> **How it is measured.** A discharge tube with a few kilovolts across low-pressure hydrogen glows with the atomic spectrum. A diffraction grating spreads the light out according to $`d\sin\theta = m\lambda`$, where d is the spacing of the grating lines and m is the order. The spectrometer records intensity against angle, and so against wavelength. Separating the Balmer lines needs a resolving power λ/Δλ of about 10³. Splitting the Hα doublet of Unit 2 needs about 5 × 10⁴: a large grating used in a high order, or a Fabry–Pérot etalon.
+
 Light from a hydrogen discharge tube, passed through a prism or a grating, does not give a continuous rainbow. It gives sharp lines. The visible ones are:
 
 | Line | Wavelength in air (nm) | Colour |
@@ -135,6 +137,8 @@ The Lyman series limit is 91.2 nm, or 13.6 eV. This matches the **measured ioniz
 - Every line is a jump between two of these levels.
 - We have not yet explained *why* the levels exist. That is Lecture 2.
 
+**In response language ([Lecture 0](lecture-0-spectroscopy-as-response.md)).** Each line is a resonance of the atom's response at a frequency $`(E_n - E_m)/\hbar`$. The Rydberg formula tells us where the resonances are.
+
 ### Problems for Lecture 1
 
 **1.1** Show that Balmer's formula and the wavenumber formula are the same, and find B in terms of R.
@@ -152,6 +156,8 @@ The Lyman series limit is 91.2 nm, or 13.6 eV. This matches the **measured ioniz
 ## Lecture 2 · Energy levels are real: Franck–Hertz, Bohr and the reduced mass
 
 ### 2.1 The data: the Franck–Hertz experiment (1914)
+
+> **How it is measured.** The tube contains a heated cathode, a mesh grid, a collector plate and a drop of mercury. It is heated to about 180 °C to fill it with mercury vapour. The accelerating voltage V is applied between the cathode and the grid, and a retarding voltage of about 1.5 V between the grid and the collector. A sensitive ammeter records the collector current as V is raised. The 253.7 nm light is recorded with a quartz spectrograph, because glass absorbs ultraviolet light at this wavelength.
 
 Electrons from a hot cathode are accelerated through mercury vapour by a voltage V. They reach a collector only if they still have enough energy to overcome a small retarding voltage. As V increases:
 
@@ -220,7 +226,7 @@ For hydrogen, $`M = m_p = 1836.15\,m_e`$, which gives $`R_\text{H} = 1.096776 \t
 
 ### 2.4 Test a prediction: the Pickering series
 
-In 1896 Pickering found a series of lines in the spectrum of the star ζ Puppis. Some of them sit almost on top of Balmer lines, but others fall between them:
+Pickering photographed the spectra of stars through a prism placed in front of the telescope lens (an objective prism), which records the spectra of many stars at once. In 1896 he found a series of lines in the spectrum of the star ζ Puppis. Some of them sit almost on top of Balmer lines, but others fall between them:
 
 | Pickering line (air, nm) | Hydrogen line nearby |
 |---|---|
@@ -261,7 +267,7 @@ If hydrogen had a heavier isotope, its lines would be shifted slightly towards s
 \frac{\Delta\lambda}{\lambda} = 1 - \frac{R_\text{H}}{R_\text{D}} = 2.72 \times 10^{-4}, \qquad \Delta\lambda(\text{H}\alpha) = 0.179\ \text{nm}.
 ```
 
-In 1932 Urey, Brickwedde and Murphy found faint companion lines exactly there; for example, deuterium Hα at 656.10 nm. This is how deuterium was discovered. Isotope shifts return in Unit 2.
+In 1932 Urey, Brickwedde and Murphy concentrated the heavy isotope by slowly evaporating liquid hydrogen, then photographed the Balmer lines with a large grating spectrograph. They found faint companion lines exactly there; for example, deuterium Hα at 656.10 nm. This is how deuterium was discovered. Isotope shifts return in Unit 2.
 
 ### 2.6 What Bohr's model cannot explain
 
@@ -269,6 +275,8 @@ In 1932 Urey, Brickwedde and Murphy found faint companion lines exactly there; f
 - Why some lines are bright and others faint.
 - Why the ground state of hydrogen has **no** orbital angular momentum (Lecture 3).
 - At high resolution, Hα is a close **doublet** (Unit 2).
+
+**In response language ([Lecture 0](lecture-0-spectroscopy-as-response.md)).** The Franck–Hertz current measures the energy-loss function of mercury vapour: electrons lose energy only at the atom's resonance frequencies, the same ones that light sees. The reduced mass and the Z² scaling only move the resonances.
 
 ### Problems for Lecture 2
 
@@ -287,6 +295,8 @@ In 1932 Urey, Brickwedde and Murphy found faint companion lines exactly there; f
 ## Lecture 3 · Quantum states: the Schrödinger hydrogen atom and selection rules
 
 ### 3.1 The data that Bohr cannot explain
+
+> **How it is measured.** **Phipps and Taylor:** hydrogen atoms from a discharge tube form a beam through narrow slits, pass through a non-uniform magnetic field and land on a plate coated with molybdenum trioxide, which turns blue where hydrogen atoms hit it. **Lifetimes:** atoms are excited by a short pulse, and the emitted light is timed; its intensity decays as $`e^{-t/\tau}`$. Atoms in the long-lived 2s level survive a flight of many centimetres in a beam. They are detected by applying an electric field, which mixes 2s with 2p and makes them emit Lyman α.
 
 1. **The ground state has no orbital magnetic moment.** In 1927 Phipps and Taylor sent a beam of ground-state hydrogen atoms through a Stern–Gerlach magnet. The beam split into **two** parts. A Bohr orbit with $`L = \hbar`$ would carry an orbital magnetic moment with three orientations. Two parts mean that the orbital angular momentum is zero, and that the splitting comes from something else: the electron's spin (Unit 2).
 2. **Equal energies, very different lifetimes.** An atom in the 2p level emits Lyman α after an average of **1.6 ns**. An atom in the 2s level, which has the same energy, lives for **0.12 s**: about 10⁸ times longer. States with the same n must differ in some other quantum number.
@@ -407,6 +417,8 @@ The same rule tells us what Hα is made of. The allowed transitions from n = 3 t
 | Pickering series; deuterium lines | Z² scaling and the reduced mass |
 | Two Stern–Gerlach components for ground-state H | l = 0 in the ground state; electron spin (Unit 2) |
 | τ(2p) = 1.6 ns but τ(2s) = 0.12 s | The selection rule Δl = ±1 |
+
+**In response language ([Lecture 0](lecture-0-spectroscopy-as-response.md)).** Selection rules say which resonances have any weight: $`f_{n0} \propto |\langle n|z|0\rangle|^2`$ is zero unless Δl = ±1. Lifetimes set the widths: the 2p resonance is 100 MHz wide.
 
 ### Problems for Lecture 3 (CSIR-NET style)
 
