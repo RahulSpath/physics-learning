@@ -31,7 +31,7 @@ A low-resolution lamp spectrum like this one has a few dozen lines. A high-resol
 Fit a Gaussian to the top of each line (a parabola through the logarithm of the intensity), leaving out clipped points. This gives:
 
 - **The centre,** to a few hundredths of an ångström for a strong line.
-- **The width.** Every line has a full width at half maximum of 1.6 to 2.6 Å. This is the **resolution of the spectrograph**, not a property of the atoms. The Doppler width of a cadmium line at 400 K is only 0.007 Å, and its natural width about 10⁻⁴ Å (Lecture 10). The resolving power near 480 nm is λ/Δλ ≈ 2800.
+- **The width.** Most fitted full widths at half maximum are about 1.6 to 2.6 Å; broader or unreliable fits can occur for blends or weak features. This 1.6–2.6 Å width is the **resolution of the spectrograph**, not a property of the atoms. The Doppler width of a cadmium line at 400 K is only 0.007 Å, and its natural width about 10⁻⁴ Å (Lecture 10). The resolving power near 480 nm is λ/Δλ ≈ 2800.
 
 ## Step 3 · Identify the lines
 

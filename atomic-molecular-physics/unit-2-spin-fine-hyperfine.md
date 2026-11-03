@@ -118,7 +118,7 @@ The splitting grows with Z (Figure 4.1) because the valence electron spends part
 ### 4.6 Test a prediction: order and intensity of the D lines
 
 - **Order.** For an electron in an attractive potential, $`\zeta > 0`$, so ²P<sub>3/2</sub> lies above ²P<sub>1/2</sub>. D2 should therefore have the shorter wavelength. It does: 588.995 nm against 589.592 nm.
-- **Intensity.** A level with total angular momentum J contains 2J + 1 states. If all upper states are equally populated and decay at the same rate, each line's brightness is proportional to the number of states it starts from:
+- **Intensity.** A level with total angular momentum J contains 2J + 1 states. If the source is optically thin and all upper magnetic sublevels are equally populated and decay at the same rate, each line's brightness is approximately proportional to the number of states it starts from:
 
 ```math
 \frac{I(\text{D2})}{I(\text{D1})} = \frac{2\cdot\tfrac32 + 1}{2\cdot\tfrac12 + 1} = \frac{4}{2} = 2,

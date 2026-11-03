@@ -276,7 +276,7 @@ In 1932 Urey, Brickwedde and Murphy concentrated the heavy isotope by slowly eva
 - Why the ground state of hydrogen has **no** orbital angular momentum (Lecture 3).
 - At high resolution, Hα is a close **doublet** (Unit 2).
 
-**In response language ([Lecture 0](lecture-0-spectroscopy-as-response.md)).** The Franck–Hertz current measures the energy-loss function of mercury vapour: electrons lose energy only at the atom's resonance frequencies, the same ones that light sees. The reduced mass and the Z² scaling only move the resonances.
+**In response language ([Lecture 0](lecture-0-spectroscopy-as-response.md)).** The Franck–Hertz current reveals discrete atomic excitation energies through inelastic electron collisions, but also depends on electron transport and collection; electron impact can excite levels inaccessible to electric-dipole absorption from the ground state. The reduced mass and the Z² scaling only move the resonances.
 
 ### Problems for Lecture 2
 

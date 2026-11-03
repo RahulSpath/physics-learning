@@ -181,7 +181,7 @@ H = \sum_{i=1,2}\left(\frac{p_i^2}{2m} - \frac{2e^2}{4\pi\varepsilon_0 r_i}\righ
 
 - **First-order perturbation theory.** The average repulsion in this state is $`\langle e^2/(4\pi\varepsilon_0 r_{12})\rangle = \tfrac58 Z \times 27.2\ \text{eV} = 34.0`$ eV, so E = −74.8 eV.
 - **The variational method.** Let each electron see an effective charge Z′ and minimize the energy, $`E(Z') = \left[Z'^2 - 2ZZ' + \tfrac58 Z'\right] \times 27.2\ \text{eV}`$. The minimum is at $`Z' = Z - \tfrac{5}{16} = \tfrac{27}{16}`$, with $`E = -\left(\tfrac{27}{16}\right)^2 \times 27.2\ \text{eV} = -77.5`$ eV. Each electron screens 5/16 of a proton charge from the other.
-- **Exact numerical result:** −79.0 eV. The last 1.5 eV is **correlation**: the electrons avoid each other more than any product of two orbitals allows.
+- **Exact numerical result:** −79.0 eV. The last 1.5 eV includes about 0.4 eV from improving the restricted orbital to the Hartree–Fock limit (about −77.9 eV), and a further lowering of about 1.1 eV from **correlation**: the electrons avoid each other more than any product of two orbitals allows.
 
 **Excited states, 1s nl.** One electron is in 1s and the other in nl. Because the electrons are identical, the spatial wavefunction must be either symmetric or antisymmetric when they are exchanged:
 
@@ -491,7 +491,7 @@ which is proportional to the pressure.
 | Sodium's s, p, d and f series; d and f levels almost hydrogenic | One electron outside a core; penetration; quantum defect δ<sub>l</sub> |
 | δ<sub>l</sub> almost constant in n; grows from Li to Cs | The core shifts the phase of the outer wave |
 | Two line systems in helium; triplets below singlets | Pauli principle and exchange; ΔS = 0 |
-| Helium ground state at −79.0 eV | Screening (Z′ = 27/16, −77.5 eV) plus correlation |
+| Helium ground state at −79.0 eV | Screening (Z′ = 27/16, −77.5 eV), orbital optimization to the Hartree–Fock limit (about −77.9 eV), then correlation |
 | Calcium interval ratio 2.03; carbon's three groups of levels | LS coupling, Landé interval rule |
 | Lead's three groups of levels | jj coupling |
 | Oxygen's inverted ³P; rare-earth magnetic moments | Hund's rules |

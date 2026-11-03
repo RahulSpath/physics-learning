@@ -30,7 +30,7 @@ Every topic starts from real data from a classic experiment found in standard te
 
 ## Worked example: from a raw spectrum to energy levels
 
-Experiments measure spectra, not level diagrams. [This worked example](worked-example-raw-spectrum.md) takes a real mercury–cadmium–argon lamp spectrum and goes step by step to the energy levels of cadmium and mercury: find the lines, measure them, identify them, apply the Ritz principle, and label the levels. The data are in [`data/`](data/) and a Python script that repeats the whole analysis is in [`analysis/`](analysis/).
+Experiments measure spectra, not level diagrams. [This worked example](worked-example-raw-spectrum.md) takes a real mercury–cadmium–argon lamp spectrum and goes step by step to the energy levels of cadmium and mercury: find the lines, measure them, identify them, apply the Ritz principle, and label the levels. The data are in [`data/`](data/), and a Python script that finds and fits the lines, identifies the seven selected cadmium and mercury transitions, and recovers cadmium levels and mercury level spacings is in [`analysis/`](analysis/). The fuller identifications in [`data/measured-lines.csv`](data/measured-lines.csv) used the NIST line lists compiled in PypeIt.
 
 ## Lectures
 
@@ -79,7 +79,7 @@ Experiments measure spectra, not level diagrams. [This worked example](worked-ex
 | Electronic spectra and Franck–Condon principle | I₂ visible absorption bands, converging near 499 nm | Franck–Condon factors; Birge–Sponer extrapolation to the dissociation energy |
 | Einstein A and B coefficients | Sodium 3p lifetime of 16 ns, so A = 6.2 × 10⁷ s⁻¹ | Spontaneous and stimulated emission; $`A/B \propto \nu^3`$ |
 | Optical pumping, population inversion, rate equations | He–Ne laser: helium's 2¹S level (20.62 eV) matches a neon level (20.66 eV). A laser diode's light output jumps at a threshold current. Rubidium optical pumping | Three- and four-level systems, rate equations and threshold, optical pumping |
-| Resonator modes and coherence length | A 30 cm He–Ne cavity has modes 500 MHz apart. Michelson interferometer with a sodium lamp: the fringes fade every 0.29 mm of mirror travel | Longitudinal and transverse modes; coherence length ≈ λ²/Δλ |
+| Resonator modes and coherence length | A 30 cm He–Ne cavity has modes 500 MHz apart. Michelson interferometer with a sodium lamp: successive visibility minima are 0.29 mm apart in mirror travel, from beating between D1 and D2 | Longitudinal and transverse modes; doublet beat spacing λ²/(2Δλ) in mirror travel; coherence length ≈ λ²/δλ, set by each line's own width δλ |
 
 ## Where the data comes from
 

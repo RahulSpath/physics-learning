@@ -135,7 +135,7 @@ Multiplied by ħω, this is exactly the power absorbed in linear response, $`P =
 
 ## 0.5 Numbers from the data
 
-- **Sodium.** The two D lines carry f = 0.641 + 0.320 = 0.961. Sodium's single valence electron has a total strength of 1, and 96% of it is in the D lines. Their ratio is 2.00, the same 2 : 1 ratio seen in emission (Unit 2).
+- **Sodium.** The two D lines carry f = 0.641 + 0.320 = 0.961. In an effective one-electron picture, sodium's valence electron has a total strength of 1, so about 96% of it is in the D lines. Their ratio is 2.00, also the approximate emission ratio for an optically thin source with equally populated upper magnetic sublevels and nearly equal decay rates (Unit 2).
 - **Hydrogen.** Lyman α carries 0.416 and Lyman β 0.079. All the lines together carry 0.565, and the ionization continuum the remaining 0.435. The total is exactly 1.
 
 ![How one electron's oscillator strength is shared](figures/oscillator-strengths.svg)
