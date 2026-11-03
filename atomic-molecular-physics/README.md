@@ -18,7 +18,7 @@ Every topic starts from real data from a classic experiment found in standard te
 | Unit | Lectures | Syllabus topics | Notes |
 |---|---|---|---|
 | 1. The hydrogen atom | 1–3 | Quantum states of an electron in an atom | [Unit 1](unit-1-hydrogen.md) |
-| 2. Spin, fine and hyperfine structure | 4–6 | Electron spin; relativistic corrections for the energy levels of hydrogen; hyperfine structure and isotope shift | Planned |
+| 2. Spin, fine and hyperfine structure | 4–6 | Electron spin; relativistic corrections for the energy levels of hydrogen; hyperfine structure and isotope shift | [Unit 2](unit-2-spin-fine-hyperfine.md) |
 | 3. Many-electron atoms | 7–10 | Spectra of helium and alkali atoms; LS and jj coupling; width of spectral lines | Planned |
 | 4. Atoms in fields | 11–13 | Zeeman, Paschen–Back and Stark effects; electron spin resonance; nuclear magnetic resonance and chemical shift | Planned |
 | 5. Molecules | 14–17 | Born–Oppenheimer approximation; electronic, rotational, vibrational and Raman spectra of diatomic molecules; selection rules; Franck–Condon principle | Planned |
