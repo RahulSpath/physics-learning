@@ -26,16 +26,16 @@ The first two days establish this map and Unit 0. Then develop each unit in sequ
 
 **Central question.** We cannot directly see the internal quantum states of an atom or molecule. How do we learn about them through measurements?
 
-**Motivating observation.** A hydrogen discharge produces discrete optical lines, while a magnetic-resonance experiment produces a signal as frequency or field is scanned. What does each instrument record, and what microscopic interpretation requires a model?
+**Motivating observation.** A hydrogen discharge produces discrete optical lines, while a sample in a magnetic field, exposed to microwaves, gives a signal at a particular field. What does each instrument record, and what microscopic interpretation requires a model?
 
 **Essential concepts.** Follow the plan’s six short sections:
 
-1. **What does an experiment actually give us?** Compare an emission spectrum, a resonance signal and, optionally, an inelastic-scattering spectrum.
-2. **An atomic emission spectrum.** Begin with a real single-element spectrum, preferably hydrogen; explain its axes before interpreting its peaks.
+1. **What does an experiment actually give us?** Compare an emission spectrum with a resonance signal, described plainly.
+2. **An atomic emission spectrum.** Begin with a measured hydrogen spectrum, intensity against wavelength; explain its axes before interpreting its peaks.
 3. **What information does a spectral line contain?** Ask about position, strength, width and response to external conditions.
 4. **From observations to a mathematical model.** Introduce states, energies and probe-dependent access to transitions.
-5. **The same reasoning across physics.** Preview molecular spectroscopy, magnetic resonance, photoemission and inelastic scattering. Diffraction primarily reveals spatial structure and correlations; these experiments need not measure the same quantity.
-6. **Questions that will guide the course.** Discreteness, splittings, missing transitions, molecular structure, intensities and widths.
+5. **The same reasoning across physics.** Each new kind of measurement is read the same way as the course meets it: what the instrument records, how the probe couples, which model connects them. Techniques are introduced where they arise, not previewed.
+6. **Questions that will guide the course.** Many questions will arise as we go, and the course answers them as they arise. Unit 0 ends with the first: why hydrogen emits at separated wavelengths.
 
 **Indispensable equations.**
 
@@ -48,7 +48,7 @@ E_u-E_l=h\nu=\frac{hc}{\lambda_{\mathrm{vac}}}
 
 A transition’s visibility also depends on the probe’s coupling to the system; no perturbation-theory or susceptibility derivation is needed here.
 
-**Syllabus coverage.** Conceptual preparation for all units. Energy differences, transition strengths, widths and magnetic resonance appear here as previews; their explanations follow below.
+**Syllabus coverage.** Conceptual preparation for all units. Energy differences, transition strengths and widths appear here as questions; their explanations follow below.
 
 **Connection to Unit 1.** Discrete lines suggest discrete energy differences. Why does an atom possess discrete bound states?
 
@@ -432,7 +432,7 @@ Retain the present asset directories:
 
 The written units provide substantial atomic-structure material through Unit 3, and Unit 5 already holds the lecture on line widths. External fields and magnetic resonance are largely only planned. Einstein coefficients and selection rules appear in existing notes, but the connected treatment of optical processes and lasers remains to be written. Molecular structure and spectroscopy are currently README outlines.
 
-The repository contains a mixed measured lamp spectrum, but no separate measured hydrogen, Hg, Cd or Ar spectra. `balmer-spectrum.svg` is a line-position illustration, not a measured intensity trace. Source a properly attributed single-element record for Unit 0 and individual-element examples for Unit 8; do not manufacture experimental traces or present selected lines from the mixture as separately measured spectra.
+Unit 0 now uses a measured hydrogen spectrum from Wikimedia Commons (CC BY-SA 3.0), recorded with a USB2000 spectrometer. The repository still has no separate measured Hg, Cd or Ar spectra. Source individual-element examples for Unit 8; do not manufacture experimental traces or present selected lines from the mixture as separately measured spectra.
 
 ### Scientific concerns to address during restructuring
 
