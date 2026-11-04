@@ -2,11 +2,13 @@
 
 Study material for sharpening physics problem solving, with a focus on theoretical condensed matter.
 
-## Atomic and Molecular Physics, Data First
+## Atomic and Molecular Physics
 
 **Read the notes:** [atomic-molecular-physics/](atomic-molecular-physics/README.md)
 
-Lecture notes for Section VII of the CSIR-UGC NET Physical Sciences syllabus. Each topic starts from real textbook data and builds the theory needed to explain it. Lecture 0 (spectroscopy as linear response) and Units 1–3 (the hydrogen atom; spin, fine and hyperfine structure; many-electron atoms) are written; Units 4–6 are planned. A [worked example](atomic-molecular-physics/worked-example-raw-spectrum.md) goes from a real lamp spectrum to energy levels, with the data and a Python script to repeat it.
+A connected, observation-driven MSc course covering Section VII of the CSIR–UGC NET Physical Sciences syllabus. Start with [Unit 0](atomic-molecular-physics/unit-0-learning-from-measurements.md); the [course map](atomic-molecular-physics/course-map.md) explains the progression through atoms, fields, radiation and molecules to [Unit 8's spectrum investigation](atomic-molecular-physics/unit-8-putting-the-ideas-together.md).
+
+The first connected writing pass now spans Units 0–8. Unit 0 is accepted as a first draft and Unit 1 as a provisional draft; the later units remain provisional. Visible TODOs identify missing measurements, independent tests and later refinement. The [progress audit](atomic-molecular-physics/day-1-audit.md) records that status. Unit 8 includes a [numerical companion](atomic-molecular-physics/worked-example-raw-spectrum.md) with guarded analysis of a processed calibration archive and explicit limits on its interpretation.
 
 ## Condensed Matter Scales
 

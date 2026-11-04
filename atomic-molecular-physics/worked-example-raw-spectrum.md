@@ -1,143 +1,78 @@
-# Worked example · From a raw spectrum to energy levels
+# Numerical companion · From a processed spectrum to a conditional level scheme
 
-Experiments do not measure level diagrams. They measure **spectra**: intensity against wavelength, full of lines. Spectroscopists find the lines, measure their positions, identify some of them, and only then work out the energy levels. A level diagram, such as Figure 9.1 in [Unit 3](unit-3-many-electron-atoms.md), is the final product of that work.
+[Unit 8](unit-8-putting-the-ideas-together.md) gives the physical investigation, proposed controls and limits of inference. This companion makes its arithmetic reproducible. The historical filename says “raw”; the supplied spectrum is a processed PypeIt wavelength-calibration template.
 
-This example starts from a real lamp spectrum and follows the same route, step by step, to the energy levels of cadmium and mercury. It uses the methods of Lecture 1 (the Ritz combination principle), Lecture 9 (LS coupling and the Landé interval rule) and Lecture 10 (line widths).
+## What the source audit changes
 
-**Try it yourself.** The spectrum is in [`data/hg-cd-ar-lamp-spectrum.csv`](data/hg-cd-ar-lamp-spectrum.csv), and [`analysis/raw_spectrum_to_levels.py`](analysis/raw_spectrum_to_levels.py) carries out every step below. It needs only Python and NumPy.
+The [CSV](data/hg-cd-ar-lamp-spectrum.csv) exactly reproduces the preserved upstream FITS columns after rounding. Its wavelength axis uses known reference lines. Four input exposures were continuum-subtracted, aligned, normalized separately and stitched. A value of 10000 is a normalization maximum, not established detector saturation. The old CSV header and older `measured-lines.csv` clipping flags are incorrect; both files remain unchanged as archive records. The [source audit](data/lamp-archive/README.md) documents this correction.
 
----
+No raw detector variance, independent calibration uncertainty or intensity-response curve is supplied. The calculation therefore estimates centres for an illustration; it does not determine formal centroid errors or intrinsic branching strengths.
 
-## The data
+## Reproduce the candidate measurements
 
-> **How it was measured.** Light from mercury, cadmium and argon lamps was passed through the DeVeny spectrograph on the 4.3 m Lowell Discovery Telescope in Arizona and recorded on a CCD camera. The spectrum is distributed as a wavelength-calibrated "arc" spectrum with the PypeIt data-reduction package (file `ldt_deveny_1200_HgCdAr.fits`; BSD licence, see [`data/PypeIt-LICENSE.txt`](data/PypeIt-LICENSE.txt)). Wavelengths are **in vacuum**. The intensity is in arbitrary units, normalized so that the brightest lines reach 10 000; four lines are clipped at that value.
+From the repository root, using Python and NumPy:
 
-![The raw lamp spectrum](figures/lamp-spectrum-raw.svg)
+```sh
+python3 atomic-molecular-physics/analysis/raw_spectrum_to_levels.py --no-plot --output-dir atomic-molecular-physics/data/lamp-analysis
+```
 
-*Figure E.1. The raw spectrum, 318–734 nm, on a logarithmic intensity scale. Measured data. The coloured ticks mark the lines found in Step 1.*
+This writes the current [candidate table](data/lamp-analysis/candidate-lines.csv) and [summary](data/lamp-analysis/analysis-summary.json). It finds 38 local-max candidates at the declared threshold; 31 pass the limited profile guards and seven fail. Thresholding is relative to the processed signal, not a statistical significance test. Other thresholds change the inventory.
 
-This is what an experiment actually produces. Nothing in it says "³P₁" or "J = 2": it is counts against wavelength.
+The fit uses positive core samples in an eleven-sample window. Values at 10000 are included. It rejects insufficient samples, nonnegative curvature, misplaced vertices and widths inconsistent with the window. Remaining background, blending and profile mismatch can still bias an accepted estimate. Only seven reference transitions are compared; this script does not reproduce the older full-list identification table.
 
----
+| Candidate | Estimated centre (Å, vacuum) | Reference input (Å, vacuum) |
+|---|---:|---:|
+| Cd ground-state anchor | 3261.9638 | 3261.9951 |
+| Cd branch to ³P₀ | 4679.4463 | 4679.4587 |
+| Cd branch to ³P₁ | 4801.2394 | 4801.2540 |
+| Cd branch to ³P₂ | 5087.2581 | 5087.2393 |
+| Hg branch to ³P₀ | 4047.7095 | 4047.7080 |
+| Hg branch to ³P₁ | 4359.5965 | 4359.5600 |
+| Hg branch to ³P₂ | 5462.2916 | 5462.2680 |
 
-## Step 1 · Find the lines
+Digits are retained to reproduce the arithmetic, not to claim those uncertainties. The named lower states and shared upper states come from reference assignments. Agreement with references already used in the wavelength scale is not independent validation.
 
-The spectrum has 7205 points. A line is a local maximum that stands clearly above the background. Taking every peak higher than 0.2% of the brightest line gives **38 lines**.
+## Carry out the Ritz sums
 
-A low-resolution lamp spectrum like this one has a few dozen lines. A high-resolution spectrum of an iron arc, or of the Sun, has thousands; the method is the same.
+Convert each estimated vacuum wavelength using
 
-## Step 2 · Measure each line's position
+```math
+\tilde\nu\ [\mathrm{cm}^{-1}]=\frac{10^8}{\lambda\ [\text{Å}]}.
+```
 
-Fit a Gaussian to the top of each line (a parabola through the logarithm of the intensity), leaving out clipped points. This gives:
+If the three visible Cd branches share 5s6s ³S₁, their differences give
 
-- **The centre,** to a few hundredths of an ångström for a strong line.
-- **The width.** Every line has a full width at half maximum of 1.6 to 2.6 Å. This is the **resolution of the spectrograph**, not a property of the atoms. The Doppler width of a cadmium line at 400 K is only 0.007 Å, and its natural width about 10⁻⁴ Å (Lecture 10). The resolving power near 480 nm is λ/Δλ ≈ 2800.
+```math
+\begin{aligned}
+(E_{P_1}-E_{P_0})/(hc)&\simeq542.095\ \mathrm{cm}^{-1},\\
+(E_{P_2}-E_{P_1})/(hc)&\simeq1171.001\ \mathrm{cm}^{-1}.
+\end{aligned}
+```
 
-## Step 3 · Identify the lines
+The proposed 326.2 nm transition anchors ³P₁ to the ground state. Add the branch to ³P₁ to obtain the common upper energy, then subtract the other branches:
 
-Compare each centre with tables of known wavelengths. Here the tables are the NIST lists of mercury, cadmium and argon lines, compiled in PypeIt.
+| Cd level | Reconstructed energy / $`hc`$ (cm⁻¹) |
+|---|---:|
+| 5s5p ³P₀ | 30114.3 |
+| 5s5p ³P₁ | 30656.4 |
+| 5s5p ³P₂ | 31827.4 |
+| 5s6s ³S₁ | 51484.3 |
 
-- **29 of the 38 lines** match a known line within 1.5 Å: 9 of mercury, 8 of cadmium and 12 of argon.
-- **9 lines are not identified.** They are blends, weak lines from impurities or ions, or instrumental effects. Real spectra always leave some lines unexplained.
+These are conditional values without a formal uncertainty budget. Four transitions connect five levels: after fixing the ground energy, the graph has no independent cycle. Add a new upper state with two branches to existing levels; one branch fixes the new energy and the other tests a prediction.
 
-The full list is in [`data/measured-lines.csv`](data/measured-lines.csv). We need seven of the lines:
+The analogous Hg intervals are about 1767.428 and 4630.568 cm⁻¹. The 253.7 nm ground-state connection lies outside the recorded range, so this example supplies relative intervals only. Ratios of consecutive intervals are approximately 2.16 for Cd and 2.62 for Hg, compared with 2 in the simple LS interval model. Deviations motivate further coupling and measurement tests rather than uniquely identifying their cause.
 
-| Atom | Measured centre (nm, vacuum) | Reference (nm) | Wavenumber (cm⁻¹) |
-|---|---|---|---|
-| Cd | 326.196 | 326.200 | 30 656.38 |
-| Cd | 467.945 | 467.946 | 21 370.05 |
-| Cd | 480.124 | 480.125 | 20 827.96 |
-| Cd | 508.726 | 508.724 | 19 656.95 |
-| Hg | 404.771 | 404.771 | 24 705.32 |
-| Hg | 435.960 | 435.956 | 22 937.89 |
-| Hg | 546.229 | 546.227 | 18 307.33 |
+## What the signal cannot establish here
 
-The wavenumber of a line is simply 1/λ in vacuum: $`\tilde\nu\ [\text{cm}^{-1}] = 10^8/\lambda\ [\text{Å}]`$.
+The three Cd peak heights are not calibrated integrated photon counts. Even a pure-LS angular-strength ratio 1:3:5 would require frequency, population, collection and detector factors before comparison with a measurement. Separate normalization prevents a common physical intensity comparison across archive snippets. This calculation does not attribute a discrepancy uniquely to detector sensitivity or state mixing.
 
-![The cadmium and mercury triplets](figures/lamp-spectrum-triplets.svg)
+The fitted FWHM near 480 nm is about 1.70 Å, giving an apparent resolving power near 2800 only if an isolated instrumental profile dominates. Widths alone do not establish that condition or the atomic lifetime.
 
-*Figure E.2. The region 400–550 nm on a linear scale. Measured data. The labels give the lower level of each line.*
+## Questions for the next measurement
 
-## Step 4 · Look for patterns: the Ritz principle
+- Which candidate survives an independently recorded single-element control?
+- Which additional branch closes a Ritz cycle without being used to set the fitted energies?
+- How could a field-dependent component pattern distinguish alternative angular-momentum labels?
+- What calibration and retained exposure information would turn a branch-area ratio into a test of transition probabilities?
 
-Three cadmium lines (467.9, 480.1 and 508.7 nm) and three mercury lines (404.8, 436.0 and 546.2 nm) form two **triplets**. In each triplet, all three lines start from the same upper level, (n + 1)s ³S₁, and end on the three levels of the ns np ³P term.
-
-When lines share an upper level, their wavenumber differences are the spacings between their lower levels. These are energy differences that no single line measures:
-
-| | ³P₁ − ³P₀ (cm⁻¹) | ³P₂ − ³P₁ (cm⁻¹) |
-|---|---|---|
-| Cadmium, this spectrum | 542.1 | 1171.0 |
-| Cadmium, NIST | 542.1 | 1170.9 |
-| Mercury, this spectrum | 1767.4 | 4630.6 |
-| Mercury, NIST | 1767.2 | 4630.7 |
-
-Historically, levels were discovered this way. Spectroscopists noticed that the same wavenumber differences turned up again and again between different pairs of lines. Each repeated difference was the spacing between two levels.
-
-## Step 5 · Build the level diagram for cadmium
-
-To place the levels above the ground state we need one line that ends on the ground state. Cadmium's 326.2 nm line does. Then each level follows from the one before:
-
-1. 326.2 nm: ³P₁ → ground state, so ³P₁ = 30 656.38 cm⁻¹.
-2. 480.1 nm: ³S₁ → ³P₁, so ³S₁ = 30 656.38 + 20 827.96 = 51 484.34 cm⁻¹.
-3. 467.9 nm: ³S₁ → ³P₀, so ³P₀ = 51 484.34 − 21 370.05 = 30 114.29 cm⁻¹.
-4. 508.7 nm: ³S₁ → ³P₂, so ³P₂ = 51 484.34 − 19 656.95 = 31 827.39 cm⁻¹.
-
-| Level | From this spectrum (cm⁻¹) | NIST (cm⁻¹) |
-|---|---|---|
-| 5s5p ³P₀ | 30 114.3 | 30 114.0 |
-| 5s5p ³P₁ | 30 656.4 | 30 656.1 |
-| 5s5p ³P₂ | 31 827.4 | 31 827.0 |
-| 5s6s ³S₁ | 51 484.3 | 51 484.0 |
-
-Four measured lines give four energy levels, each within 0.4 cm⁻¹ of the accepted value.
-
-![Cadmium energy levels built from four lines](figures/cadmium-levels-from-lines.svg)
-
-*Figure E.3. Cadmium levels built from the four measured lines. Schematic: the ³P levels are spread out for clarity.*
-
-For mercury the corresponding line to the ground state is at 253.7 nm, outside this spectrum. Its glass lamp envelope and the spectrograph do not pass that ultraviolet light, so we get mercury's ³P spacings but not its position above the ground state.
-
-## Step 6 · Label the levels
-
-The numbers alone do not say which level is ³P₀, ³P₁ or ³P₂. Three pieces of evidence decide it.
-
-- **Which level reaches the ground state.** The ground state has J = 0. A level with J = 0 cannot decay to it (J = 0 → 0 is forbidden), and neither can one with J = 2 (ΔJ = 2 is forbidden). Only J = 1 can. Of the three levels, only the middle one has a line to the ground state (326.2 nm), so it is J = 1.
-- **The Landé interval rule.** For J = 0, 1, 2 the intervals should be in the ratio 2 : 1. For cadmium, 1171.0/542.1 = **2.16**, close to 2.
-- **Intensities.** In LS coupling, the three lines from ³S₁ to ³P₀, ³P₁ and ³P₂ have strengths in the ratio 1 : 3 : 5, set by the 2J + 1 states of each lower level. The measured heights are 1 : 2.44 : 2.84. Including the ν³ dependence of the emission rate gives an expected 1 : 2.78 : 3.89. The remaining shortfall in the redder lines is plausibly the instrument's sensitivity, which we have not corrected for.
-
-**Mercury breaks the interval rule:** 4630.6/1767.4 = **2.62**. Mercury is heavy, so spin–orbit coupling is strong and the atom is in intermediate coupling (Lecture 9). The same mixing makes its 253.7 nm singlet–triplet line strong. Together with zinc's NIST value, these spectra show the same trend down group 12 as Figure 9.1 shows from carbon to lead:
-
-| Atom | Configuration | Interval ratio |
-|---|---|---|
-| Zn | 4s4p ³P | 2.05 (NIST) |
-| Cd | 5s5p ³P | 2.16 (this spectrum) |
-| Hg | 6s6p ³P | 2.62 (this spectrum) |
-
----
-
-## What a professional analysis adds
-
-- **Much higher resolution.** Fourier-transform spectrometers reach λ/Δλ ≈ 10⁶, about a thousand times better than here, and separate blended lines.
-- **An independent wavelength standard.** The wavelength scale of this archived spectrum was itself calibrated by fitting known lamp lines, so it cannot test the reference wavelengths independently. It demonstrates the method; it is not a new measurement. Real level work calibrates against an interferometer or a frequency comb.
-- **Thousands of lines and many configurations.** A least-squares program (for example NIST's LOPT) adjusts all the levels at once to fit all the lines.
-- **Zeeman patterns** (Unit 4) to confirm J and the g-factor of each level.
-
-## Exercises
-
-**E.1** Mercury's yellow pair, measured at 577.13 and 579.23 nm (vacuum), comes from the levels 6s6d ¹D₂ and 6s6d ³D₂, and both lines end on 6s6p ¹P₁. What does the difference of their wavenumbers measure, and how big is it?
-
-**E.2** Pick one of the nine unidentified lines in [`data/measured-lines.csv`](data/measured-lines.csv) and suggest what it might be.
-
-**E.3** Use the line widths to estimate the resolving power of the spectrograph at 326 nm and at 700 nm.
-
-**E.4** Change the detection threshold in the script from 0.2% to 1% and to 0.05%. How does the number of lines change, and why?
-
-### Answers
-
-**E.1** The two lines share their lower level, so the difference is the spacing between the two upper levels, ¹D₂ and ³D₂: about 62.8 cm⁻¹.
-
-**E.2** Open-ended. Check the wavelength against the NIST Atomic Spectra Database, including ions such as Ar II and common impurities.
-
-**E.3** About 3261.96/1.57 ≈ 2100 at 326 nm, and about 2900–3000 near 700 nm (widths of 2.3–2.4 Å).
-
-**E.4** Fewer lines at 1% (only the bright ones) and more at 0.05%, where noise peaks and the faint wings of strong lines start to be counted as lines. Choosing the threshold is a real judgement in data analysis.
+The archived input, legacy line table and older labelled figures are retained for traceability. Use the corrected Unit 8 figures and current diagnostics for the investigation.

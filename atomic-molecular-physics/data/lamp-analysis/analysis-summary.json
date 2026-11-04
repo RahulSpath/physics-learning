@@ -1,0 +1,195 @@
+{
+  "input": {
+    "path": "hg-cd-ar-lamp-spectrum.csv",
+    "sha256": "1f9652a2543db0af05a599ff9336a57cc8aaffd50b1d94e65ce2c3212111d99b",
+    "samples": 7205,
+    "wavelength_units": "vacuum angstrom",
+    "signal_units": "independently normalized archive segments",
+    "wavelength_range": [
+      3175.8795,
+      7340.6708
+    ],
+    "median_sample_spacing_angstrom": 0.581000000000131
+  },
+  "method": {
+    "relative_threshold": 0.002,
+    "half_window_samples": 5,
+    "core_fraction": 0.15,
+    "reference_tolerance_angstrom": 1.5,
+    "formal_centroid_uncertainties": null,
+    "notes": [
+      "10000 maxima arise from normalization, not established saturation",
+      "A core estimate is not a validated single-line profile",
+      "Only seven selected references are considered; legacy full-list IDs are not reproduced",
+      "No independent wavelength calibration or intensity-response calibration is supplied"
+    ]
+  },
+  "counts": {
+    "local_maximum_candidates": 38,
+    "core_estimates": 31,
+    "invalid_core_fits": 7,
+    "selected_reference_candidates": 7,
+    "normalization_maxima": 4
+  },
+  "selected_candidates": [
+    {
+      "sample_peak_index": 149,
+      "sample_wavelength_angstrom": 3261.8735,
+      "peak_height": 5160.491,
+      "centre_vacuum_angstrom": 3261.9637779961968,
+      "fwhm_angstrom": 1.5654061723001242,
+      "fit_status": "core_estimate",
+      "flags": [],
+      "core_samples": 4,
+      "log_rms": 0.020552333568659816,
+      "unconstrained_vertex_angstrom": 3261.9637779961968,
+      "unconstrained_fwhm_angstrom": 1.5654061723001242,
+      "reference_wavelength_angstrom": 3261.9951,
+      "species": "Cd",
+      "upper_level": "5s5p 3P1",
+      "lower_level": "5s2 1S0",
+      "offset_from_reference_angstrom": -0.03132200380332506,
+      "assignment_status": "reference_candidate_not_confirmed"
+    },
+    {
+      "sample_peak_index": 1508,
+      "sample_wavelength_angstrom": 4047.5683,
+      "peak_height": 10000.0,
+      "centre_vacuum_angstrom": 4047.709504544297,
+      "fwhm_angstrom": 1.6357417042398577,
+      "fit_status": "core_estimate",
+      "flags": [
+        "normalization_maximum"
+      ],
+      "core_samples": 5,
+      "log_rms": 0.028157596893952783,
+      "unconstrained_vertex_angstrom": 4047.709504544297,
+      "unconstrained_fwhm_angstrom": 1.6357417042398577,
+      "reference_wavelength_angstrom": 4047.708,
+      "species": "Hg",
+      "upper_level": "6s7s 3S1",
+      "lower_level": "6s6p 3P0",
+      "offset_from_reference_angstrom": 0.0015045442969494616,
+      "assignment_status": "reference_candidate_not_confirmed"
+    },
+    {
+      "sample_peak_index": 2046,
+      "sample_wavelength_angstrom": 4359.3409,
+      "peak_height": 10000.0,
+      "centre_vacuum_angstrom": 4359.59654778535,
+      "fwhm_angstrom": 1.71425231456065,
+      "fit_status": "core_estimate",
+      "flags": [
+        "normalization_maximum"
+      ],
+      "core_samples": 4,
+      "log_rms": 0.00932418043105301,
+      "unconstrained_vertex_angstrom": 4359.59654778535,
+      "unconstrained_fwhm_angstrom": 1.71425231456065,
+      "reference_wavelength_angstrom": 4359.56,
+      "species": "Hg",
+      "upper_level": "6s7s 3S1",
+      "lower_level": "6s6p 3P1",
+      "offset_from_reference_angstrom": 0.03654778534928482,
+      "assignment_status": "reference_candidate_not_confirmed"
+    },
+    {
+      "sample_peak_index": 2597,
+      "sample_wavelength_angstrom": 4679.1992,
+      "peak_height": 1037.791,
+      "centre_vacuum_angstrom": 4679.44629362896,
+      "fwhm_angstrom": 1.6866135591287494,
+      "fit_status": "core_estimate",
+      "flags": [],
+      "core_samples": 4,
+      "log_rms": 0.008413403853742882,
+      "unconstrained_vertex_angstrom": 4679.44629362896,
+      "unconstrained_fwhm_angstrom": 1.6866135591287494,
+      "reference_wavelength_angstrom": 4679.4587,
+      "species": "Cd",
+      "upper_level": "5s6s 3S1",
+      "lower_level": "5s5p 3P0",
+      "offset_from_reference_angstrom": -0.012406371040015074,
+      "assignment_status": "reference_candidate_not_confirmed"
+    },
+    {
+      "sample_peak_index": 2807,
+      "sample_wavelength_angstrom": 4801.3863,
+      "peak_height": 2528.467,
+      "centre_vacuum_angstrom": 4801.239444756309,
+      "fwhm_angstrom": 1.700462673490495,
+      "fit_status": "core_estimate",
+      "flags": [],
+      "core_samples": 5,
+      "log_rms": 0.007553121779559745,
+      "unconstrained_vertex_angstrom": 4801.239444756309,
+      "unconstrained_fwhm_angstrom": 1.700462673490495,
+      "reference_wavelength_angstrom": 4801.254,
+      "species": "Cd",
+      "upper_level": "5s6s 3S1",
+      "lower_level": "5s5p 3P1",
+      "offset_from_reference_angstrom": -0.01455524369066552,
+      "assignment_status": "reference_candidate_not_confirmed"
+    },
+    {
+      "sample_peak_index": 3298,
+      "sample_wavelength_angstrom": 5087.4172,
+      "peak_height": 2943.319,
+      "centre_vacuum_angstrom": 5087.258131321191,
+      "fwhm_angstrom": 1.7044909899771923,
+      "fit_status": "core_estimate",
+      "flags": [],
+      "core_samples": 5,
+      "log_rms": 0.030914471584051,
+      "unconstrained_vertex_angstrom": 5087.258131321191,
+      "unconstrained_fwhm_angstrom": 1.7044909899771923,
+      "reference_wavelength_angstrom": 5087.2393,
+      "species": "Cd",
+      "upper_level": "5s6s 3S1",
+      "lower_level": "5s5p 3P2",
+      "offset_from_reference_angstrom": 0.01883132119110087,
+      "assignment_status": "reference_candidate_not_confirmed"
+    },
+    {
+      "sample_peak_index": 3945,
+      "sample_wavelength_angstrom": 5461.9689,
+      "peak_height": 10000.0,
+      "centre_vacuum_angstrom": 5462.2915874328055,
+      "fwhm_angstrom": 1.9525951456751984,
+      "fit_status": "core_estimate",
+      "flags": [
+        "normalization_maximum"
+      ],
+      "core_samples": 6,
+      "log_rms": 0.036832259351994315,
+      "unconstrained_vertex_angstrom": 5462.2915874328055,
+      "unconstrained_fwhm_angstrom": 1.9525951456751984,
+      "reference_wavelength_angstrom": 5462.268,
+      "species": "Hg",
+      "upper_level": "6s7s 3S1",
+      "lower_level": "6s6p 3P2",
+      "offset_from_reference_angstrom": 0.0235874328054706,
+      "assignment_status": "reference_candidate_not_confirmed"
+    }
+  ],
+  "ritz_demo": {
+    "status": "conditional_on_imported_assignments_and_archive_calibration",
+    "independent_cycles": 0,
+    "cadmium_intervals_cm_inverse": {
+      "P1_minus_P0": 542.0945416731374,
+      "P2_minus_P1": 1171.0010054125742
+    },
+    "mercury_intervals_cm_inverse": {
+      "P1_minus_P0": 1767.427860453743,
+      "P2_minus_P1": 4630.567731889219
+    },
+    "cadmium_levels_cm_inverse": {
+      "5s5p 3P0": 30114.285113599843,
+      "5s5p 3P1": 30656.37965527298,
+      "5s5p 3P2": 31827.380660685554,
+      "5s6s 3S1": 51484.33484280593
+    },
+    "cadmium_interval_ratio": 2.1601416642166518,
+    "mercury_interval_ratio": 2.619947232641471
+  }
+}

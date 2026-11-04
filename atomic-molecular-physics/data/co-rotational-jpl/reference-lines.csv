@@ -1,0 +1,4 @@
+isotopologue,vibrational_level,j_upper,j_lower,frequency_mhz,listed_uncertainty_mhz,signed_catalogue_tag,source_row
+12C16O,0,1,0,115271.2018,0.0005,-28001,1
+12C16O,0,2,1,230538.0000,0.0005,-28001,2
+12C16O,0,3,2,345795.9899,0.0005,-28001,3

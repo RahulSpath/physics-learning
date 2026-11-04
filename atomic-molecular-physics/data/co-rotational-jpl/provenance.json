@@ -1,0 +1,53 @@
+{
+  "description": "Three tabulated experimental rotational transition centres; not detector traces",
+  "isotopologue": "12C16O",
+  "electronic_state": "X1Sigma+",
+  "vibrational_level": 0,
+  "catalogue": "JPL Molecular Spectroscopy Catalogue",
+  "species_tag": 28001,
+  "version": 4,
+  "catalogue_date": "1997-08",
+  "retrieved_date": "2026-11-04",
+  "source_url": "https://spec.jpl.nasa.gov/ftp/pub/catalog/c028001.cat",
+  "entry_documentation_url": "https://spec.jpl.nasa.gov/ftp/pub/catalog/doc/d028001.cat",
+  "negative_tag_documentation_url": "https://cdms.astro.uni-koeln.de/classic/predictions/pickett/beispiele/CO/",
+  "negative_tag_meaning": "Experimental line inserted into a catalogue containing predictions",
+  "measurement_reference": {
+    "authors": [
+      "G. Winnewisser",
+      "S. P. Belov",
+      "Th. Klaus",
+      "R. Schieder"
+    ],
+    "title": "Sub-Doppler Measurements on the Rotational Transitions of Carbon Monoxide",
+    "journal": "Journal of Molecular Spectroscopy",
+    "volume": 184,
+    "pages": "468-472",
+    "year": 1997,
+    "doi": "10.1006/jmsp.1997.7341"
+  },
+  "frequency_unit": "MHz",
+  "uncertainty_field": "Listed catalogue frequency uncertainty in MHz; no independent confidence interpretation or covariance supplied here",
+  "source_rows_1_based": [
+    1,
+    2,
+    3
+  ],
+  "source_rows_browser_text": [
+    "115271.2018   .0005 -5.0105 2     .0000  3 -28001 101 1           0",
+    "  230538.0000   .0005 -4.1197 2    3.8450  5 -28001 101 2           1",
+    "  345795.9899   .0005 -3.6118 2   11.5350  7 -28001 101 3           2"
+  ],
+  "transcription_notes": "Numeric fields and signed tags transcribed from the primary catalogue browser view. Byte-for-byte upstream whitespace and line endings are not claimed.",
+  "csv_sha256": "082d0fc4768554a35ff834d190027f8745fe70b05083ef5581c8705cd4e8eb8d",
+  "analysis": {
+    "calibration": "B_MHz = frequency_MHz(J=1<-0)/2; uses only first centre",
+    "prediction": "frequency_MHz(J<-J-1) = 2 B_MHz J",
+    "held_out_upper_J": [
+      2,
+      3
+    ],
+    "residual_definition": "experimental frequency minus predicted frequency",
+    "plotted_uncertainties": "Only individual listed catalogue frequency uncertainties. Calibration uncertainty and correlations are not propagated."
+  }
+}

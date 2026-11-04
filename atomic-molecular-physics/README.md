@@ -1,60 +1,47 @@
-# Atomic and Molecular Physics, Data First
+# Atomic and Molecular Physics
 
-Lecture notes for Section VII (Atomic & Molecular Physics) of the CSIR-UGC NET Physical Sciences syllabus.
+A connected, observation-driven course in atomic and molecular physics at MSc level, in development. Its planned scope follows Section VII (Atomic & Molecular Physics) of the CSIR-UGC NET Physical Sciences syllabus.
 
-Every topic starts from real data from a classic experiment found in standard textbooks. The theory is then developed to explain that data. This is also how the subject grew: Balmer fitted the hydrogen lines in 1885, almost 30 years before Bohr explained them.
+We cannot directly see the internal quantum states of an atom or molecule. How do we learn about them through measurements? The course follows this question through a recurring cycle: **observation → provisional model → prediction → proposed experiment → measured result → assessment and next question**. Each experiment enters because we can explain what it would test. Agreement establishes the model's useful range; a discrepancy, a changed system or a different probe can motivate the next investigation. This is a reconstruction of scientific reasoning; historical context is distinguished from the teaching sequence.
 
-**Start with [Lecture 0](lecture-0-spectroscopy-as-response.md).** It sets up the common language for the whole course: a spectrum measures the atom's response function, as in linear-response theory in condensed matter.
+**Start with [Unit 0](unit-0-learning-from-measurements.md).** The [course map](course-map.md) gives each unit's central question, motivating observation, essential equations and connection to the next.
 
-## How each lecture works
-
-1. **Data:** a spectrum, a table of lines or a measured curve. A short **How it is measured** box describes the apparatus, what is recorded and the resolution needed.
-2. **Puzzle:** what the simple theory cannot explain.
-3. **Model:** the theory that explains it.
-4. **Numbers from the data:** constants such as the Rydberg constant, a bond length or a g-factor.
-5. **Test a prediction** against more data.
-6. **In response language:** one or two sentences linking the lecture back to Lecture 0.
-7. **Problems** in CSIR-NET style, with answers.
+The first connected writing pass now spans Units 0–8. Unit 0 is accepted as a first draft and Unit 1 as a provisional draft, with writing to revisit; Units 2–8 remain provisional. Missing measurements and independent tests are visible TODOs. This establishes the course's conceptual progression while leaving reader review, experimental enrichment and further validation to continue. The [progress audit](day-1-audit.md) records the work and remaining gaps.
 
 ## Units
 
-| Unit | Lectures | Syllabus topics | Notes |
+| Unit | Central question | Syllabus topics | Notes |
 |---|---|---|---|
-| 0. What a spectrum measures | 0 | The common language for selection rules, line widths, Einstein coefficients, ESR, NMR and Raman spectra | [Lec 0](lecture-0-spectroscopy-as-response.md) |
-| 1. The hydrogen atom | 1–3 | Quantum states of an electron in an atom | [Unit 1](unit-1-hydrogen.md) |
-| 2. Spin, fine and hyperfine structure | 4–6 | Electron spin; relativistic corrections for the energy levels of hydrogen; hyperfine structure and isotope shift | [Unit 2](unit-2-spin-fine-hyperfine.md) |
-| 3. Many-electron atoms | 7–10 | Spectra of helium and alkali atoms; LS and jj coupling; width of spectral lines | [Unit 3](unit-3-many-electron-atoms.md) |
-| 4. Atoms in fields | 11–13 | Zeeman, Paschen–Back and Stark effects; electron spin resonance; nuclear magnetic resonance and chemical shift | Planned |
-| 5. Molecules | 14–17 | Born–Oppenheimer approximation; electronic, rotational, vibrational and Raman spectra of diatomic molecules; selection rules; Franck–Condon principle | Planned |
-| 6. Lasers | 18–20 | Spontaneous and stimulated emission; Einstein A and B coefficients; optical pumping, population inversion, rate equations; modes of resonators and coherence length | Planned |
+| 0. How do we learn about the microscopic world? | How do measurements reveal microscopic properties? | Preparation for the whole section | [Unit 0](unit-0-learning-from-measurements.md) |
+| 1. The hydrogen atom | What explains discrete levels and spectral series? | Quantum states of an electron in an atom | [Unit 1](unit-1-hydrogen.md), accepted provisional first draft |
+| 2. Spin and atomic fine structure | Why do levels and lines split? | Electron spin; relativistic corrections for the energy levels of hydrogen; hyperfine structure and isotope shift | [Unit 2](unit-2-spin-fine-hyperfine.md), provisional first connected draft |
+| 3. Many-electron atoms | How do interacting electrons change atomic spectra? | Spectra of helium and alkali atoms; LS and jj coupling | [Unit 3](unit-3-many-electron-atoms.md), provisional first connected draft |
+| 4. Atoms in external fields | How do fields shift, split and connect states? | Zeeman, Paschen–Back and Stark effects; electron spin resonance; nuclear magnetic resonance and chemical shift | [Unit 4](unit-4-atoms-in-external-fields.md), provisional first connected draft |
+| 5. Light–matter interaction | What determines strengths, widths and laser oscillation? | Width of spectral lines; spontaneous and stimulated emission; Einstein A and B coefficients; optical pumping, population inversion, rate equations; modes of resonators and coherence length | [Unit 5](unit-5-light-matter-interaction.md), provisional first connected draft. Optional reading: [spectroscopy as linear response](reading-spectroscopy-as-response.md) |
+| 6. Molecules and nuclear motion | How do molecules bind, rotate and vibrate? | Born–Oppenheimer approximation; the levels behind the electronic, rotational and vibrational spectra of diatomic molecules | [Unit 6](unit-6-molecules-and-nuclear-motion.md), provisional first connected draft |
+| 7. Molecular spectroscopy | How do probes reveal molecular motion and electronic structure? | Electronic, rotational, vibrational and Raman spectra of diatomic molecules; selection rules; Franck–Condon principle | [Unit 7](unit-7-molecular-spectroscopy.md), provisional first connected draft |
+| 8. Putting the ideas together | What can a complex spectrum establish? | Synthesis of state assignments, coupling, intensities, widths and measurement inference | [Unit 8](unit-8-putting-the-ideas-together.md), provisional first connected draft |
 
-## Worked example: from a raw spectrum to energy levels
+## How the units are written
 
-Experiments measure spectra, not level diagrams. [This worked example](worked-example-raw-spectrum.md) takes a real mercury–cadmium–argon lamp spectrum and goes step by step to the energy levels of cadmium and mercury: find the lines, measure them, identify them, apply the Ritz principle, and label the levels. The data are in [`data/`](data/) and a Python script that repeats the whole analysis is in [`analysis/`](analysis/).
+Version 1 aims to make the physics and its connections complete before the details are polished. A unit is complete for Version 1 when a reader can answer:
 
-## Lectures
+1. What physical phenomenon motivated this topic?
+2. What new theoretical idea was necessary?
+3. What can we calculate or predict with it?
+4. What does it fail to explain, and what comes next?
 
-0. What a spectrum measures: spectroscopy as linear response
-1. The hydrogen spectrum and the Rydberg formula
-2. Energy levels are real: Franck–Hertz, Bohr and the reduced mass
-3. Quantum states: the Schrödinger hydrogen atom and selection rules
-4. Electron spin: Stern–Gerlach and the sodium doublet
-5. Fine structure of hydrogen: relativistic corrections and the Dirac formula
-6. Hyperfine structure (the 21 cm line) and isotope shifts
-7. Alkali spectra and the quantum defect
-8. Helium: exchange, singlets and triplets
-9. LS and jj coupling
-10. Widths of spectral lines
-11. Zeeman and Paschen–Back effects
-12. The Stark effect
-13. Magnetic resonance: ESR and NMR
-14. The Born–Oppenheimer approximation and rotational spectra
-15. Vibrational spectra
-16. Raman spectra
-17. Electronic spectra and the Franck–Condon principle
-18. Einstein A and B coefficients
-19. Population inversion, rate equations and optical pumping
-20. Resonator modes and coherence length
+Real measurements are used wherever good data exist, but a missing dataset does not hold up the physical argument.
+
+New experiments should enter because an earlier observation leaves a specific question unresolved. Explain what to vary, what to record and what outcomes would test the proposed explanation before interpreting the result. Where a first-pass measurement or comparison is missing, place a visible **TODO** box at that point, specifying what is needed. Original research papers can be linked where they clarify motivation, experimental difficulties or historical development. They supplement the self-contained physics; an external manual or slide set does not supply a missing argument or detector record. Keep source attribution in the bibliography and data provenance.
+
+Units 1–8 develop connected physical arguments rather than a compulsory lecture template. Measured hydrogen excitation, published CO line centres, a processed CO infrared record and an empirical calibration template supply examples. Their provenance distinguishes recorded signals, tabulated results, processing and model figures. The [optional response reading](reading-spectroscopy-as-response.md) belongs after Unit 5 and is not required to begin the course.
+
+## Numerical companion to Unit 8
+
+[Unit 8](unit-8-putting-the-ideas-together.md) proposes single-element controls before interpreting a mixed Hg–Cd–Ar record. Those controls remain TODOs. The available archive is a continuum-subtracted, separately normalized and stitched wavelength-calibration template, with its [source audit](data/lamp-archive/README.md) preserved. Its four maxima at 10000 are normalization maxima, not demonstrated detector saturation.
+
+The [numerical companion](worked-example-raw-spectrum.md) and [analysis](analysis/raw_spectrum_to_levels.py) reproduce guarded candidate measurements and a conditional Ritz reconstruction. The [current diagnostics](data/lamp-analysis/README.md) do not claim formal centroid errors or independent validation against the same references used for calibration. The older full-list line table is retained as a legacy record rather than treated as a reproduced identification result.
 
 ## Experiments for each syllabus topic
 
@@ -64,7 +51,7 @@ Experiments measure spectra, not level diagrams. [This worked example](worked-ex
 | Electron spin | Stern–Gerlach: a silver beam splits in two. The sodium D line is a doublet at 589.0 and 589.6 nm | Spin ½, spin magnetic moment, spin–orbit coupling |
 | Alkali spectra | Sodium's sharp, principal and diffuse series, converging to the ionization energy of 5.14 eV | Quantum defect, $`E = -13.6\ \text{eV}/(n - \delta_l)^2`$, with $`\delta_s = 1.35`$, $`\delta_p = 0.86`$, $`\delta_d \approx 0`$; core penetration |
 | Helium spectrum | Two separate line systems (singlet and triplet). The 1s2s levels at 19.82 eV (triplet) and 20.62 eV (singlet). Ground state at −79.0 eV | Pauli principle and exchange energy. Perturbation theory gives −74.8 eV; the variational method gives −77.5 eV |
-| Relativistic corrections for hydrogen | Hα is a close doublet; the n = 2 fine structure is 0.365 cm⁻¹ | Relativistic kinetic energy, spin–orbit and Darwin terms; the Dirac energy formula |
+| Relativistic corrections for hydrogen | Resolved 2s → 6p excitation resonances about 405 MHz apart | Relativistic kinetic energy, spin–orbit and Darwin terms; leading fine-structure prediction about 406 MHz |
 | Hyperfine structure and isotope shift | Hydrogen's 21 cm line at 1420.4 MHz. Deuterium Hα at 656.10 nm against 656.28 nm for hydrogen | Coupling to the nuclear magnetic moment ($`F = I + J`$); reduced-mass correction |
 | Width of spectral lines | Sodium D line: natural width about 10 MHz (lifetime 16 ns); Doppler width about 1.3 GHz at room temperature | Lifetime (Lorentzian), Doppler (Gaussian) and pressure broadening |
 | LS and jj coupling | Calcium 4s4p ³P levels 52 and 106 cm⁻¹ apart (ratio 2). The np² level pattern changes from LS in carbon to jj in lead | Term symbols, Hund's rules, Landé interval rule, the jj limit |
@@ -72,14 +59,14 @@ Experiments measure spectra, not level diagrams. [This worked example](worked-ex
 | Stark effect | Hydrogen Balmer lines split in proportion to the electric field; alkali lines shift as its square | Degenerate perturbation theory ($`\pm 3ea_0F`$ for n = 2); polarizability |
 | Electron spin resonance | DPPH absorbs at g = 2.0036 (9.5 GHz at 0.34 T). Mn²⁺ gives six lines | $`h\nu = g\mu_B B`$; hyperfine splitting into 2I + 1 lines |
 | NMR and chemical shift | The 1951 proton spectrum of ethanol: three peaks with areas 3 : 2 : 1 | Larmor precession (42.58 MHz/T), shielding, chemical shift in ppm |
-| Born–Oppenheimer approximation | Vibrational frequencies of H₂, HD and D₂: 4401, 3813 and 3116 cm⁻¹; H₂/D₂ = 1.413 ≈ √2 | Electronic and nuclear motion separate; all isotopes share one potential curve |
-| Rotational spectra | CO microwave lines every 3.84 cm⁻¹, the first at 115.3 GHz | Rigid rotor, ΔJ = ±1, bond length 1.13 Å, centrifugal distortion |
+| Born–Oppenheimer approximation | CO isotope comparisons; harmonic constants distinguished from fundamental intervals | Approximately shared electronic potential; rotational and harmonic vibrational scales vary as $`\mu_{\mathrm{red}}^{-1}`$ and $`\mu_{\mathrm{red}}^{-1/2}`$ |
+| Rotational spectra | Published CO line centres near 115.271, 230.538 and 345.796 GHz | Rigid-rotor prediction and its residuals; effective bond length near 1.13 Å; centrifugal distortion |
 | Vibrational spectra | HCl infrared band at 2886 cm⁻¹: P and R branches, no Q branch, doublets from ³⁵Cl and ³⁷Cl, overtone at 5668 cm⁻¹ | Harmonic oscillator, then the Morse potential; anharmonicity; vibration–rotation coupling |
-| Raman spectra | N₂ rotational Raman lines every 8 cm⁻¹, with intensities alternating 2 : 1. CCl₄ lines at 218, 314, 459 and 762/790 cm⁻¹ | Polarizability, ΔJ = 0, ±2, nuclear-spin statistics, mutual exclusion (CO₂) |
-| Electronic spectra and Franck–Condon principle | I₂ visible absorption bands, converging near 499 nm | Franck–Condon factors; Birge–Sponer extrapolation to the dissociation energy |
+| Raman spectra | Nonpolar molecules can show shifted scattering despite absent ordinary dipole absorption; Stokes/anti-Stokes and polarization comparisons | Polarizability; rotational ΔJ = ±2; rovibrational ΔJ = 0, ±2. Measured strengths also depend on populations, spin statistics and detection |
+| Electronic spectra and Franck–Condon principle | Electronic bands contain vibrational progressions; calibrated band records remain a TODO | Electronic transition moments and Franck–Condon overlaps; corrected band strengths test nuclear-state assignments and potential displacement |
 | Einstein A and B coefficients | Sodium 3p lifetime of 16 ns, so A = 6.2 × 10⁷ s⁻¹ | Spontaneous and stimulated emission; $`A/B \propto \nu^3`$ |
 | Optical pumping, population inversion, rate equations | He–Ne laser: helium's 2¹S level (20.62 eV) matches a neon level (20.66 eV). A laser diode's light output jumps at a threshold current. Rubidium optical pumping | Three- and four-level systems, rate equations and threshold, optical pumping |
-| Resonator modes and coherence length | A 30 cm He–Ne cavity has modes 500 MHz apart. Michelson interferometer with a sodium lamp: the fringes fade every 0.29 mm of mirror travel | Longitudinal and transverse modes; coherence length ≈ λ²/Δλ |
+| Resonator modes and coherence length | A 30 cm He–Ne cavity has modes 500 MHz apart. Michelson interferometer with a sodium lamp: successive visibility minima are 0.29 mm apart in mirror travel, from beating between D1 and D2 | Longitudinal and transverse modes; doublet beat spacing λ²/(2Δλ) in mirror travel; coherence length ≈ λ²/δλ, set by each line's own width δλ |
 
 ## Where the data comes from
 
