@@ -1,0 +1,56 @@
+{
+  "upstream_repository": "https://github.com/pypeit/PypeIt",
+  "inspected_release": "1.13.0",
+  "upstream_template_path": "pypeit/data/arc_lines/reid_arxiv/ldt_deveny_1200_HgCdAr.fits",
+  "instrument": "LDT/DeVeny, DV9 1200 g/mm",
+  "preserved_upstream_files": [
+    {
+      "file": "original-template.fits",
+      "sha256": "95f54628fd639b9d815f6052aafbdb224728e72191523b8e6e6302578626d3f8"
+    },
+    {
+      "file": "source-templ_ldt_deveny.py",
+      "sha256": "95b363cdf7d108bdc255c06a6ee3645e49abd3d5df6676be697b860a6e42d21c"
+    },
+    {
+      "file": "source-template-builder.py",
+      "sha256": "bd49595931ce655d5fc376b3b5f634745a9253db1d347b08f4672e0b6b93ec77"
+    }
+  ],
+  "csv_file": "../hg-cd-ar-lamp-spectrum.csv",
+  "csv_sha256": "1f9652a2543db0af05a599ff9336a57cc8aaffd50b1d94e65ce2c3212111d99b",
+  "csv_conversion_verified": {
+    "samples": 7205,
+    "wave_column": "wave rounded to 4 decimal places in vacuum angstrom",
+    "signal_column": "flux rounded to 3 decimal places",
+    "match": "all values equal after stated rounding"
+  },
+  "processing_verified_in_source": {
+    "creation_function": "ldt_deveny_1200",
+    "input_files": [
+      "MasterWaveCalib_H_DV9_3800.fits",
+      "MasterWaveCalib_I_DV9_4800.fits",
+      "MasterWaveCalib_J_DV9_5800.fits",
+      "MasterWaveCalib_K_DV9_6800.fits"
+    ],
+    "nominal_stitch_cuts_angstrom": [
+      4300,
+      5300,
+      6300
+    ],
+    "subtract_conti": true,
+    "normalize": true,
+    "shift_wave": true,
+    "normalization": "each input snippet scaled to maximum 10000"
+  },
+  "legacy_claim_correction": "The CSV header and measured-lines.csv call maxima clipped; upstream construction instead establishes normalization maxima. This is not evidence of detector saturation. Legacy files are preserved unchanged.",
+  "not_supplied": [
+    "raw detector frames and variances",
+    "independent calibration residuals and their covariance",
+    "absolute or relative intensity-response calibration",
+    "original segment normalization factors",
+    "separate single-element spectra"
+  ],
+  "license": "../PypeIt-LICENSE.txt",
+  "processing_source_revision": "Exact source-script commit not retained; inspected copies and their hashes are preserved."
+}

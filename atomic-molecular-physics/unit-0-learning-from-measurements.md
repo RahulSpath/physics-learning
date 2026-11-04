@@ -2,39 +2,29 @@
 
 > We cannot directly see the internal quantum states of an atom or molecule. How do we learn about them through measurements?
 
-A hydrogen discharge produces light at distinct wavelengths. A sample exposed to microwaves gives a signal at particular magnetic field strengths. Neither instrument displays a quantum state. We need a physical argument connecting the recorded signal to the microscopic system.
-
-This is the starting question of the [course map](course-map.md). It prepares the language needed for atomic and molecular structure and optical processes in CSIR–UGC NET Physical Sciences, Part B, Section VII.
-
-**Conventions.** Visible wavelengths are quoted in air unless marked vacuum. Photon energies and spectroscopic wavenumbers use vacuum wavelengths. Constants follow CODATA 2018.
+An atom can emit light, absorb energy or respond to an applied field. We observe these effects and use them to ask what states the atom can occupy and how it changes between them. The first step is to distinguish the measured effect from the microscopic explanation we propose for it.
 
 ## 0.1 What does an experiment actually give us?
 
-Consider two observations.
+Consider two experiments.
 
-**An optical emission spectrum.** Light from a hydrogen discharge enters a spectrometer. A grating separates wavelengths, and a detector records a signal at each position. After wavelength calibration, the result can be displayed as detector counts against wavelength. Distinct bright lines appear above the background.
+**Light from hydrogen.** Passing an electric current through low-pressure hydrogen makes the gas emit light. A spectrometer separates the light by wavelength, and a detector records a signal at each wavelength. The graph contains narrow peaks, called *emission lines*. Why does the gas emit strongly at these particular wavelengths?
 
-The detector has recorded light. Identifying a line with a transition between two atomic states is a further step, requiring energy conservation and a model of the atom.
+**A microwave resonance.** Microwaves pass through a sample placed in a magnetic field. We keep the microwave frequency fixed and vary the field. Near a particular field value, the sample absorbs more microwave energy and the transmitted signal falls. We record a detector voltage against magnetic field. Why does absorption increase there?
 
-**A resonance signal.** A sample is placed in a magnetic field and exposed to microwaves. At a fixed microwave frequency, varying the field reveals a change in the detected microwave signal near a particular field value. The immediate record is a detector voltage against field. Explaining why the signal changes there requires a model of the sample.
-
-In both cases, distinguish three things: what the instrument recorded, how the apparatus transformed the physical signal, and what microscopic interpretation explains it. Wavelength calibration, background subtraction, detector sensitivity and finite resolution belong to this connection.
-
-A peak is evidence to interpret. Its position, shape and strength become physical information only after we establish what the axes mean and how the measurement was made.
+Both experiments give us a graph relating a detected signal to wavelength or magnetic field. Neither directly supplies a list of microscopic states. To infer those states, we need a model that explains why the signal changes where it does. Let us begin with the light from hydrogen.
 
 ## 0.2 An atomic emission spectrum
 
-Begin with hydrogen, rather than a mixture of elements. Its optical lines give a manageable observation: the light is concentrated near separated wavelengths, and the lines become more closely spaced towards shorter wavelengths.
-
-Figure 0.1 is a real record of this light: the signal of a small spectrometer, recording a hydrogen plasma, against wavelength.
+Figure 0.1 shows a measured hydrogen spectrum. The horizontal axis is wavelength in nanometres; the vertical axis is intensity in arbitrary units, indicating the relative size of the recorded signal. Light is concentrated in a few separated peaks.
 
 ![Measured visible spectrum of a hydrogen plasma](figures/hydrogen-spectrum-usb2000.gif)
 
 *Figure 0.1. Visible spectrum of a hydrogen plasma, measured with an Ocean Optics USB2000 spectrometer. Measured data: Profeta, [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:H_plasma_spectrum.gif), [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).*
 
-The peaks in Figure 0.1 lie at the tabulated wavelengths of Hα, Hβ and Hγ. The tabulated air wavelengths of the visible lines, carried over from the [hydrogen notes](unit-1-hydrogen.md) (sources: Haken & Wolf; NIST Atomic Spectra Database), are:
+The source identifies the three visible peaks as Hα, Hβ and Hγ. The table gives reference wavelengths for these and two weaker lines. These are names for spectral lines; their physical origin remains to be explained.
 
-| Line | Wavelength in air (nm) |
+| Line | Approximate wavelength in air (nm) |
 |---|---:|
 | Hα | 656.28 |
 | Hβ | 486.13 |
@@ -42,112 +32,87 @@ The peaks in Figure 0.1 lie at the tabulated wavelengths of Hα, Hβ and Hγ. Th
 | Hδ | 410.17 |
 | Hε | 397.01 |
 
-The tabulated Hδ and Hε lines do not appear in this trace because the spectrometer is not sensitive enough to distinguish them from the noise. A missing peak can mean a less sensitive instrument, not a missing line.
+The source reports that the weaker lines are indistinguishable from noise in this record. Hδ and Hε are known from other measurements, even though we cannot pick them out here. This gives us a first limit on interpretation: failure to see a peak does not establish that the atom cannot emit at that wavelength.
 
-What does the horizontal axis tell us? **Wavelength** is the spatial period of the light; **frequency** is the number of oscillations per second. Their vacuum relation is
-
-```math
-\nu=\frac{c}{\lambda_{\mathrm{vac}}}.
-```
-
-Frequency does not change when light enters air, but its wavelength does:
+What do the peak positions tell us? **Wavelength** is the spatial period of the light; **frequency** is the number of oscillations per second. Light of frequency $`\nu`$ carries energy in photons, each with energy $`E_\gamma=h\nu`$. In vacuum,
 
 ```math
-\lambda_{\mathrm{vac}}
-=n_{\mathrm{air}}\lambda_{\mathrm{air}}.
+\nu=\frac{c}{\lambda_{\mathrm{vac}}},
+\qquad
+E_\gamma=h\nu=\frac{hc}{\lambda_{\mathrm{vac}}}.
 ```
 
-At visible wavelengths, $`n_{\mathrm{air}}\simeq1.00028`$ is adequate for rough conversions. Precision work requires its dependence on wavelength and air conditions. Consequently, using $`c/\lambda_{\mathrm{air}}`$ directly introduces a systematic error.
+Here $`h`$ is Planck's constant and $`c`$ is the speed of light in vacuum. Shorter wavelengths therefore mean higher photon energies.
 
-Spectroscopists also use **wavenumber**, conventionally the reciprocal of the vacuum wavelength:
+Spectroscopists also use **wavenumber**, the reciprocal of the vacuum wavelength:
 
 ```math
 \tilde{\nu}=\frac{1}{\lambda_{\mathrm{vac}}}
-=\frac{\nu}{c}.
-```
-
-It is often reported in $`\mathrm{cm}^{-1}`$, taking the wavelength in centimetres. The photon relation connects these coordinates to energy:
-
-```math
-E_\gamma=h\nu
-=\frac{hc}{\lambda_{\mathrm{vac}}}
-=hc\tilde{\nu},
+=\frac{\nu}{c},
 \qquad
-hc\simeq1239.84\ \mathrm{eV\,nm}.
+E_\gamma=hc\tilde{\nu}.
 ```
 
-Thus shorter wavelengths correspond to higher photon energies. These equations translate line positions into the energies carried by individual photons. They do not yet explain why hydrogen emits preferentially at those energies.
+Wavenumber is often reported in $`\mathrm{cm}^{-1}`$, using wavelength in centimetres. It is useful because photon energy is directly proportional to it.
+
+The table quotes wavelengths in air, whereas the energy equations use vacuum wavelengths. They are related by $`\lambda_{\mathrm{vac}}=n_{\mathrm{air}}\lambda_{\mathrm{air}}`$, where $`n_{\mathrm{air}}`$ is air's refractive index, approximately $`1.00028`$ in visible light. This small correction matters when comparing precise measurements.
+
+For example, using $`hc\simeq1239.84\ \mathrm{eV\,nm}`$, the Hα wavelength gives a photon energy of about $`1.89\ \mathrm{eV}`$. We can now translate a measured line position into an energy. We still need to explain why hydrogen emits photons with that energy.
 
 ## 0.3 What information does a spectral line contain?
 
-A line raises four different questions.
+A spectrum contains more information than the wavelengths of its peaks. Each line raises four questions.
 
-**Where is the line?** Its centre gives a characteristic photon energy. In a transition model, this constrains an energy difference between states. Motion, external fields and collisions can shift the observed centre, so the conditions and wavelength calibration matter. An apparently single line can also contain unresolved components.
+**Where is the line?** Its position tells us the energy of the emitted photons. What change within the atom releases this energy?
 
-**How strong is it?** Emission depends on how many atoms occupy the emitting state and how readily that state radiates into the transition. The photon energy, collection geometry and detector response also affect the recorded signal. A bright line need not represent the most highly populated state. Comparing background-subtracted integrated line signals is generally more useful than comparing peak heights, but even integrated signals require an intensity-response calibration. Reabsorption within the source can further alter the escaping light.
+**How strong is it?** The amount of emitted light depends on how many atoms occupy the emitting state and how readily they emit. The detector may also respond differently to different wavelengths. Why is one line stronger than another?
 
-**How wide is it?** The full width at half maximum describes the interval over which a line remains above half its maximum, after accounting for background. Finite lifetimes, collisions and a distribution of atomic velocities can all contribute to broadening. The spectrometer adds its own width. A measured width therefore cannot immediately be read as an excited-state lifetime. Unit 5 separates these causes.
+**How wide is it?** A line extends over a small range of wavelengths. Finite lifetimes of emitting states, atomic motion and collisions can all contribute to this spread, and the spectrometer can make it appear wider. Which of these sets the width we observe?
 
-**How does it change under external conditions?** An applied magnetic or electric field may shift or split a line. Temperature changes can redistribute populations and change the spread of atomic velocities that broadens lines; pressure changes can reveal collision effects. Such controlled changes help distinguish competing interpretations. A line’s response to a field can reveal information about the states that its zero-field position alone cannot establish.
+**How does it change under external conditions?** Electric or magnetic fields can shift or split lines; temperature and pressure can change their strengths and widths. What do these changes reveal about the atom and its surroundings?
 
-These questions separate energy structure, transition strengths, populations and dynamics. Explaining a line position is only the first part of explaining a spectrum.
+These questions will require different parts of the theory. Predicting the line positions is the first task; explaining a complete spectrum requires more.
 
 ## 0.4 From observations to a mathematical model
 
-A quantum model begins with a **Hamiltonian** $`H`$, the operator representing the system’s energy. Its stationary states satisfy
-
-```math
-H|n\rangle=E_n|n\rangle.
-```
-
-The state label $`n`$ here is general; it need not be hydrogen’s principal quantum number. The model specifies which degrees of freedom and interactions are included. Solving it gives allowed energies and states from which measurable predictions can be constructed.
-
-For an isolated atom at rest, neglecting photon recoil, emission from an upper state $`|u\rangle`$ to a lower state $`|l\rangle`$ obeys
+Suppose an atom emits a photon while changing from a state of energy $`E_u`$ to one of lower energy $`E_l`$. Such a change is called a **transition**. Energy conservation gives
 
 ```math
 E_u-E_l=h\nu.
 ```
 
-Absorption reverses the energy transfer: a photon can supply the difference between a lower and an upper state.
+Here we consider an atom initially at rest and neglect the small energy of its recoil. In absorption, the atom gains the energy supplied by the photon. A spectral line thus reveals a **difference between atomic energies**. One line alone does not tell us which two states are involved.
 
-A spectral line therefore constrains a **difference of energies**, rather than displaying one energy eigenvalue. Adding the same constant to every energy leaves all transition frequencies unchanged. Nor does one wavelength, by itself, identify the two states involved. Assignments become convincing when several transitions, their strengths and their responses to controlled changes fit one consistent model.
-
-The Hamiltonian alone is insufficient to determine visibility. We must also specify **how the system couples to the probe**. For absorption from an applied optical field, the electric-dipole interaction is
+To predict those energies, we need a model of the atom: which particles are present, how they move and how they interact. In quantum mechanics, this information is expressed by the **Hamiltonian** $`H`$, the operator representing the system's energy. A stationary state $`|n\rangle`$ has a definite energy $`E_n`$ and satisfies
 
 ```math
-V(t)=-\mathbf d\cdot\mathbf E(t),
+H|n\rangle=E_n|n\rangle.
 ```
 
-where $`\mathbf d`$ is the atomic electric-dipole operator and $`\mathbf E(t)`$ is the light’s electric field. The coupling between two states involves the dipole matrix element
+The label $`n`$ distinguishes the states. Solving this equation gives the energies $`E_n`$ that the model permits. Differences between these energies predict possible photon frequencies, which we can compare with the measured spectrum. Several lines must fit the same set of levels for the explanation to be convincing.
 
-```math
-\mathbf d_{lu}=\langle l|\mathbf d|u\rangle.
-```
+Matching an energy difference is necessary, but does not guarantee an observable line. Light interacts with the atom through its charges, and the strength of that interaction depends on the states involved. For some pairs of states this interaction is strong; for others it is weak or cannot connect them. An emission experiment also requires atoms to occupy the upper state. The allowed energies alone therefore do not determine the spectrum.
 
-The light’s polarization selects a component of this matrix element. Symmetry can make that component vanish even when the energy difference matches the photon energy. The same atomic dipole matrix elements enter electric-dipole emission. Other interactions can connect different pairs of states.
-
-This gives an essential distinction:
+This leads to a distinction that will recur throughout the course:
 
 **What we measure is not everything that exists in the system.**
 
-An absent emission line may mean that the upper state was scarcely populated, that the relevant coupling is weak or forbidden in the approximation being used, or that the instrument cannot resolve or detect it. A forbidden electric-dipole transition does not imply absent energy levels or rule out every other transition mechanism.
-
-The argument now runs in both directions. From a proposed Hamiltonian, state preparation and coupling, predict observable transitions. From measured spectra, constrain that model and ask which further measurement could distinguish alternative explanations. Unit 5 will make transition probabilities quantitative.
+We test a model by asking whether its states, their populations and their interaction with light account for the observations. When a prediction fails, we must ask whether the model omitted an interaction, whether the relevant states were populated, or whether the measurement could reveal the predicted feature.
 
 ## 0.5 The same reasoning across physics
 
-As the course meets each new kind of measurement, we will use the same reasoning: ask what the instrument records, how the probe couples to the system, and which model connects the recorded signal to microscopic properties.
+A different probe can interact with a different property of a system and make previously unseen transitions accessible. Its recorded signal need not represent the same quantity as an optical spectrum. As we meet new measurements, we will ask which states and interactions they reveal, and how a model connects that information to the signal.
 
 ## 0.6 Questions that will guide the course
 
-Many interesting questions will arise as we go. The course will answer them as they arise.
+Why do apparently single lines split when measured more precisely? Which transitions can light produce, and what determines their strengths and widths? Why do molecules have spectra different from those of isolated atoms? The [course map](course-map.md) shows how these questions will unfold. We begin in [Unit 1](unit-1-hydrogen.md) with hydrogen's discrete spectrum.
 
-Our first observation remains unexplained: hydrogen emits at separated wavelengths that form a regular pattern. Converting those wavelengths into photon energies tells us the energy differences a model must reproduce. We now need a model that predicts those differences and explains why only certain bound energies occur. [Unit 1](unit-1-hydrogen.md) begins with this pattern and asks what the electron–nucleus interaction can explain.
+The hydrogen spectrum gives us a pattern of photon energies, and energy conservation turns that pattern into constraints on atomic energy differences. It does not explain why those differences occur. What model of an electron bound to a nucleus predicts the observed pattern, and why does that model allow only certain bound-state energies?
 
 ---
 
 ## Sources of the data
 
 - Figure 0.1: [H plasma spectrum](https://commons.wikimedia.org/wiki/File:H_plasma_spectrum.gif), measured with an Ocean Optics USB2000 spectrometer; by Profeta, Wikimedia Commons, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
-- Hydrogen wavelengths: Haken & Wolf, *The Physics of Atoms and Quanta*; NIST Atomic Spectra Database.
+- Hydrogen wavelengths: [NIST, Strong Lines of Hydrogen](https://physics.nist.gov/PhysRefData/Handbook/Tables/hydrogentable2.htm); Haken & Wolf, *The Physics of Atoms and Quanta*. The quoted values summarize unresolved lines; the reference table also lists fine-structure components.
 - Constants: CODATA 2018.

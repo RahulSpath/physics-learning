@@ -1,20 +1,24 @@
 # Atomic and Molecular Physics · Course map
 
-**Version 1: a connected MSc-level course covering CSIR–UGC NET Physical Sciences, Part B, Section VII.** This map follows the unit sequence in the course plan of 3 November 2026.
+**Plan for Version 1: a connected MSc-level course covering CSIR–UGC NET Physical Sciences, Part B, Section VII.** The table gives the whole argument; the sections below give first-pass outlines. All units now have connected first drafts; drafting status and remaining refinements are recorded at the end.
 
 | Unit | Central question and essential content | Connection to the next unit |
 |---|---|---|
-| **0. How do we learn about the microscopic world?** | How do measurements reveal microscopic properties? Instrument signals, spectra, energy differences and probe-dependent inference. | We observe discrete lines. Why do discrete bound-state energies exist? |
-| **1. The hydrogen atom** | What explains discrete levels and spectral series? Balmer/Rydberg patterns, Franck–Hertz electron-impact evidence, the Coulomb Hamiltonian, quantum numbers and reduced mass. | Hydrogenic levels explain the gross spectrum. What produces additional splittings? |
-| **2. Spin and atomic fine structure** | Why do levels and lines split? Stern–Gerlach, spin, spin–orbit coupling, relativistic corrections, hyperfine structure and isotope shifts. | A single electron is understood approximately. What changes when several electrons interact? |
-| **3. Many-electron atoms** | How do interacting electrons change atomic spectra? Helium, exchange, Pauli principle, singlets/triplets, alkalis, quantum defects and LS/jj coupling. | How can external fields test state assignments and manipulate the states? |
-| **4. Atoms in external fields** | How do fields shift, split and connect states? Zeeman, Paschen–Back and Stark effects; ESR, NMR and chemical shifts. | Transition frequencies alone do not explain spectral intensities and widths. |
-| **5. Light–matter interaction** | What determines strengths, widths and laser oscillation? Matrix elements, selection rules, Einstein coefficients, lifetimes, broadening, pumping, inversion, rate equations, resonator modes and coherence. | What new structure appears when nuclei move relative to one another? |
-| **6. Molecules and nuclear motion** | How do molecules bind, rotate and vibrate? Potential-energy curves, Born–Oppenheimer approximation, rotational/vibrational levels and rovibrational structure. | Which molecular levels can different probes reveal? |
-| **7. Molecular spectroscopy** | How do probes reveal molecular motion and electronic structure? Infrared, Raman and electronic spectra, selection rules, Franck–Condon factors and vibrational progressions. | Can we disentangle a complicated experimental spectrum? |
-| **8. Putting the ideas together** | What can a complex spectrum establish? Individual Hg, Cd and Ar spectra, mixtures, line identification, resolution, calibration and limits of inference. | Concluding synthesis: return to measurement, models and microscopic inference. |
+| **0. How do we learn about the microscopic world?** | How do measurements reveal microscopic properties? Instrument signals, spectra, energy differences and probe-dependent inference. | Lines constrain energy differences. What makes an atom's bound-state energies discrete? |
+| **1. The hydrogen atom** | What explains discrete levels and spectral series? Balmer/Rydberg patterns, Franck–Hertz electron-impact evidence, the Coulomb Hamiltonian, quantum numbers and reduced mass. | The Coulomb model explains the main pattern, but precise measurements reveal splittings. Which interactions have we neglected? |
+| **2. Spin and atomic fine structure** | What explains the resolved hydrogen excitation resonances? A motivated magnetic-gradient measurement, spin, spin–orbit coupling, relativistic corrections, hyperfine structure and isotope shifts. | These interactions refine a one-electron model. What changes when several electrons repel one another and obey the Pauli principle? |
+| **3. Many-electron atoms** | How do interacting electrons change atomic spectra? Helium, exchange, Pauli principle, singlets/triplets, alkalis, quantum defects and LS/jj coupling. | Level patterns suggest state assignments. How can applied fields test them and control the states? |
+| **4. Atoms in external fields** | How do fields shift, split and connect states? Zeeman, Paschen–Back and Stark effects; ESR, NMR and chemical shifts. | We can predict shifts and splittings. What determines a line's visibility, intensity and width? |
+| **5. Light–matter interaction** | What determines strengths, widths and laser oscillation? Matrix elements, selection rules, Einstein coefficients, lifetimes, broadening, pumping, inversion, rate equations, resonator modes and coherence. | Atomic transitions now have positions, strengths and widths. What new levels arise when nuclei move within a molecule? |
+| **6. Molecules and nuclear motion** | How do molecules bind, rotate and vibrate? Potential-energy curves, Born–Oppenheimer approximation, rotational/vibrational levels and rovibrational structure. | Nuclear motion supplies new levels. Which transitions can different probes reveal? |
+| **7. Molecular spectroscopy** | How do probes reveal molecular motion and electronic structure? Infrared, Raman and electronic spectra, selection rules, Franck–Condon factors and vibrational progressions. | We can interpret individual transitions. How much can we infer when species overlap and the instrument obscures structure? |
+| **8. Putting the ideas together** | What can a complex spectrum establish? Individual Hg, Cd and Ar spectra, mixtures, line identification, resolution, calibration and limits of inference. | Return to Unit 0: which conclusions follow from the measurement, and which further observation would resolve an ambiguity? |
 
-The course develops one investigation: measurements reveal discrete transitions; hydrogen explains their first pattern; additional interactions explain splittings; external fields probe the states; transition theory explains strengths, widths and gain; nuclear motion introduces molecular spectra; and the final unit brings these ideas back to experimental inference.
+The course develops a recurring investigation: **observation → provisional model → quantitative prediction → proposed experimental test → measured result → assessment and next question**. Before interpreting a new record, explain what is varied, what is measured and which outcomes would distinguish the predictions. Existing measurements can supply the test; the teaching order should make clear why we would seek that measurement.
+
+Agreement establishes the model's useful range and motivates tests at greater precision, under changed conditions or in a different system. A discrepancy prompts checks of preparation, calibration, resolution and the interaction with the probe, alongside possible missing physics. A new observable or probe can also open the next question. The sequence should not require a failed prediction at every step.
+
+This is a reconstruction of scientific reasoning rather than a chronological account of discovery. State which measurements already exist, which experiment is being proposed for the argument and which record remains a visible TODO. Historical context can explain how the questions actually arose, including earlier data reinterpreted by later models. Links to original research papers are useful when they illuminate motivations, experimental difficulties or historical development, while the physical argument remains self-contained. Each unit should develop the cycle in the form its physics needs.
 
 A recurring distinction is that **what we measure is not everything that exists in the system**. An absent peak may reflect a selection rule, an unpopulated state, broadening or limited sensitivity.
 
@@ -28,14 +32,14 @@ The first two days establish this map and Unit 0. Then develop each unit in sequ
 
 **Motivating observation.** A hydrogen discharge produces discrete optical lines, while a sample in a magnetic field, exposed to microwaves, gives a signal at a particular field. What does each instrument record, and what microscopic interpretation requires a model?
 
-**Essential concepts.** Follow the plan’s six short sections:
+**Essential concepts.** Six short sections, using plain language and a single measured hydrogen plot:
 
 1. **What does an experiment actually give us?** Compare an emission spectrum with a resonance signal, described plainly.
 2. **An atomic emission spectrum.** Begin with a measured hydrogen spectrum, intensity against wavelength; explain its axes before interpreting its peaks.
 3. **What information does a spectral line contain?** Ask about position, strength, width and response to external conditions.
 4. **From observations to a mathematical model.** Introduce states, energies and probe-dependent access to transitions.
-5. **The same reasoning across physics.** Each new kind of measurement is read the same way as the course meets it: what the instrument records, how the probe couples, which model connects them. Techniques are introduced where they arise, not previewed.
-6. **Questions that will guide the course.** Many questions will arise as we go, and the course answers them as they arise. Unit 0 ends with the first: why hydrogen emits at separated wavelengths.
+5. **The same reasoning across physics.** In one short paragraph, carry the distinction between signal, coupling and interpretation beyond the opening examples. Introduce each technique by name when its physics is needed.
+6. **Questions that will guide the course.** In connected prose, ask why bound energies are discrete (Unit 1), why lines split (Units 2–4), why transitions differ in visibility and width (Unit 5), and why molecular motion produces new structure (Units 6–7). End with the first unresolved observation: hydrogen's separated wavelengths.
 
 **Indispensable equations.**
 
@@ -50,13 +54,13 @@ A transition’s visibility also depends on the probe’s coupling to the system
 
 **Syllabus coverage.** Conceptual preparation for all units. Energy differences, transition strengths and widths appear here as questions; their explanations follow below.
 
-**Connection to Unit 1.** Discrete lines suggest discrete energy differences. Why does an atom possess discrete bound states?
+**Connection to Unit 1.** We can translate hydrogen's line positions into photon energies and constrain differences between atomic energies. We have not explained the pattern. What model of the electron and nucleus predicts discrete bound-state energies and the observed separations?
 
 ## Unit 1 · The hydrogen atom
 
 **Central question.** What physical model explains hydrogen’s spectral series and their convergence towards ionization?
 
-**Motivating observation.** The Balmer lines crowd towards a series limit. Other series and the nearby lines of ionized helium test whether the pattern extends beyond the original observations. Franck–Hertz current minima in mercury provide independent evidence of discrete levels through electron-impact excitation.
+**Motivating observation.** The Balmer lines crowd towards a series limit. Ask which pattern accounts for their spacings, then what physical model produces it. To test whether internal excitation energies also govern collisions, design an electron-impact measurement before introducing mercury as the Franck–Hertz implementation. Varying nuclear mass tests the reduced-mass prediction; preparing a common initial state tests whether apparently degenerate upper levels remain degenerate at higher resolution.
 
 **Essential concepts.** Balmer and Rydberg patterns; the Ritz combination principle; Franck–Hertz and electron-impact excitation; the Coulomb Hamiltonian; normalizable bound states; quantum numbers $`n,l,m`$; wavefunctions and degeneracy; reduced mass. Use Bohr’s model briefly to connect the observed pattern to energy scales, then explain quantization through the Schrödinger problem.
 
@@ -83,15 +87,17 @@ Here $`n=1,2,\ldots`$, $`l=0,\ldots,n-1`$ and $`m=-l,\ldots,l`$.
 
 **Syllabus coverage.** Quantum states of an electron in an atom. Introduce isotope shifts through reduced mass before Unit 2. Introduce electric-dipole matrix elements and the basic rules $`\Delta l=\pm1`$, $`\Delta m=0,\pm1`$ to explain why 2p and 2s decay differently; rates and the general framework belong to Unit 5.
 
-**Connection to Unit 2.** The Coulomb model predicts the gross spectrum, but precise measurements resolve additional structure. Which degrees of freedom and interactions have been omitted?
+**Connection to Unit 2.** The hydrogen spectrum suggests that electronic energies are quantized, and the Coulomb Hamiltonian explains their approximate values. But sufficiently precise measurements reveal additional structure that the simplest model cannot explain. What physical degrees of freedom and interactions have we neglected?
 
 ## Unit 2 · Spin and atomic fine structure
 
 **Central question.** Why do apparently single atomic levels and spectral lines split?
 
-**Motivating observation.** A silver beam splits into two in a Stern–Gerlach magnet; sodium has a D doublet; hydrogen shows fine and hyperfine intervals and isotope-dependent line positions.
+**Motivating observation.** Unit 1's measured hydrogen 2s → 6p excitation record resolves two resonances where the Coulomb model predicts one. Their separation establishes additional structure but does not identify its cause. Motivate a magnetic-gradient beam measurement as an independent probe of magnetic moment and angular momentum before introducing Stern–Gerlach. Return to the hydrogen interval to test the extended model, then propose measurements of the remaining degeneracies and nuclear contributions.
 
-**Essential concepts.** Electron spin and magnetic moment; addition of orbital and spin angular momenta; spin–orbit coupling; relativistic kinetic-energy and Darwin corrections; nuclear spin and hyperfine coupling; mass and nuclear-volume isotope shifts. Distinguish these mechanisms by their energy scales. The Lamb shift marks a limitation of the theory, without requiring a QED derivation.
+**Essential concepts.** Electron spin and magnetic moment; addition of orbital and spin angular momenta; spin–orbit coupling; relativistic kinetic-energy and Darwin corrections; nuclear spin and hyperfine coupling; mass and nuclear-volume isotope shifts. Distinguish these mechanisms by their energy scales. Test the remaining 2s–2p degeneracy through a microwave-induced depletion measurement before introducing the Lamb shift, without requiring a QED derivation. Compare isotope line centroids separately from their hyperfine component patterns.
+
+The provisional draft uses sections 2.1–2.8: the resolved hydrogen record; a magnetic probe and spin; angular-momentum addition; fine-structure corrections and the leading 6p estimate; the remaining degeneracy and Lamb shift; hyperfine coupling and contact-density scaling; isotope shifts; and the question of a second electron. Visible TODO boxes mark the missing Stern–Gerlach record, independent fine-structure comparison, Lamb-shift depletion curve, hyperfine resonance and isotope comparison.
 
 **Indispensable equations.**
 
@@ -127,17 +133,19 @@ E_F=\frac{A_{\mathrm{hf}}}{2}
 
 Here $`\mathbf F=\mathbf I+\mathbf J`$ and $`A_{\mathrm{hf}}`$ has energy units. Additional hyperfine interactions are needed where nuclear quadrupole moments contribute.
 
-**Syllabus coverage.** Electron spin; relativistic corrections to hydrogen energy levels; hyperfine structure and isotopic shift. Alkali doublets are a basic application here; their electronic structure follows in Unit 3. Intensity ratios remain conditional previews of Unit 5.
+**Syllabus coverage.** Electron spin; relativistic corrections to hydrogen energy levels; hyperfine structure and isotopic shift. Sodium and other alkali doublets belong with the electronic structure and angular-momentum coupling developed in Unit 3. Intensity ratios require the transition and population framework of Unit 5.
 
-**Connection to Unit 3.** A single electron is now understood approximately. What changes when electrons repel one another and must obey the Pauli principle?
+**Connection to Unit 3.** Spin, relativistic corrections and nuclear properties explain structure absent from the Coulomb model. Yet helium cannot be described by putting two independent electrons into hydrogenic levels. What changes when electrons repel one another and the total state must obey the Pauli principle?
 
 ## Unit 3 · Many-electron atoms
 
 **Central question.** How do electron interactions produce helium’s two spectral systems, alkali series and different angular-momentum coupling schemes?
 
-**Motivating observation.** Helium has singlet and triplet families; alkali levels depend strongly on orbital angular momentum; multiplet patterns change between light and heavy atoms.
+**Motivating observation.** Unit 2 ends by proposing a controlled change from He⁺ to helium: keep nuclear charge fixed and add a second electron. Ionization thresholds test the independent-electron binding prediction. Helium's repeated excitation families then motivate Pauli symmetry and exchange. Move to alkali series to test a closed-core approximation, and use multiplet intervals to investigate how several angular momenta couple.
 
-**Essential concepts.** Antisymmetry and the Pauli principle; direct and exchange energies; screening and electron correlation; helium singlets, triplets and metastability; central-field approximations; alkali core penetration and quantum defects; term symbols, Hund’s rules and the Landé interval rule. Compare residual electrostatic interactions with spin–orbit coupling to distinguish LS, jj and intermediate coupling.
+**Essential concepts.** Electron repulsion, a short variational estimate, screening and correlation; antisymmetry and the Pauli principle; direct and exchange energies; helium singlets, triplets and metastability; central-field approximations; alkali core penetration and quantum defects; term symbols, Hund’s rules and the Landé interval rule. Compare residual electrostatic interactions with spin–orbit coupling to distinguish LS, jj and intermediate coupling. Include the correlated mass shift left open in Unit 2.
+
+The provisional draft uses sections 3.1–3.8: the He⁺–He binding test; repulsion and screening; Pauli symmetry; exchange and accessible helium lines; alkali series and a held-out sodium-level prediction; LS terms, Hund ordering and a calcium interval test; jj and intermediate coupling; and external fields as the next probe. Visible TODO boxes mark helium ionization thresholds, calibrated helium spectra and preparation, an alkali series, multiplet reconstruction and state assignments, and a comparison across coupling regimes.
 
 **Indispensable equations.**
 
@@ -169,17 +177,21 @@ E_{nl}\simeq-\frac{hcR_M}{(n-\delta_l)^2}.
 \end{aligned}
 ```
 
-**Syllabus coverage.** Spectra of helium and alkali atoms; LS and JJ coupling. Explain the approximate LS rule $`\Delta S=0`$ through helium, and how state mixing weakens it. Unit 5 supplies the fuller transition framework. Revisit the additional, correlated mass shift in many-electron atoms.
+**Syllabus coverage.** Spectra of helium and alkali atoms; LS and JJ coupling. Explain the approximate LS rule $`\Delta S=0`$ through helium, and how state mixing weakens it. Unit 5 supplies the fuller transition framework. Introduce the additional, correlated mass shift in many-electron atoms.
 
-**Connection to Unit 4.** Level patterns suggest angular-momentum assignments. How can applied fields test those assignments and manipulate the states?
+**Connection to Unit 4.** Electron interactions and angular-momentum coupling explain multiplet patterns and suggest assignments of the states. A zero-field spectrum does not fully establish their magnetic moments or electric response. How can applied fields test those assignments and let us manipulate the states?
 
 ## Unit 4 · Atoms in external fields
 
 **Central question.** How do electric and magnetic fields shift, split and connect atomic states?
 
-**Motivating observation.** Atomic lines split in a magnetic field, hydrogen exhibits a linear Stark effect in its degenerate Coulomb manifolds, and radio-frequency or microwave absorption occurs at field-dependent resonances.
+**Motivating observation.** Unit 3 assigns angular momenta to atomic states; those assignments predict magnetic responses beyond the zero-field energies. Propose a calibrated field-off and field-on optical comparison, then test the predicted shifts and polarization patterns. Increase the field to test the assumed coupling, change to an electric perturbation to probe state mixing, and motivate magnetic resonance as a direct measurement between field-dependent states.
 
 **Essential concepts.** Normal and anomalous Zeeman effects; Landé factors and polarized components; Paschen–Back decoupling when magnetic energies exceed spin–orbit intervals; degenerate and non-degenerate Stark perturbations; magnetic-dipole transitions; ESR and NMR; nuclear shielding and chemical shift. Use $`F`$ rather than $`J`$ where resolved hyperfine coupling controls the weak-field states.
+
+The provisional draft uses sections 4.1–4.8: field predictions and the normal Zeeman effect; Landé factors, sodium patterns, polarization and hyperfine qualifications; Paschen–Back coupling changes; quadratic and degenerate Stark effects; direct magnetic resonance; ESR; NMR and chemical shifts; and the question of signal strengths and widths. Five visible TODO boxes identify the missing weak-field optical record, high-field crossover, Stark field series, ESR record and NMR environment comparison. Its calculated Zeeman figure is a model illustration, not an experimental trace.
+
+**Prediction and test.** Use the assigned states to predict field-dependent energies, transition frequencies and polarization components. Vary a calibrated magnetic or electric field and record the spectrum. Compare weak- and strong-field behaviour to test the assumed coupling hierarchy. Then motivate magnetic-resonance measurements as direct tests of transitions between the field-dependent states, including nuclear shielding in NMR.
 
 **Indispensable equations.**
 
@@ -216,17 +228,21 @@ h\nu_{\mathrm{ESR}}=g\mu_BB,
 
 **Syllabus coverage.** Zeeman, Paschen–Back and Stark effects; electron spin resonance; nuclear magnetic resonance and chemical shift. Magnetic-resonance line widths introduce coherence decay; Unit 5 develops its relation to line shape.
 
-**Connection to Unit 5.** Predicting transition frequencies does not predict a complete spectrum. What determines whether a transition is visible, how intense it is and how broad it becomes?
+**Connection to Unit 5.** Field-dependent shifts and splittings test our description of the states. Their energies still leave much of the measured signal unexplained: lines at allowed energy differences can be weak, absent or broadened. What determines transition probabilities, populations and the time scales behind a spectrum?
 
 ## Unit 5 · Light–matter interaction
 
 **Central question.** What determines spectral strengths and widths, and how can emission become sustained laser oscillation?
 
-**Motivating observation.** States with comparable excitation energies can have vastly different lifetimes. Sodium lines broaden between an atomic beam and a vapour cell. A pumped optical medium begins lasing only above threshold.
+**Motivating observation.** Unit 4 predicts field-dependent resonance positions but leaves their strengths, widths and time dependence unexplained. Propose calibrated line-area and decay measurements, then vary temperature, pressure and preparation to test the signal model. Changing populations motivates optical pumping and weak-probe gain; adding feedback tests whether amplification becomes laser oscillation.
 
 **Essential concepts.** Dipole coupling and transition matrix elements; the golden rule; polarization, parity and angular-momentum selection rules; spontaneous and stimulated emission; Einstein coefficients; populations and branching ratios. Develop natural, Doppler and collision broadening, homogeneous and inhomogeneous widths, and Voigt profiles.
 
-Then follow absorption into optical pumping, population inversion and elementary three- and four-level laser cycles. Explain gain, loss and threshold with rate equations, followed by longitudinal and transverse resonator modes and temporal coherence. Detailed laser dynamics can be refined later.
+Then follow absorption into optical pumping, dark states, population inversion and elementary three- and four-level laser cycles. Distinguish pumping from inversion and gain from laser oscillation. Explain gain, loss and threshold with rate equations, followed by longitudinal and transverse resonator modes and temporal coherence. Detailed laser dynamics can be refined later.
+
+The provisional draft uses sections 5.1–5.10: line areas and matrix elements; Einstein rates; population lifetime and coherence decay; controlled broadening; optical pumping and dark states; gain, inversion and three-/four-level systems; laser rate equations and threshold; longitudinal and transverse modes; coherence and doublet beating; and molecular motion as the next question. Seven visible TODO boxes mark calibrated branching strengths, decay and isolated linewidth, controlled broadening, pumping and remixing, weak-probe gain, threshold and cavity spectra, and interferometric coherence. The line-shape and laser-level figures illustrate models, not measured records.
+
+**Prediction and test.** Use transition probabilities and prepared populations to predict strengths, decay times and spectral widths. Vary temperature and density to distinguish broadening mechanisms, and compare time-domain decay with spectral width. For a pumped medium, predict the gain–loss threshold before measuring output against pump strength. Check which additional observations distinguish laser oscillation from increased fluorescence.
 
 **Indispensable equations.**
 
@@ -270,7 +286,7 @@ For an ideal four-level laser with a rapidly emptied lower laser level,
 \dot n_\gamma=(v_g\sigma_eN-\kappa)n_\gamma+\beta\frac{N}{\tau}.
 ```
 
-Here $`N`$ and $`n_\gamma`$ are upper-state and photon densities, $`R_p`$ is the pump rate density, $`\kappa`$ is the photon loss rate and $`\beta`$ is the spontaneous-emission fraction entering the mode. Threshold occurs at $`v_g\sigma_eN=\kappa`$. More generally, inversion requires $`N_u/g_u>N_l/g_l`$.
+Here $`N`$ and $`n_\gamma`$ are upper-state and photon densities, $`R_p`$ is the pump rate density, $`\kappa`$ is the photon-number loss rate and $`\beta`$ is the fraction of unstimulated upper-state decays producing a photon in the selected mode, including radiative branching. Threshold occurs at $`v_g\sigma_eN=\kappa`$. More generally, inversion requires $`N_u/g_u>N_l/g_l`$.
 
 For an empty cavity of length $`L`$,
 
@@ -286,15 +302,19 @@ For a single Lorentzian spectral line, defining $`\tau_c`$ by the field correlat
 
 **Syllabus coverage.** Width of spectral lines; selection rules; lasers; spontaneous and stimulated emission; Einstein A and B coefficients; optical pumping; population inversion; rate equations; resonator modes and coherence length. This is the fuller treatment of transition ideas introduced in Units 0–4.
 
-**Connection to Unit 6.** Atomic electronic transitions now have positions, strengths and widths. What new structure appears when nuclei move relative to one another?
+**Connection to Unit 6.** Transition theory connects atomic energy differences to strengths, lifetimes and widths, while pumping can turn absorption into gain. In a molecule, however, the nuclei can also move relative to one another. How does this motion create levels beyond the electronic structure of an atom?
 
 ## Unit 6 · Molecules and nuclear motion
 
 **Central question.** How can electronic binding and nuclear motion be separated sufficiently to calculate molecular levels?
 
-**Motivating observation.** Diatomic molecules show closely spaced rotational levels, larger vibrational intervals and isotope-dependent frequencies, rather than only atomic-like electronic lines.
+**Motivating observation.** Follow carbon monoxide from its closely spaced microwave lines to much larger infrared intervals. Ask what nuclear motions could produce those scales, then use rotational assignments to predict an unused line and isotope substitution to test the common-potential model. Published measured JPL line centres provide a first rotational comparison; they and reference molecular constants remain distinct from detector-intensity records.
 
 **Essential concepts.** Molecular bonding and potential-energy curves; the Born–Oppenheimer approximation; nuclear reduced mass; equilibrium separation and dissociation; rigid rotation and harmonic vibration; anharmonicity, centrifugal distortion and vibration–rotation coupling. Explain the hierarchy of electronic, vibrational and rotational scales and where separation can fail.
+
+The provisional draft uses sections 6.1–6.8: new molecular spacings in CO; binding and a potential minimum; electronic–nuclear separation; a rotational prediction; harmonic vibration; a matched isotope test; higher-excitation corrections and dissociation; and probe-dependent access as the next question. Five TODO boxes mark a rotational record, a rovibrational interval record, a matched isotope comparison, a held-out higher-excitation ladder and a dissociation or potential test. The rotational comparison uses published measured JPL line centres. The Morse and harmonic potential figure is a calculated illustration, not CO data.
+
+**Prediction and test.** Infer a candidate molecular potential from a selected band pattern, then predict additional rotational and vibrational intervals. Within the same electronic potential, isotope substitution tests the predicted inverse-mass rotational scaling and inverse-square-root-mass vibrational scaling. Higher excitations test centrifugal distortion, anharmonicity and the range of the separation between electronic and nuclear motion.
 
 **Indispensable equations.**
 
@@ -303,16 +323,16 @@ For a single Lorentzian spectral line, defining $`\tau_c`$ by the field correlat
 \qquad
 [T_N+U_a(R)]\chi_{avJ}=E\chi_{avJ},
 \qquad
-\mu_N=\frac{M_1M_2}{M_1+M_2}.
+\mu_{\mathrm{red}}=\frac{M_1M_2}{M_1+M_2}.
 ```
 
-The potential $`U_a(R)`$ includes electronic energy and nuclear repulsion; neglecting couplings generated by nuclear derivatives is the central approximation.
+The potential $`U_a(R)`$ includes electronic energy and nuclear repulsion once. Neglecting couplings generated by nuclear derivatives is the central approximation; small nuclear kinetic energy does not guarantee accuracy near small electronic gaps. Here $`\mu_{\mathrm{red}}`$ denotes nuclear reduced mass, distinct from the nuclear magneton $`\mu_N`$ used earlier.
 
 ```math
-E_{\mathrm{rot}}=\frac{\hbar^2J(J+1)}{2\mu_NR_e^2}
+E_{\mathrm{rot}}=\frac{\hbar^2J(J+1)}{2\mu_{\mathrm{red}}R_e^2}
 =hcB_eJ(J+1),
 \qquad
-\omega_v=\sqrt{\frac{k}{\mu_N}},
+\omega_v=\sqrt{\frac{k}{\mu_{\mathrm{red}}}},
 ```
 
 ```math
@@ -320,23 +340,27 @@ E_v\simeq\hbar\omega_v\left(v+\frac12\right)
 -\hbar\omega_vx_e\left(v+\frac12\right)^2.
 ```
 
-Here $`B_e`$ is in wavenumber units and $`k`$ is the potential curvature at equilibrium.
+Here $`B_e`$ is in wavenumber units, $`\omega_v`$ is an angular frequency, and $`k`$ is the potential curvature at equilibrium. Distinguish equilibrium $`B_e`$ from vibrationally averaged $`B_v`$, harmonic constants from observed fundamentals, and the well depth $`D_e`$ from the ground-level dissociation energy $`D_0`$.
 
 **Syllabus coverage.** Born–Oppenheimer approximation; the level structure underlying electronic, rotational and vibrational spectra of diatomic molecules. Spectral spacings appear at a basic level here; probe-dependent selection rules and observed bands belong to Unit 7.
 
-**Connection to Unit 7.** A molecule possesses these levels, but which ones can infrared light, Raman scattering or electronic absorption reveal?
+**Connection to Unit 7.** Separating electronic and nuclear motion gives rotational and vibrational levels and explains their isotope dependence. These levels alone do not specify the observed bands. Which transitions can infrared light, Raman scattering and electronic absorption reveal, and why do their intensities differ?
 
 ## Unit 7 · Molecular spectroscopy
 
 **Central question.** How do different probes reveal molecular rotation, vibration and electronic structure?
 
-**Motivating observation.** CO has a microwave rotational spectrum; HCl infrared absorption has rotational branches; homonuclear molecules can show Raman spectra despite lacking ordinary electric-dipole rotational and vibrational absorption. Electronic bands contain vibrational progressions.
+**Motivating observation.** Begin with the same CO molecule used in Unit 6, comparing its known rotational levels with a measured infrared overview. Ask which dipole couplings produce the observed branches and predict unused lines. Missing ordinary dipole absorption in a nonpolar molecule then motivates testing polarizability through Raman scattering. Higher-energy electronic bands pose a further question: why does one electronic transition distribute strength across a nuclear progression?
 
-**Essential concepts.** Pure rotational and rovibrational spectra; infrared activity; Raman scattering through polarizability; Stokes and anti-Stokes shifts; electronic transitions and molecular symmetry; Franck–Condon factors and vibrational progressions.
+**Essential concepts.** Pure rotational and rovibrational spectra; permanent dipole versus its bond-length derivative; infrared activity, overtones and P/R branch predictions; Raman scattering through polarizability; Stokes and anti-Stokes shifts, polarization and thermal populations; electronic band origins and molecular symmetry; Franck–Condon factors and vibrational progressions.
+
+The provisional draft uses sections 7.1–7.8: CO infrared evidence and probe access; dipole selection; P/R predictions and combination differences; a motivated nonpolar Raman experiment; Raman shift and intensity tests; electronic band origins; Franck–Condon overlaps and progressions; and ambiguous mixed spectra as the next question. Six TODO boxes mark a fundamental/overtone comparison, high-resolution held-out P/R reconstruction, nonpolar Raman record, thermal/polarization Raman test, electronic-band assignment and corrected Franck–Condon progression. The NIST CO infrared overview is measured but processed, smoothed and limited to 4 cm⁻¹ resolution; the Franck–Condon illustration is a calculated model.
 
 Pure rotational electric-dipole transitions require a permanent molecular dipole and have $`\Delta J=\pm1`$. Harmonic vibrational absorption requires $`(d\mu/dR)_e\ne0`$ and has $`\Delta v=\pm1`$; anharmonicity permits weak overtones. For simple $`\Sigma\leftrightarrow\Sigma`$ rovibrational bands, $`\Delta J=\pm1`$ gives P and R branches without a Q branch.
 
-Raman activity depends on polarizability: rotational Raman shifts have $`\Delta J=\pm2`$, while vibrational Raman bands may include $`\Delta J=0,\pm2`$. A purely rotational $`\Delta J=0`$ contribution is unshifted Rayleigh scattering.
+Raman activity depends on polarizability: rotational Raman shifts have $`\Delta J=\pm2`$, while vibrational Raman bands may include $`\Delta J=0,\pm2`$. For unchanged vibrational state, a $`\Delta J=0`$ contribution is unshifted Rayleigh scattering; $`\Delta J=0`$ can instead give a shifted Q branch when vibration changes.
+
+**Prediction and test.** Combine Unit 6's levels with the interaction for each probe to predict accessible transitions and band strengths. If electric-dipole absorption misses a candidate excitation, ask whether its coupling through induced polarization makes a Raman measurement useful. Compare spectra of the same molecule under specified preparation. Test rotational branch spacings and vibrational progressions before refining the potential or transition-moment approximation.
 
 **Indispensable equations.**
 
@@ -360,20 +384,26 @@ In the Condon approximation, the electronic transition dipole varies slowly over
 
 ```math
 q_{v'v}=
-\left|\int\chi_{a'v'}^*(R)\chi_{av}(R)\,dR\right|^2.
+\left|\int u_{a'v'}^*(R)u_{av}(R)\,dR\right|^2.
 ```
+
+Here $`u_{av}`$ are reduced radial nuclear functions normalized with $`dR`$, consistent with Unit 6. Corrected band strengths also require the electronic transition moment, populations, rotational factors and the appropriate frequency weighting.
 
 **Syllabus coverage.** Electronic, rotational, vibrational and Raman spectra of diatomic molecules; molecular selection rules; Franck–Condon principle. Apply Unit 5’s transition framework to the levels established in Unit 6.
 
-**Connection to Unit 8.** We can interpret individual transition mechanisms. Can we combine that knowledge to disentangle an experimental spectrum with several species, blends and instrumental limitations?
+**Connection to Unit 8.** Molecular selection rules and wavefunction overlaps explain why different probes reveal different parts of the same level structure. We can now interpret individual transition mechanisms. How much of that information can we recover from a measured spectrum containing several species, unresolved blends and instrumental distortions?
 
 ## Unit 8 · Putting the ideas together
 
 **Central question.** What microscopic conclusions can a complicated spectrum support, and what remains ambiguous?
 
-**Motivating observation.** Individual Hg, Cd and Ar spectra have recognizable patterns; their mixed lamp spectrum combines lines with different strengths, unresolved blends and clipped peaks.
+**Motivating observation.** A processed Hg–Cd–Ar calibration archive contains features that invite candidate assignments and level reconstruction. Propose separate Hg, Cd and Ar control records first; they remain missing. Explain the empirical archive's continuum subtraction, segment normalization and stitching before interpreting its signal. Values of 10000 are normalization maxima, not established saturation.
 
-**Essential concepts.** Study the single-element spectra first, then the mixture. Distinguish detector counts, wavelength calibration and intensity response; identify candidate lines; test shared-level assignments with Ritz combinations; compare coupling predictions; account for resolution, line blending, uncertainty and missing transitions. Preserve unresolved identifications where the evidence is insufficient.
+**Essential concepts.** Candidate detection and guarded profile fits; reference assignments versus evidence; wavelength conventions, blends, resolution and uncertainty; conditional Ritz networks; independent closure tests and calibration; corrected branch areas; coupling and field-dependent tests. A four-edge tree connecting five levels reconstructs energies without independently testing a redundant relation.
+
+The provisional draft uses sections 8.1–8.8: single-source controls; archive provenance; feature measurement; candidate identifications; conditional level reconstruction; an independent cycle test; strengths and field responses; and the evidence-to-next-measurement conclusion. Six TODO boxes mark single-element records, calibration and profile uncertainties, unused companions, a Ritz closure, calibrated branch areas and a field test. A numerical companion and machine-readable diagnostics reproduce the limited calculation without treating failed fits or imported labels as discoveries.
+
+**Prediction and test.** Predict unused companion lines, a new transition closing a level cycle or field-dependent components. Compare those measurements with the existing assignments using independent calibration where required. Changing source, excitation, resolution or probe can distinguish alternatives. Preserve unassigned features and missing information explicitly.
 
 **Indispensable equations.**
 
@@ -397,46 +427,48 @@ where $`\eta`$ represents spectral sensitivity, $`G_{\mathrm{inst}}`$ the instru
 
 **Syllabus coverage.** Synthesis of quantum states, coupling, selection rules, intensities and widths, with external-field and molecular examples available for comparison. This unit adds no large theoretical topic.
 
-**Closing connection.** Return to Unit 0: explain what was recorded, which model connected the signal to microscopic structure, what was inferred and which further measurement could resolve the remaining uncertainty.
+**Closing connection.** We began with detector signals and asked what microscopic picture could account for them. We can now infer level spacings, test state assignments and recognize limits set by coupling, populations and the instrument. Which conclusions are established by the evidence, and what further measurement would distinguish the interpretations that remain?
 
-## Working reconciliation — remove once restructuring is complete
+## Draft status and further work
 
-This is the proposed restructuring following inspection of commit `a0164bc`. Numerical analyses have not been rerun; existing claims of calculation or agreement are not independent verification.
+This records the present files and the remaining work after comparison with the course plan and supplied syllabus. The [Day 1 audit](day-1-audit.md) distinguishes the initial structural work from later unit development. The lamp calculation has been rerun with guarded core fits and an audited processing history. Its reference-calibrated axis still does not supply an independent wavelength test.
 
-### Current files and lectures
+### Current notes and supporting material
 
 | Current material | Destination and action |
 |---|---|
-| [Course README](README.md) | **Done:** navigation follows Units 0–8 and links this map; references and conventions are kept. The seven-step pattern is described as that of the lectures written so far, and a missing dataset no longer holds up a unit. |
-| [Former Lecture 0](reading-spectroscopy-as-response.md) | The course entrance is now the written [Unit 0](unit-0-learning-from-measurements.md). **Done:** retitled as optional response-theory reading attached to Unit 5 (Lorentz oscillator, polarizability, oscillator strengths, Kubo formula, sum rule and Kramers–Kronig relations), with sections renumbered R.1–R.8 and unit references updated to this map. Revise it further when Unit 5 is developed. |
-| [Unit 1](unit-1-hydrogen.md), Lectures 1–3 | Keep in Unit 1: spectral series; Franck–Hertz and reduced mass; quantum states. Keep selection rules and lifetime contrasts as explicitly basic previews of Unit 5. |
-| [Unit 2](unit-2-spin-fine-hyperfine.md), Lectures 4–6 | Keep in Unit 2: spin; fine structure; hyperfine structure and isotope shifts. Keep sodium as an illustrative single-valence-electron example before its fuller explanation in Unit 3. |
-| [Unit 3](unit-3-many-electron-atoms.md), Lectures 7–9 | Keep alkali spectra, helium and coupling in Unit 3; arrange helium, alkalis and coupling into a continuous argument. Keep rare-earth moments as an optional application after Unit 4 introduces the Landé factor. |
-| Former Unit 3, Lecture 10 | **Done:** moved with its problems, answers, sources and `line-shapes.svg` to [Unit 5](unit-5-light-matter-interaction.md). Earlier units need only enough resolution context to explain why splittings may be hidden. |
-| README’s planned Lectures 11–13 | Develop in Unit 4: Zeeman/Paschen–Back, Stark, ESR/NMR and chemical shift. These are currently plans, not written units. |
-| README’s planned Lectures 14–15 | Divide between Unit 6’s molecular potentials and nuclear levels and Unit 7’s rotational/infrared transitions and bands. |
-| README’s planned Lectures 16–17 | Develop Raman and electronic/Franck–Condon spectroscopy in Unit 7. |
-| README’s planned Lectures 18–20 | Develop Einstein coefficients, pumping, inversion, rate equations, resonators and coherence in Unit 5. |
-| [Worked lamp example](worked-example-raw-spectrum.md) | Rework as Unit 8’s principal example, preceded by individual Hg, Cd and Ar spectra. Preserve its useful Ritz reconstruction and explicit calibration limitation. |
-| [Top-level README](../README.md) | **Done:** the Atomic and Molecular Physics introduction, entry link and progress description match the new course. |
+| [Course README](README.md) and [top-level README](../README.md) | Navigation follows Units 0–8. State the actual drafting status and use a physical argument appropriate to each topic; the inherited seven-step format is not a requirement. |
+| [Unit 0](unit-0-learning-from-measurements.md) | Six-section introduction to measurement and inference, with the measured hydrogen trace. Keep the final question as the reason to begin hydrogen. |
+| [Former Lecture 0](reading-spectroscopy-as-response.md) | The course entrance is now the written [Unit 0](unit-0-learning-from-measurements.md). **Done:** retitled as optional response-theory reading attached to Unit 5 (Lorentz oscillator, polarizability, oscillator strengths, Kubo formula, sum rule and Kramers–Kronig relations), with sections renumbered R.1–R.8 and unit references updated to this map. Keep it as an optional companion after the core Unit 5 argument; the main unit does not require its response formulas. |
+| [Unit 1](unit-1-hydrogen.md), sections 1.1–1.7 | Accepted as a provisional first draft, with writing to revisit: observed pattern, empirical rule, energy levels, Coulomb Hamiltonian, quantized bound states and tests using spectral series and deuterium. Franck–Hertz supplies independent excitation evidence. Basic selection rules preview Unit 5; measured Hδ excitation scans reveal structure beyond the Coulomb model and motivate Unit 2. |
+| [Unit 2](unit-2-spin-fine-hyperfine.md), sections 2.1–2.8 | Provisional first connected draft: begin with the measured hydrogen excitation record, motivate a magnetic probe, then develop spin, angular-momentum addition, fine structure, the Lamb-shift test, hyperfine coupling and isotope shifts. Missing records and comparisons have visible TODO boxes. Its final question motivates helium and electron–electron interaction in Unit 3; further reader review and measurement enrichment remain. |
+| [Unit 3](unit-3-many-electron-atoms.md), sections 3.1–3.8 | Provisional first connected draft: a controlled He⁺–He binding comparison leads through repulsion, screening, Pauli symmetry and exchange to helium's spectral families. Alkali series test a central-field quantum-defect model; multiplet intervals test LS coupling before jj and intermediate coupling. Missing records and comparisons have visible TODO boxes. The final question proposes external fields as a test of state assignments. |
+| [Unit 4](unit-4-atoms-in-external-fields.md), sections 4.1–4.8 | Provisional first connected draft: predict field responses from the assigned states, test optical shifts and polarization, then develop coupling changes, electric-field mixing, ESR, NMR and chemical shielding. Five measurement comparisons remain visible TODOs. The calculated Zeeman figure displays predictions; the closing question motivates strengths, widths and dynamics in Unit 5. |
+| [Unit 5](unit-5-light-matter-interaction.md), sections 5.1–5.10 | Provisional first connected draft: calibrated strengths lead to matrix elements and rates, decay and linewidth comparisons lead to coherence and broadening, and controlled populations lead to pumping, gain and laser oscillation. Cavity and interference tests develop modes and coherence before the molecular question. Seven measurement comparisons remain visible TODOs; line-shape and laser-level figures show models. |
+| [Unit 6](unit-6-molecules-and-nuclear-motion.md), sections 6.1–6.8 | Provisional first connected draft: CO spacings motivate binding, Born–Oppenheimer separation, rotational and vibrational levels, then matched isotope and higher-excitation tests. Five records and comparisons remain TODOs. Published measured CO line centres test the rotational prediction; the calculated potential diagram illustrates the models. Neither the catalog centres nor reference constants supply a detector-intensity trace. The closing question motivates probe-dependent molecular spectra. |
+| [Unit 7](unit-7-molecular-spectroscopy.md), sections 7.1–7.8 | Provisional first connected draft: measured CO infrared evidence motivates dipole selection and branch tests, a nonpolar comparison motivates Raman, and electronic progressions motivate Franck–Condon overlaps. Six measurement comparisons remain TODOs. Keep the processed measured infrared overview distinct from high-resolution records and the calculated overlap illustration. The closing question motivates competing assignments in Unit 8. |
+| [Unit 8](unit-8-putting-the-ideas-together.md), sections 8.1–8.8 | Provisional synthesis from proposed single-source controls through an audited processed archive, guarded feature estimates and candidate assignments to conditional Ritz reconstruction and independent tests. Six measurement TODOs remain. The [numerical companion](worked-example-raw-spectrum.md) and current diagnostics replace unsupported precision, clipping and intensity claims in the older example. |
 
-Old lecture numbers above identify existing material. Use unit and section numbers in the revised course; update lecture-number references, figure captions and links together. Replace repetitive compulsory “In response language” endings with physically useful connections to the next question.
+Unit and section numbers now organize the connected drafts. Optional response theory follows Unit 5; each unit closes with the next physical question.
 
 Retain the present asset directories:
 
-- **Units 1–3:** keep the hydrogen, sodium, helium and coupling figures with their corresponding discussions. Label diagrams and plots from tabulated values accurately.
+- **Units 1–4:** keep the hydrogen, sodium, helium and coupling figures with their corresponding discussions. Label diagrams, tabulated-level plots and the calculated field-response figure accurately.
 - **Unit 5:** associate `lorentz-response.svg`, `oscillator-strengths.svg` and `line-shapes.svg` with transitions, response and broadening.
-- **Unit 8:** retain the two lamp-spectrum figures and `cadmium-levels-from-lines.svg`, together with both CSV files, the optional analysis script and `PypeIt-LICENSE.txt`. The notes must explain the inference without requiring Python.
+- **Unit 6:** keep calculated molecular potentials distinct from reference level data and detector records.
+- **Unit 7:** retain the processed measured CO infrared overview and its provenance separately from the calculated Franck–Condon illustration. Its stated resolution and smoothing limit the branch-level inferences it supports.
+- **Unit 8:** use the updated unlabelled archive overview, candidate-feature plot and conditional Ritz schematic. Preserve the original CSV, upstream FITS and processing-source copies, licence and legacy line table. The current analysis exports diagnostic CSV/JSON; the notes remain understandable without Python.
 
-### Coverage still to develop
+### Measurements and later refinement
 
-The written units provide substantial atomic-structure material through Unit 3, and Unit 5 already holds the lecture on line widths. External fields and magnetic resonance are largely only planned. Einstein coefficients and selection rules appear in existing notes, but the connected treatment of optical processes and lasers remains to be written. Molecular structure and spectroscopy are currently README outlines.
+The first connected writing pass now spans every syllabus topic in Units 0–8. The physical arguments and their proposed tests are present; the TODO records, independent uncertainty checks and reader reviews remain unfinished. This is a provisional course draft, not a statement that every experimental comparison has been completed.
 
-Unit 0 now uses a measured hydrogen spectrum from Wikimedia Commons (CC BY-SA 3.0), recorded with a USB2000 spectrometer. The repository still has no separate measured Hg, Cd or Ar spectra. Source individual-element examples for Unit 8; do not manufacture experimental traces or present selected lines from the mixture as separately measured spectra.
+Separate measured Hg, Cd and Ar control spectra are still absent. Add them before claiming that mixture-based candidate assignments have passed the proposed source test. Do not manufacture these records from selected mixture peaks. Other units retain their own specific measurement gaps.
 
-### Scientific concerns to address during restructuring
+### Scientific limits retained in the draft
 
-- **Scope of atomic models.** In Unit 2, describe Hα’s apparent “doublet” as prominent groups within a spectrum containing several allowed components, and state the approximations used.
-- **Strengths and populations.** In Unit 8’s lamp example, distinguish integrated photon counts, emitted power and peak heights before applying frequency factors or attributing discrepancies to detector sensitivity.
-- **Limits of the archived analysis.** In Unit 8, review blends, background treatment, clipping and uncertainties before retaining precision claims. Agreement on a scale calibrated from reference lines cannot independently validate those same reference wavelengths.
-- **Coherence and beating.** In Unit 5, separate the sodium doublet’s periodic two-frequency beating from the coherence envelope set by each component’s width.
+- **Model precision.** Unit 2's leading fixed-nucleus comparison omits small corrections and is distinct from a precision centroid prediction.
+- **Signal strengths.** Units 5, 7 and 8 distinguish line areas, photon counts, power, populations and detector response. The lamp archive does not supply a calibrated branching-strength measurement.
+- **Archive interpretation.** Unit 8 verifies normalization maxima and processing, rejects unreliable core estimates and treats reference labels as hypotheses. Raw variances, independent calibration and a profile-response measurement remain missing.
+- **Independent tests.** A reference-calibrated wavelength match or a four-edge reconstruction is not a new independent confirmation. The proposed unused transitions, field tests and cycle closures provide the next measurements.
+- **Coherence.** Unit 5 distinguishes doublet beating from a single-line coherence envelope and states its linewidth conventions.

@@ -1,10 +1,10 @@
 # Optional reading for Unit 5 · What a spectrum measures: spectroscopy as linear response
 
-**Where it fits.** This optional reading belongs with [Unit 5](unit-5-light-matter-interaction.md) and is best read after it: response functions mean more once transitions and perturbations have been studied. It was Lecture 0 in the first draft of these notes; the course now begins with [Unit 0](unit-0-learning-from-measurements.md). The syllabus does not list it as a separate topic, but it is the common language behind several topics it does list: selection rules, the width of spectral lines, Einstein A and B coefficients, electron spin resonance, NMR and Raman spectra. The lectures written so far each end with a short note that connects back to it.
+**Where it fits.** This optional reading follows the provisional connected draft of [Unit 5](unit-5-light-matter-interaction.md): response functions mean more once transitions, populations and widths have been studied. It is not required for the course argument, which begins with [Unit 0](unit-0-learning-from-measurements.md). The syllabus does not list response theory as a separate topic, but it connects selection rules, spectral widths, Einstein coefficients, magnetic resonance and Raman spectroscopy.
 
 **For readers from condensed matter.** This is the same linear-response theory used for optical conductivity or neutron scattering, applied to a single atom.
 
-It follows the same path as those lectures: **data → puzzle → model → numbers from the data → test a prediction → problems.** Answers are at the end.
+The aim here is to connect absorption, dispersion and transition strengths through one response function. Optional problems and answers follow the explanation.
 
 ---
 
@@ -15,7 +15,7 @@ It follows the same path as those lectures: **data → puzzle → model → numb
 > - **Dispersion.** In Rozhdestvensky's "hook method" (1912), an interferometer has the vapour cell in one arm, and its output goes into a spectrograph. The fringes shift by the extra optical path, (n − 1)L. Near each absorption line they bend into hook shapes, and the separation of the hooks gives the product of the atom density and the strength of the line.
 > - **Lifetimes.** Atoms are excited by a short pulse of light or electrons, and the emitted light is timed. Its intensity decays as $`e^{-t/\tau}`$.
 
-**1. Absorption and dispersion go together.** Sodium vapour absorbs strongly at each D line, and near each line its refractive index changes sharply. Just below the line frequency, n is greater than 1 and rising; just above it, n is less than 1. This is called **anomalous dispersion**.
+**1. Absorption and dispersion go together.** Sodium vapour absorbs strongly at each D line, and near each line its refractive index changes sharply. The isolated line's contribution to n − 1 is positive below resonance and negative above it. Across the central absorption region, n decreases as frequency increases: **anomalous dispersion**.
 
 **2. Each line has a measurable strength.** It is expressed as the oscillator strength f, defined in Section R.3:
 
@@ -26,14 +26,14 @@ It follows the same path as those lectures: **data → puzzle → model → numb
 | H 1s → 2p, Lyman α | 121.6 | 0.416 |
 | H 1s → 3p, Lyman β | 102.6 | 0.079 |
 
-The hydrogen values are exact calculations, confirmed by measured lifetimes.
+The hydrogen values are calculations in the non-relativistic Coulomb model, supported by measured lifetimes.
 
 **3. The excited states decay.** Sodium's 3p level lives 16.2 ns; hydrogen's 2p level lives 1.6 ns.
 
 ## R.2 The puzzle
 
 - Why are absorption and the refractive index linked, so that every line affects both?
-- Why does D2 absorb exactly twice as strongly as D1?
+- Why do the integrated D-line oscillator strengths have an approximately 2:1 ratio?
 - Is there a connection between how strongly an atom absorbs a line and how quickly it emits it?
 
 ## R.3 Model 1: the Lorentz oscillator
@@ -77,39 +77,39 @@ The area under the absorption line does not depend on γ:
 \int \sigma\,d\nu = \frac{e^2}{4\varepsilon_0 m c} = 2.65 \times 10^{-6}\ \text{m}^2\,\text{Hz}.
 ```
 
-The model explains the **shape** of anomalous dispersion. But measured lines are weaker than one classical electron would make them. Each line must be multiplied by a factor f smaller than 1, once called the "number of dispersion electrons". The classical model cannot say what f is.
+The model explains the **shape** of anomalous dispersion. Different lines require different strength factors f, historically called the "number of dispersion electrons". The classical model cannot calculate them; f need not be less than one for a multi-electron atom.
 
 ## R.4 Model 2: the quantum response function
 
-Now apply the perturbation $`H' = ezE(t)`$ to an atom in its ground state $`|0\rangle`$, and calculate the induced dipole to first order in E. This is **linear response**. The result, found by Kramers and Heisenberg, is
+For an atom with $`N_e`$ electrons, define $`Z_e=\sum_{i=1}^{N_e}z_i`$ and $`d_z=-eZ_e`$. Apply $`H'=eZ_eE(t)`$ to the ground state $`|0\rangle`$ and calculate the induced dipole to first order in E. This is **linear response**. For the chosen polarization axis, a spectral representation with phenomenological damping is
 
 ```math
 \alpha(\omega) = \frac{e^2}{m}\sum_n \frac{f_{n0}}{\omega_{n0}^2 - \omega^2 - i\gamma_n\omega},
 \qquad
-f_{n0} = \frac{2m\,\omega_{n0}}{\hbar}\,\bigl|\langle n|z|0\rangle\bigr|^2,
+f_{n0} = \frac{2m\,\omega_{n0}}{\hbar}\,\bigl|\langle n|Z_e|0\rangle\bigr|^2,
 \qquad
 \omega_{n0} = \frac{E_n - E_0}{\hbar}.
 ```
 
-Every transition behaves like a Lorentz oscillator, and quantum mechanics fixes the three things the classical model left open:
+Here m is the electron mass, and n labels complete atomic excited states, including the continuum. For an isotropic gas, sum over degenerate final states and average over the initial magnetic-state populations and orientations. Each resonance has three distinct ingredients:
 
 - **Position.** Each resonance sits at a transition frequency, a difference of two energy levels.
 - **Weight.** Its strength is the oscillator strength $`f_{n0}`$, set by a matrix element.
-- **Width.** Its width $`\gamma_n`$ is the decay rate of the excited state.
+- **Width.** Its angular-frequency FWHM is $`\gamma_n=2/T_{2,n}`$, determined by coherence decay. It equals the upper-state population decay rate only for a stable lower state with no additional dephasing.
 
 **For readers from condensed matter:** this is the Kubo formula for one atom,
 
 ```math
-\alpha(\omega) = \frac{i}{\hbar}\int_0^\infty dt\,e^{i\omega t}\,\bigl\langle 0\bigl|\,[d_z(t), d_z(0)]\,\bigr|0\bigr\rangle, \qquad d_z = -ez,
+\alpha(\omega) = \frac{i}{\hbar}\int_0^\infty dt\,e^{i\omega t}\,\bigl\langle 0\bigl|\,[d_z(t), d_z(0)]\,\bigr|0\bigr\rangle, \qquad d_z = -eZ_e,
 ```
 
-evaluated by inserting a complete set of states, with the decay widths added by hand.
+evaluated by inserting a complete set of states, with the coherence widths added phenomenologically. For population decay rates $`\Gamma_n,\Gamma_0`$ and pure-dephasing rate $`\gamma_{\phi,n0}`$, $`\gamma_n=\Gamma_n+\Gamma_0+2\gamma_{\phi,n0}`$, as developed in Unit 5.
 
-**A historical note.** Kramers' 1924 dispersion formula, which is a response function, was the starting point for Heisenberg's matrix mechanics in 1925. The "matrices" were the matrix elements $`\langle n|z|0\rangle`$ that set the line strengths.
+**A historical note.** Kramers' 1924 dispersion formula helped motivate Heisenberg's matrix mechanics in 1925. Transition amplitudes, represented here by matrix elements such as $`\langle n|Z_e|0\rangle`$, became central quantities.
 
 ### Three exact properties
 
-**1. The f-sum rule (Thomas–Reiche–Kuhn).** From the commutator $`[z,[H,z]] = \hbar^2/m`$ for each electron:
+**1. The f-sum rule (Thomas–Reiche–Kuhn).** For a non-relativistic atom with a fixed nucleus and a coordinate-dependent potential, $`[Z_e,[H,Z_e]]=N_e\hbar^2/m`$. A complete sum over bound and continuum states gives
 
 ```math
 \sum_n f_{n0} = N_e,
@@ -128,19 +128,19 @@ Absorption lines and anomalous dispersion are two views of the same resonances.
 **3. The golden rule gives the same answer.** For a weak field $`E_0\cos\omega t`$, Fermi's golden rule gives the transition rate
 
 ```math
-W = \frac{2\pi}{\hbar}\,\Bigl|\bigl\langle n\bigl|\tfrac12 ezE_0\bigr|0\bigr\rangle\Bigr|^2\,\delta(E_n - E_0 - \hbar\omega).
+W = \frac{2\pi}{\hbar}\,\Bigl|\bigl\langle n\bigl|\tfrac12 eZ_eE_0\bigr|0\bigr\rangle\Bigr|^2\,\delta(E_n - E_0 - \hbar\omega).
 ```
 
 Multiplied by ħω, this is exactly the power absorbed in linear response, $`P = \tfrac{\omega}{2}\,\mathrm{Im}\,\alpha(\omega)\,E_0^2`$, with each narrow Lorentzian replaced by a delta function (Problem R.4). So linear response is the framework, and the golden rule is the calculating tool. The later units, and the NET exam, mostly use the golden rule.
 
 ## R.5 Numbers from the data
 
-- **Sodium.** The two D lines carry f = 0.641 + 0.320 = 0.961. In an effective one-electron picture, sodium's valence electron has a total strength of 1, so about 96% of it is in the D lines. Their ratio is 2.00, also the approximate emission ratio for an optically thin source with equally populated upper magnetic sublevels and nearly equal decay rates (Unit 2).
+- **Sodium.** The two D lines carry f = 0.641 + 0.320 = 0.961. An approximate valence-electron comparison places this on a scale of one, with about 96% in the D lines. This is not sodium's full atomic sum: neutral sodium has 11 electrons, and the complete TRK sum is 11, including core excitations. The D-line ratio is approximately 2:1, also an approximate emission ratio for an optically thin source with equally populated upper magnetic sublevels and nearly equal decay rates, under the conditions discussed in Unit 5.
 - **Hydrogen.** Lyman α carries 0.416 and Lyman β 0.079. All the lines together carry 0.565, and the ionization continuum the remaining 0.435. The total is exactly 1.
 
-![How one electron's oscillator strength is shared](figures/oscillator-strengths.svg)
+![Hydrogen oscillator strengths and an approximate sodium valence-sector comparison](figures/oscillator-strengths.svg)
 
-*Figure R.2. How one electron's total oscillator strength is shared among transitions from the ground state.*
+*Figure R.2. Reference oscillator strengths, not a measured spectrum. Hydrogen's complete sum is one. The sodium bar is an approximate valence-sector comparison; core excitations contributing to its full atomic sum of 11 are not shown.*
 
 ## R.6 Test a prediction: absorption predicts emission
 
@@ -150,33 +150,33 @@ Absorption and dispersion measure f. Einstein's relation between absorption and 
 A_{ul} = \frac{2\pi e^2\nu^2}{\varepsilon_0 m_e c^3}\,\frac{g_l}{g_u}\,f_{lu}.
 ```
 
-Here l and u label the lower and upper levels, and g = 2J + 1 counts the states in each.
+Here l and u label the lower and upper electronic levels, g = 2J + 1 counts their magnetic states, and f is the corresponding level-averaged absorption oscillator strength. Hyperfine structure is omitted. In general $`\tau_u^{-1}=\sum_l A_{ul}`$; the table uses nearly single-branch decays.
 
 | Line | f | Predicted lifetime τ = 1/A | Measured lifetime |
 |---|---|---|---|
 | Na D2 (from 3p ²P<sub>3/2</sub>) | 0.641 | 16.2 ns | 16.2 ns |
 | H Lyman α (from 2p) | 0.416 | 1.60 ns | 1.6 ns |
 
-The width of each resonance follows too. Since γ = A, the natural line width A/2π is 9.8 MHz for the sodium D lines and 100 MHz for Lyman α. Unit 5 adds Doppler and collision broadening.
+For these nearly single-branch decays to a stable lower state, with no additional dephasing, $`\gamma\simeq A`$. The natural frequency FWHM $`A/(2\pi)`$ is therefore 9.8 MHz for the sodium D lines and 100 MHz for Lyman α. Unit 5 distinguishes these lifetime-limited widths from Doppler and collision broadening.
 
 ## R.7 The course in response language
 
 | Response-function idea | Where it appears |
 |---|---|
 | Positions of the resonances, $`\omega_{n0}`$ | Every energy level: hydrogen (Unit 1), fine and hyperfine structure (Unit 2), Zeeman and Stark shifts (Unit 4), molecular levels (Unit 6) |
-| Weights of the resonances, $`f_{n0}`$ | Selection rules (Units 1 and 5), line intensities (Unit 2), Franck–Condon factors (Unit 7) |
+| Weights of the resonances, $`f_{n0}`$ | Selection rules (Units 1, 3 and 5), line intensities (Unit 5), Franck–Condon factors (Unit 7) |
 | Widths of the resonances, $`\gamma_n`$ | Natural line width, then Doppler and collision broadening (Unit 5) |
 | The f-sum rule | Checks on line strengths; free-electron response at high frequency |
 | Kramers–Kronig relations | Anomalous dispersion near absorption lines |
 | Fluctuation–dissipation theorem | Einstein A and B coefficients (Unit 5) |
-| Magnetic susceptibility χ″(ω) | ESR and NMR; the Bloch equations give Lorentzian lines of width 1/T₂ (Unit 4) |
+| Magnetic susceptibility χ″(ω) | ESR and NMR (Unit 4); exponential coherence decay gives angular-frequency HWHM $`1/T_2`$, or frequency FWHM $`1/(\pi T_2)`$ (Unit 5) |
 | Correlation function of the polarizability, like S(q, ω) | Raman spectra (Unit 7) |
 | Electron energy loss | The Franck–Hertz experiment, an early form of electron energy-loss spectroscopy; electron impact also excites levels that light cannot reach from the ground state (Unit 1) |
 | Im χ < 0, meaning gain | Lasers and population inversion (Unit 5) |
 
 ## R.8 What linear response does not cover
 
-- **Stern–Gerlach** (Unit 2) measures a static magnetic moment and the quantization of its direction. It is not a spectrum.
+- **Stern–Gerlach** (Unit 2) measures magnetic-moment projections through deflection. It is not a spectrum.
 - **Spontaneous emission** needs the quantized light field. Linear response reaches it only indirectly, through Einstein's relation or the fluctuation–dissipation theorem.
 - **Lasers above threshold, saturation and two-photon spectroscopy** are nonlinear: the response depends on the strength of the field.
 - **Linear response tells you how to read a spectrum,** but the positions and weights of the resonances still come from the atom's Hamiltonian. Calculating them is the job of the rest of the course.
@@ -191,7 +191,7 @@ The width of each resonance follows too. Since γ = A, the natural line width A/
 
 **R.3** Using f = 0.416 for Lyman α, find the spontaneous emission rate and lifetime of the hydrogen 2p level.
 
-**R.4** Show that the golden-rule rate multiplied by ħω equals $`\tfrac{\omega}{2}\,\mathrm{Im}\,\alpha\,E_0^2`$ when γ → 0. Use $`\lim_{\gamma\to0}\frac{\gamma/2\pi}{(\omega_0-\omega)^2 + \gamma^2/4} = \delta(\omega - \omega_0)`$.
+**R.4** For a single electron, so that $`Z_e=z`$, show that the golden-rule rate multiplied by ħω equals $`\tfrac{\omega}{2}\,\mathrm{Im}\,\alpha\,E_0^2`$ when γ → 0. Use $`\lim_{\gamma\to0}\frac{\gamma/2\pi}{(\omega_0-\omega)^2 + \gamma^2/4} = \delta(\omega - \omega_0)`$.
 
 **R.5** Find the peak absorption cross-section of the sodium D2 line for an atom at rest, using its natural width of 9.8 MHz. Compare it with the geometric size of an atom, about 10⁻²⁰ m².
 
@@ -203,7 +203,7 @@ The width of each resonance follows too. Since γ = A, the natural line width A/
 
 **R.2** For ω much larger than every $`\omega_{n0}`$, $`\alpha \approx -\frac{e^2}{m\omega^2}\sum_n f_{n0} = -\frac{N_e e^2}{m\omega^2}`$. Then $`n - 1 = N\,\mathrm{Re}\,\alpha/(2\varepsilon_0) = -\omega_p^2/(2\omega^2)`$. Since n < 1, X-rays at a grazing angle are totally reflected from the outside. This is how X-ray mirrors and telescopes work.
 
-**R.3** $`A = \frac{2\pi e^2\nu^2}{\varepsilon_0 m_e c^3}\cdot\frac{2}{6}\cdot 0.416 = 6.26 \times 10^8\ \text{s}^{-1}`$, so τ = 1.60 ns, as in Unit 1.
+**R.3** $`A = \frac{2\pi e^2\nu^2}{\varepsilon_0 m_e c^3}\cdot\frac{2}{6}\cdot 0.416 = 6.26 \times 10^8\ \text{s}^{-1}`$, so τ = 1.60 ns.
 
 **R.4** As γ → 0, $`\mathrm{Im}\,\alpha \to \frac{\pi e^2 f}{2m\omega_0}\,\delta(\omega - \omega_0) = \frac{\pi e^2|z_{n0}|^2}{\hbar}\,\delta(\omega - \omega_0)`$, so $`P = \frac{\pi e^2|z_{n0}|^2E_0^2\,\omega}{2\hbar}\,\delta(\omega - \omega_0)`$. The golden rule gives $`W = \frac{2\pi}{\hbar}\cdot\frac{e^2|z_{n0}|^2E_0^2}{4}\cdot\frac{1}{\hbar}\,\delta(\omega - \omega_0)`$, and $`\hbar\omega W`$ is the same expression.
 
